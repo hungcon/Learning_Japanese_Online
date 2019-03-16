@@ -118,4 +118,43 @@ body {
 }
 
 
+/*tầng 4*/
+.cube > div:nth-child(19) {
+  transform: translateY(-400px) rotateX(90deg) translateZ(100px) ;
+}
+.cube > div:nth-child(20) {
+  transform: translateY(-600px) translateZ(100px);
+}
+.cube > div:nth-child(21) {
+  transform: translateY(-600px) rotateY(90deg) translateZ(100px);
+}
+.cube > div:nth-child(22) {
+  transform: translateY(-600px) rotateY(180deg) translateZ(100px);
+}
+.cube > div:nth-child(23) {
+  transform: translateY(-600px) rotateY(-90deg) translateZ(100px);
+}
+.cube > div:nth-child(24) {
+  transform: translateY(-800px) rotateX(-90deg) rotate(180deg) translateZ(100px);
+}
+
+/*tầng 5*/
+.cube > div:nth-child(25) {
+  transform: translateY(200px) rotateX(90deg) translateZ(100px) ;
+}
+.cube > div:nth-child(26) {
+  transform: translateY(200px) translateZ(100px);
+}
+.cube > div:nth-child(27) {
+  transform: translateY(200px) rotateY(90deg) translateZ(100px);
+}
+.cube > div:nth-child(28) {
+  transform: translateY(200px) rotateY(180deg) translateZ(100px);
+}
+.cube > div:nth-child(29) {
+  transform: translateY(200px) rotateY(-90deg) translateZ(100px);
+}
+.cube > div:nth-child(30) {
+  transform: translateY(200px) rotateX(-90deg) rotate(180deg) translateZ(100px);
+}
 
