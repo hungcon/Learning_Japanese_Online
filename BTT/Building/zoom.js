@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function(){
     var currFFZoom = 1;
     var currIEZoom = 100;
     console.log('load');
+    
     $('#In').on('click',function(){
         if (navigator.userAgent.indexOf('Firefox') != -1 && parseFloat(navigator.userAgent.substring(navigator.userAgent.indexOf('Firefox') + 8)) >= 3.6){//Firefox
             var step = 0.02;
@@ -15,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function(){
             console.log('+');
         }
     });
+
 
     $('#Out').on('click',function(){
         if (navigator.userAgent.indexOf('Firefox') != -1 && parseFloat(navigator.userAgent.substring(navigator.userAgent.indexOf('Firefox') + 8)) >= 3.6){//Firefox
