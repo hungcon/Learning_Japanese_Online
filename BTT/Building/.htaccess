@@ -1,4 +1,4 @@
-AuthName "Authenticate before running applications !!!"
+AuthName "Authenticate before running application !!! "
 AuthType Basic
 AuthUserFile D:\InstallXampp\htdocs\Building\.htpasswd
 require valid-user
