@@ -45,6 +45,7 @@ hr{
 
 .q-1-btn{
 	display: inline-block;
+	transition: 1s;
 }
 .q-button-answer{
 	font-size: 24px!important;
