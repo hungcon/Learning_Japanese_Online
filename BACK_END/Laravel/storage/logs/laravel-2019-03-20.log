@@ -147,3 +147,72 @@
 #20 C:\\Users\\huytr\\OneDrive\\Máy tính\\Leaning_Japanese_Online\\BACK_END\\Laravel\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
 #21 {main}
 "} 
+[2019-03-20 16:46:58] local.ERROR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES) (SQL: select * from information_schema.tables where table_schema = learning_japanese and table_name = migrations) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 1045): SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES) (SQL: select * from information_schema.tables where table_schema = learning_japanese and table_name = migrations) at D:\\CNWTT\\Leaning_Japanese_Online\\BACK_END\\Laravel\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:664, PDOException(code: 1045): SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES) at D:\\CNWTT\\Leaning_Japanese_Online\\BACK_END\\Laravel\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connectors\\Connector.php:70)
+[stacktrace]
+#0 D:\\CNWTT\\Leaning_Japanese_Online\\BACK_END\\Laravel\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(624): Illuminate\\Database\\Connection->runQueryCallback('select * from i...', Array, Object(Closure))
+#1 D:\\CNWTT\\Leaning_Japanese_Online\\BACK_END\\Laravel\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(333): Illuminate\\Database\\Connection->run('select * from i...', Array, Object(Closure))
+#2 D:\\CNWTT\\Leaning_Japanese_Online\\BACK_END\\Laravel\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Schema\\MySqlBuilder.php(18): Illuminate\\Database\\Connection->select('select * from i...', Array)
+#3 D:\\CNWTT\\Leaning_Japanese_Online\\BACK_END\\Laravel\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\DatabaseMigrationRepository.php(169): Illuminate\\Database\\Schema\\MySqlBuilder->hasTable('migrations')
+#4 D:\\CNWTT\\Leaning_Japanese_Online\\BACK_END\\Laravel\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(556): Illuminate\\Database\\Migrations\\DatabaseMigrationRepository->repositoryExists()
+#5 D:\\CNWTT\\Leaning_Japanese_Online\\BACK_END\\Laravel\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Console\\Migrations\\MigrateCommand.php(91): Illuminate\\Database\\Migrations\\Migrator->repositoryExists()
+#6 D:\\CNWTT\\Leaning_Japanese_Online\\BACK_END\\Laravel\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Console\\Migrations\\MigrateCommand.php(63): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->prepareDatabase()
+#7 [internal function]: Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#8 D:\\CNWTT\\Leaning_Japanese_Online\\BACK_END\\Laravel\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(29): call_user_func_array(Array, Array)
+#9 D:\\CNWTT\\Leaning_Japanese_Online\\BACK_END\\Laravel\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(87): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#10 D:\\CNWTT\\Leaning_Japanese_Online\\BACK_END\\Laravel\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(31): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#11 D:\\CNWTT\\Leaning_Japanese_Online\\BACK_END\\Laravel\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(572): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#12 D:\\CNWTT\\Leaning_Japanese_Online\\BACK_END\\Laravel\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(183): Illuminate\\Container\\Container->call(Array)
+#13 D:\\CNWTT\\Leaning_Japanese_Online\\BACK_END\\Laravel\\vendor\\symfony\\console\\Command\\Command.php(255): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#14 D:\\CNWTT\\Leaning_Japanese_Online\\BACK_END\\Laravel\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(170): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#15 D:\\CNWTT\\Leaning_Japanese_Online\\BACK_END\\Laravel\\vendor\\symfony\\console\\Application.php(901): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#16 D:\\CNWTT\\Leaning_Japanese_Online\\BACK_END\\Laravel\\vendor\\symfony\\console\\Application.php(262): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Migrations\\MigrateCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#17 D:\\CNWTT\\Leaning_Japanese_Online\\BACK_END\\Laravel\\vendor\\symfony\\console\\Application.php(145): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#18 D:\\CNWTT\\Leaning_Japanese_Online\\BACK_END\\Laravel\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(89): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#19 D:\\CNWTT\\Leaning_Japanese_Online\\BACK_END\\Laravel\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(122): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#20 D:\\CNWTT\\Leaning_Japanese_Online\\BACK_END\\Laravel\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#21 {main}
+"} 
+[2019-03-20 16:51:20] local.ERROR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES) (SQL: select * from information_schema.tables where table_schema = learning_japanese and table_name = migrations) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 1045): SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES) (SQL: select * from information_schema.tables where table_schema = learning_japanese and table_name = migrations) at D:\\CNWTT\\Leaning_Japanese_Online\\BACK_END\\Laravel\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:664, PDOException(code: 1045): SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES) at D:\\CNWTT\\Leaning_Japanese_Online\\BACK_END\\Laravel\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connectors\\Connector.php:70)
+[stacktrace]
+#0 D:\\CNWTT\\Leaning_Japanese_Online\\BACK_END\\Laravel\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(624): Illuminate\\Database\\Connection->runQueryCallback('select * from i...', Array, Object(Closure))
+#1 D:\\CNWTT\\Leaning_Japanese_Online\\BACK_END\\Laravel\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(333): Illuminate\\Database\\Connection->run('select * from i...', Array, Object(Closure))
+#2 D:\\CNWTT\\Leaning_Japanese_Online\\BACK_END\\Laravel\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Schema\\MySqlBuilder.php(18): Illuminate\\Database\\Connection->select('select * from i...', Array)
+#3 D:\\CNWTT\\Leaning_Japanese_Online\\BACK_END\\Laravel\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\DatabaseMigrationRepository.php(169): Illuminate\\Database\\Schema\\MySqlBuilder->hasTable('migrations')
+#4 D:\\CNWTT\\Leaning_Japanese_Online\\BACK_END\\Laravel\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(556): Illuminate\\Database\\Migrations\\DatabaseMigrationRepository->repositoryExists()
+#5 D:\\CNWTT\\Leaning_Japanese_Online\\BACK_END\\Laravel\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Console\\Migrations\\MigrateCommand.php(91): Illuminate\\Database\\Migrations\\Migrator->repositoryExists()
+#6 D:\\CNWTT\\Leaning_Japanese_Online\\BACK_END\\Laravel\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Console\\Migrations\\MigrateCommand.php(63): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->prepareDatabase()
+#7 [internal function]: Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#8 D:\\CNWTT\\Leaning_Japanese_Online\\BACK_END\\Laravel\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(29): call_user_func_array(Array, Array)
+#9 D:\\CNWTT\\Leaning_Japanese_Online\\BACK_END\\Laravel\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(87): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#10 D:\\CNWTT\\Leaning_Japanese_Online\\BACK_END\\Laravel\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(31): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#11 D:\\CNWTT\\Leaning_Japanese_Online\\BACK_END\\Laravel\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(572): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#12 D:\\CNWTT\\Leaning_Japanese_Online\\BACK_END\\Laravel\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(183): Illuminate\\Container\\Container->call(Array)
+#13 D:\\CNWTT\\Leaning_Japanese_Online\\BACK_END\\Laravel\\vendor\\symfony\\console\\Command\\Command.php(255): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#14 D:\\CNWTT\\Leaning_Japanese_Online\\BACK_END\\Laravel\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(170): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#15 D:\\CNWTT\\Leaning_Japanese_Online\\BACK_END\\Laravel\\vendor\\symfony\\console\\Application.php(901): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#16 D:\\CNWTT\\Leaning_Japanese_Online\\BACK_END\\Laravel\\vendor\\symfony\\console\\Application.php(262): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Migrations\\MigrateCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#17 D:\\CNWTT\\Leaning_Japanese_Online\\BACK_END\\Laravel\\vendor\\symfony\\console\\Application.php(145): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#18 D:\\CNWTT\\Leaning_Japanese_Online\\BACK_END\\Laravel\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(89): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#19 D:\\CNWTT\\Leaning_Japanese_Online\\BACK_END\\Laravel\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(122): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#20 D:\\CNWTT\\Leaning_Japanese_Online\\BACK_END\\Laravel\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#21 {main}
+"} 
+[2019-03-20 17:19:42] local.ERROR: Command "server" is not defined.
+
+Did you mean one of these?
+    dump-server
+    make:observer
+    serve {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"server\" is not defined.
+
+Did you mean one of these?
+    dump-server
+    make:observer
+    serve at D:\\CNWTT\\Leaning_Japanese_Online\\BACK_END\\Laravel\\vendor\\symfony\\console\\Application.php:632)
+[stacktrace]
+#0 D:\\CNWTT\\Leaning_Japanese_Online\\BACK_END\\Laravel\\vendor\\symfony\\console\\Application.php(226): Symfony\\Component\\Console\\Application->find('server')
+#1 D:\\CNWTT\\Leaning_Japanese_Online\\BACK_END\\Laravel\\vendor\\symfony\\console\\Application.php(145): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#2 D:\\CNWTT\\Leaning_Japanese_Online\\BACK_END\\Laravel\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(89): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 D:\\CNWTT\\Leaning_Japanese_Online\\BACK_END\\Laravel\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(122): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 D:\\CNWTT\\Leaning_Japanese_Online\\BACK_END\\Laravel\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
