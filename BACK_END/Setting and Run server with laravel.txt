@@ -31,3 +31,7 @@ Run Laravel Backend
 2.Open termital(ubtuntu) or Git Bash Here(window) 
 3.Run command "php artisan serve" (Run command "php artisan serve --port=8080" to run server with port 8080)
 ---------------------------------------------------------------
+Update CSDL:
+1.Open Laravel Folder
+2.Open Terminal or Git Bash Here
+3.Run command "php artisan migrate" 
