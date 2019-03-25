@@ -34,4 +34,5 @@ Run Laravel Backend
 Update CSDL:
 1.Open Laravel Folder
 2.Open Terminal or Git Bash Here
-3.Run command "php artisan migrate" 
+3.Run command "php artisan migrate" (Run command "php artisan migrate:rollback" to delete all in database)
+4.Run command "php artisan db:seed" to create data for usersTable.  
