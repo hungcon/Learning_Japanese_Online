@@ -1,0 +1,17 @@
+/*backgroup for body*/
+.body--regist{
+	background: url('../img/b2.jpg') no-repeat!important; 
+	padding: 100px; 
+	background-size: cover;
+}
+.body--choose{
+	background: url('../img/b2.jpg') no-repeat!important; 
+	padding: 100px; 
+	background-size: cover;
+}
+
+.body--login{
+	background: url('../img/b1.jpg') no-repeat!important; 
+	padding: 100px; 
+	background-size: cover;
+}
