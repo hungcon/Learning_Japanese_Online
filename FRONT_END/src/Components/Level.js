@@ -1,5 +1,5 @@
 import React from 'react';
-import Level from './Lesson';
+import Level from './Lession';
 
 class ComponentName extends React.Component {
     constructor(props) {
