@@ -1,6 +1,6 @@
 import React from 'react';
 
-class ComponentName extends React.Component {
+class Login extends React.Component {
     constructor(props) {
         super(props);
         this.state = {};
@@ -61,6 +61,5 @@ class ComponentName extends React.Component {
     }
 }
 
-ComponentName.propTypes = {};
 
-export default ComponentName;
+export default Login;
