@@ -28,7 +28,7 @@ class ChooseLevel extends Component {
                                     You should learn two alphabet: <strong>Hiragana(あ い う え お )</strong> and <strong>Katakana (ア イ ウ エ オ )</strong>
                                 </div>
                                 </div>
-                                <a href="#" className="btn btn-success btn-icon-split">
+                                <a href="https://vnexpress.net/du-lich" className="btn btn-success btn-icon-split">
                                 <span className="icon text-white-50">
                                     <i className="fas fa-check" />
                                 </span>
@@ -47,7 +47,7 @@ class ChooseLevel extends Component {
                                     You should study the first 25 lessons of : <strong>Mina(みなの日木語)</strong> 
                                 </div>
                                 </div>
-                                <a href="#" className="btn btn-primary btn-icon-split">
+                                <a href="https://vnexpress.net/du-lich" className="btn btn-primary btn-icon-split">
                                 <span className="icon text-white-50">
                                     <i className="fas fa-flag" />
                                 </span>
@@ -66,7 +66,7 @@ class ChooseLevel extends Component {
                                     You should study the last 25 lessons of : <strong>Mina(みなの日木語)</strong> 
                                 </div>
                                 </div>
-                                <a href="#" className="btn btn-danger btn-icon-split">
+                                <a href="https://vnexpress.net/du-lich" className="btn btn-danger btn-icon-split">
                                 <span className="icon text-white-50">
                                     <i className="fas fa-arrow-right" />
                                 </span>
