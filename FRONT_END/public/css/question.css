@@ -1,0 +1,52 @@
+hr{
+	margin-top: 0px!important;
+	margin-bottom: 0px!important;
+}
+.q-question{
+	font-size: 24px;
+}
+.q-number{
+	width: 90%;
+	float: left;
+}
+.q-result{
+	width: 5.5%;
+	float: left;
+}
+.q-abcd-btn{
+	width: 5.5%
+	margin-right:30px;
+}
+.q-abcd-content{
+	width: 90%;
+	font-size: 24px;
+}
+.q-abcd-answer{
+	cursor: pointer;
+	padding: 20px 50px;
+	transition: 0.5s;
+	border-radius: 5px;
+}
+.q-op-image{
+	width: 70%;
+}
+.q-abcd-answer:hover{
+	transition: 0.2s;
+	box-shadow: 2px 2px 18px -2px rgba(0,0,0,0.75);
+}
+.q-3-dot{
+	min-width: 30px;
+	padding: 5px;
+	border: 2px dashed #858796;
+}
+.q-question-choose{
+    line-height: 60px;
+}
+
+.q-1-btn{
+	display: inline-block;
+	transition: 1s;
+}
+.q-button-answer{
+	font-size: 24px!important;
+}
