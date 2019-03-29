@@ -23,9 +23,21 @@ class QuestionABCD extends Component {
     }
 
     displayPreButton = () => {
-        if(this.state.id != 1){
+        if(this.state.id !== 1){
             return <button className="btn btn-danger w-20 btn-lg float-left mt-3" onClick={() => this.decreaseQuestionId()}>
                         Previous
+                    </button>
+        }
+    }
+    displayNextButton = () => {
+        if(this.state.id !== 10){
+            return  <button className="btn btn-info w-20 btn-lg float-right mt-3" onClick={() => this.increaseQuestionId()}>
+                        Next
+                    </button>
+        }
+        if(this.state.id === 10){
+            return  <button className="btn btn-info w-20 btn-lg float-right mt-3" >
+                        Finish
                     </button>
         }
     }
@@ -47,7 +59,15 @@ class QuestionABCD extends Component {
                             {/* Illustrations */}
                             <div className="card shadow">
                                 <div className="card-header">
-                                    <h6 className="m-0 font-weight-bold text-primary q-number">Question 1 (1/10)</h6>
+                                    <h6 className="m-0 font-weight-bold text-primary q-number">
+                                    {
+                                        TestData.map((value, key) => {
+                                            if(value.id === this.state.id){
+                                                return "Question " + value.id + " (" + value.id + "/10)";
+                                            }
+                                        })
+                                    }
+                                    </h6>
                                     {/* Note: đây là chỗ bấm xong thì hiển thị kết quả sẽ là 1 trong 2 -- if */}
                                     <div className="result-btn q-result btn btn-success btn-circle btn-md q">
                                         <i className="fas fa-check">
@@ -56,7 +76,7 @@ class QuestionABCD extends Component {
                                 </div>
                                 {
                                     TestData.map((value,key) => {
-                                        if(value.id == this.state.id){
+                                        if(value.id === this.state.id){
                                             return  <div>
                                             <Question 
                                                 key 
@@ -79,9 +99,9 @@ class QuestionABCD extends Component {
                                         this.displayPreButton()
                                     }
                                     
-                                    <button className="btn btn-info w-20 btn-lg float-right mt-3" onClick={() => this.increaseQuestionId()}>
-                                        Next
-                                    </button>
+                                    {
+                                        this.displayNextButton()
+                                    }
                                 </div>
                                 
                             </div>
