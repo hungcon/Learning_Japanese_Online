@@ -5,19 +5,23 @@
         "questionContent": "Nội dung câu hỏi sẽ được điền vào đây nhé これからおせわになります",
         "answerA":{
             "answerImagePath": "./img/q-answer-a.png",
-            "answerContent": "あ"
+            "answerContent": "あ",
+            "answerName": "A"
         },
         "answerB":{
             "answerImagePath": "./img/q-answer-b.png",
-            "answerContent": "い"
+            "answerContent": "い",
+            "answerName": "B"
         },
         "answerC":{
             "answerImagePath": "./img/q-answer-c.png",
-            "answerContent": "う"
+            "answerContent": "う",
+            "answerName": "C"
         },
         "answerD":{
             "answerImagePath": "./img/q-answer-d.png",
-            "answerContent": "え"
+            "answerContent": "え",
+            "answerName": "D"
         }
     },
     {
