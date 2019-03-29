@@ -1,7 +1,36 @@
 import React, { Component } from 'react';
+import Answer from './Answer';
+import TestData from '../TestData/Question.json';
+import Question from './Question';
 
 class QuestionABCD extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            id: 1
+        }
+    }
+    increaseQuestionId = () => {
+        this.setState(
+            {id: this.state.id+1}
+        );
+    }
+
+    decreaseQuestionId = () => {
+        this.setState(
+            {id: this.state.id-1}
+        );
+    }
+
+    displayPreButton = () => {
+        if(this.state.id != 1){
+            return <button className="btn btn-danger w-20 btn-lg float-left mt-3" onClick={() => this.decreaseQuestionId()}>
+                        Previous
+                    </button>
+        }
+    }
     render() {
+        
         return (
             <div>
                 <div className="container-fluid">
@@ -24,61 +53,37 @@ class QuestionABCD extends Component {
                                         <i className="fas fa-check">
                                         </i>
                                     </div>
-                                    {/* Trường hợp sai */}
-                                    {/* <div class="result-btn btn btn-danger btn-circle btn-md">
-              <i class="fas fa-times"></i>
-            </div> */}
                                 </div>
-                                <div className="card-body">
-                                    <div className="text-center">
-                                        <img className="img-fluid px-3 px-sm-4 mb-2 q-image" style={{ width: '20rem' }} src="img/Japanese_hira_A.png" alt="" />
-                                    </div>
-                                    <p className="q-question">Nội dung câu hỏi sẽ được điền vào đây nhé
-                                    これからおせわになります</p>
-                                    <p>Select one: </p>
-                                    {/* Note: Mỗi 1 div q-abcd-answer tương đương với 1 button. Gán sự kiện onclick vào luôn nhé */}
-                                    <div className="q-abcd-answer clearfix">
-                                        <div className="q-abcd-btn float-left">
-                                            <img src="img/q-answer-a.png" alt="A" className="img-fluid q-op-image q-option" />
+                                {
+                                    TestData.map((value,key) => {
+                                        if(value.id == this.state.id){
+                                            return  <div>
+                                            <Question 
+                                                key 
+                                                imgPath = {value.questionImagePath} 
+                                                questionContent={value.questionContent} 
+                                            />
+                                            <Answer answerImagePath={value.answerA.answerImagePath} answerContent = {value.answerA.answerContent}/>
+                                            <Answer answerImagePath={value.answerB.answerImagePath} answerContent = {value.answerB.answerContent}/>
+                                            <Answer answerImagePath={value.answerC.answerImagePath} answerContent = {value.answerC.answerContent}/>
+                                            <Answer answerImagePath={value.answerD.answerImagePath} answerContent = {value.answerD.answerContent}/>
                                         </div>
-                                        <div className="q-abcd-content float-left">
-                                            あ
-                                    </div>
-                                    </div>
-                                    <hr />
-                                    <div className="q-abcd-answer clearfix">
-                                        <div className="q-abcd-btn float-left">
-                                            <img src="img/q-answer-b.png" alt="B" className="img-fluid q-op-image q-option" />
-                                        </div>
-                                        <div className="q-abcd-content float-left">
-                                            い
-                                    </div>
-                                    </div>
-                                    <hr />
-                                    <div className="q-abcd-answer clearfix">
-                                        <div className="q-abcd-btn float-left">
-                                            <img src="img/q-answer-c.png" alt="C" className="img-fluid  q-op-image q-option" />
-                                        </div>
-                                        <div className="q-abcd-content float-left">
-                                            う
-                                    </div>
-                                    </div>
-                                    <hr />
-                                    <div className="q-abcd-answer clearfix">
-                                        <div className="q-abcd-btn float-left">
-                                            <img src="img/q-answer-d.png" alt="D" className="img-fluid q-op-image q-option" />
-                                        </div>
-                                        <div className="q-abcd-content float-left">
-                                            え
-                                    </div>
-                                    </div>
-                                </div>
+                                        }
+                                    })
+                                }
+
+
                                 {/* Note: cái này sẽ hiện ra sau khi người dùng trả lời */}
                                 <div className="q-continue mb-3 mr-2">
-                                    <a href="#4AE" className="btn btn-info w-25 btn-lg float-right">
-                                        Continue &gt;
-                                    </a>
+                                    {
+                                        this.displayPreButton()
+                                    }
+                                    
+                                    <button className="btn btn-info w-20 btn-lg float-right mt-3" onClick={() => this.increaseQuestionId()}>
+                                        Next
+                                    </button>
                                 </div>
+                                
                             </div>
                         </div>
                         <div className="col-lg-3" />

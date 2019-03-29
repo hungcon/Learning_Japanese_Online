@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "questionImagePath" : "./img/Japanese_hira_A.png",
+        "questionContent": "Nội dung câu hỏi sẽ được điền vào đây nhé これからおせわになります",
+        "answerA":{
+            "answerImagePath": "./img/q-answer-a.png",
+            "answerContent": "あ"
+        },
+        "answerB":{
+            "answerImagePath": "./img/q-answer-b.png",
+            "answerContent": "い"
+        },
+        "answerC":{
+            "answerImagePath": "./img/q-answer-c.png",
+            "answerContent": "う"
+        },
+        "answerD":{
+            "answerImagePath": "./img/q-answer-d.png",
+            "answerContent": "え"
+        }
+    },
+    {
+        "id": 2,
+        "questionImagePath" : "./img/N4.png",
+        "questionContent": "Câu hỏi số 2",
+        "answerA":{
+            "answerImagePath": "./img/q-answer-a.png",
+            "answerContent": "ああ"
+        },
+        "answerB":{
+            "answerImagePath": "./img/q-answer-b.png",
+            "answerContent": "いあ"
+        },
+        "answerC":{
+            "answerImagePath": "./img/q-answer-c.png",
+            "answerContent": "うあ"
+        },
+        "answerD":{
+            "answerImagePath": "./img/q-answer-d.png",
+            "answerContent": "えあ"
+        }
+    }
+]
