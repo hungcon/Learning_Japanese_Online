@@ -3,7 +3,7 @@ import Navbar from './Navbar';
 import Topbar from './Topbar';
 // import Level from './Level';
 import Footer from './Footer';
-import QuestionABCD from './QuestionABCD';
+import Test from './Test';
 // import History from './History';
 // import Result from './Result';
 
@@ -25,7 +25,7 @@ class ComponentName extends React.Component {
                         <Level/> */}
                         {/* <Result/> */}
                         {/* <History/> */}
-                        <QuestionABCD/>
+                        <Test/>
                         <Footer/>
                     </div>
                 </div>
