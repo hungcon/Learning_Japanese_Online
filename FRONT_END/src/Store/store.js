@@ -5,6 +5,7 @@ const allReducerInitialState = {
     userAnswer: [],
     answerData: ''
 }
+
 const allReducer = (state = allReducerInitialState, action) => {
     switch (action.type) {
         case 'DISPLAY_FORM_CHOOSE_LEVEL':
@@ -19,4 +20,6 @@ const allReducer = (state = allReducerInitialState, action) => {
 }
 
 const store = redux.createStore(allReducer);
+// Update store 
+console.log(store.getState());
 export default store;

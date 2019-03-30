@@ -5,6 +5,7 @@ import './App.css';
 // import List from './Components/List';
 // import Lession from './Components/Lession';
 import List from './Components/List';
+// import History from './Components/History';
 
 
 
@@ -14,6 +15,7 @@ class App extends Component {
       <div className="App">
         {/* <Lession /> */}
         <List/>
+        {/* <History></History> */}
       </div>
     );
   }

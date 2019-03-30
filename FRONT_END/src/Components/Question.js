@@ -10,6 +10,7 @@ class Question extends Component {
         }
     }
     
+    // Hiện thị câu hỏi kế tiếp 
     increaseQuestionId = () => {
         this.getAnswerData();
         this.setState(
@@ -30,6 +31,7 @@ class Question extends Component {
                     </button>
         }
     }
+
     displayNextButton = () => {
         if(this.state.id !== 10){
             return  <button className="btn btn-info w-20 btn-lg float-right mt-3" onClick={() => this.increaseQuestionId()}>
@@ -42,12 +44,16 @@ class Question extends Component {
                     </button>
         }
     }
+
     getAnswerData = () => {
+        // get giá trị 
         var answer = {};
         answer.idQuestion = this.state.id;
         answer.answerData =  this.props.answerData;
+        // gọi luôn hàm để cập nhật store 
         this.props.addData(answer);
     }
+
     submitTest = () => {
         console.log(this.props.userAnswer);
     }
@@ -104,6 +110,7 @@ const mapStateToProps = (state, ownProps) => {
         userAnswer: state.userAnswer
     }
 }
+
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
         addData: (answer) => {
@@ -111,4 +118,5 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         }
     }
 }
+
 export default connect(mapStateToProps,mapDispatchToProps)(Question);
