@@ -1,3 +1,6 @@
+.actived{
+	border: 2px red solid;
+}
 hr{
 	margin-top: 0px!important;
 	margin-bottom: 0px!important;
@@ -10,11 +13,10 @@ hr{
 	float: left;
 }
 .q-result{
-	width: 5.5%;
 	float: left;
 }
 .q-abcd-btn{
-	width: 5.5%
+	width: 5.5%;
 	margin-right:30px;
 }
 .q-abcd-content{
@@ -26,6 +28,9 @@ hr{
 	padding: 20px 50px;
 	transition: 0.5s;
 	border-radius: 5px;
+}
+.actived{
+	
 }
 .q-op-image{
 	width: 70%;

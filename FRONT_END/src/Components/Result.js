@@ -32,10 +32,10 @@ class Result extends Component {
                                 <p>Do you want to test again?</p>
                                 {/* Note: cái này sẽ hiện ra sau khi người dùng trả lời */}
                                 <div className="q-continue mb-3 mr-2">
-                                    <a href="#4N" className="btn btn-danger w-25 btn-lg float-left">
+                                    <a href="#4N" className="btn btn-danger  btn-lg float-left">
                                         &lt; Try
                                     </a>
-                                    <a href="#4N" className="btn btn-info w-25 btn-lg float-right">
+                                    <a href="#4N" className="btn btn-info  btn-lg float-right">
                                         Continue &gt;
                                     </a>
                                 </div>
