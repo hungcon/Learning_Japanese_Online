@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-class ComponentName extends React.Component {
+class Navbar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {};
@@ -112,6 +112,6 @@ class ComponentName extends React.Component {
     }
 }
 
-ComponentName.propTypes = {};
+Navbar.propTypes = {};
 
-export default ComponentName;
+export default Navbar;

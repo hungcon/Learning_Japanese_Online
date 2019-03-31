@@ -1,12 +1,12 @@
 import React from 'react';
 
 
-class ComponentName extends React.Component {
+class Topbar extends React.Component {
 
 
     render() {
         return (
-            <nav className="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+            <nav className="navbar navbar-expand navbar-light bg-white topbar mb-1 static-top shadow">
 
                 <button id="sidebarToggleTop" className="btn btn-link d-md-none rounded-circle mr-3">
                     <i className="fa fa-bars" />
@@ -181,7 +181,4 @@ class ComponentName extends React.Component {
         );
     }
 }
-
-ComponentName.propTypes = {};
-
-export default ComponentName;
+export default Topbar;
