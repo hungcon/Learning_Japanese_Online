@@ -16,7 +16,8 @@ class UserController extends Controller
             $user = \App\User::where('email',$email)->first();
             return response()->json(["message" => "Login successful", "user" => $user], 200);
         }else{
-            return response()->json(["message" => "Account dont exist"],400);
+            return response()->json(["error" => "Account dont exist"],200);
         }
     }
+
 }
