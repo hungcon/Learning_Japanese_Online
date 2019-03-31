@@ -20,7 +20,6 @@ class ComponentName extends React.Component {
     }
 
     render() {
-        console.log(this.state.user);
         if(this.state.isLogout === true) return <Redirect to="/" />;
         return (
             <nav className="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
