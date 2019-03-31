@@ -1,8 +1,8 @@
 [
     {
         "id": 1,
-        "questionImagePath" : "./img/Japanese_hira_A.png",
-        "questionContent": "Nội dung câu hỏi sẽ được điền vào đây nhé これからおせわになります",
+        "questionImagePath" : "こ+れか+す+りが+おせ",
+        "questionContent": "これからおせわになります-さようなら-こちら-こそよおろし-おせわになり-ありがとう.",
         "answerA":{
             "answerImagePath": "./img/q-answer-a.png",
             "answerContent": "あ",
