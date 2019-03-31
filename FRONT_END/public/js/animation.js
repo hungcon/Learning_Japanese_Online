@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function(){
     var answer = document.getElementsByClassName('q-button-answer');
     //Lấy ra các ô trống điền đáp án
     var place = document.getElementsByClassName('q-3-dot');
+    
     //Lấy ra các span lưu text câu trả lời
     var blank = document.getElementsByClassName('blank');
     //Biến lưu chỗ trống điền đáp án
@@ -43,3 +44,4 @@ document.addEventListener("DOMContentLoaded", function(){
          }
      }
 })
+

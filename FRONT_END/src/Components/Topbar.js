@@ -2,7 +2,7 @@ import React from 'react';
 import  { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-class ComponentName extends React.Component {
+class Topbar extends React.Component {
 
     constructor(props) {
         super(props);
@@ -22,7 +22,7 @@ class ComponentName extends React.Component {
     render() {
         if(this.state.isLogout === true) return <Redirect to="/" />;
         return (
-            <nav className="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+            <nav className="navbar navbar-expand navbar-light bg-white topbar mb-1 static-top shadow">
 
                 <button id="sidebarToggleTop" className="btn btn-link d-md-none rounded-circle mr-3">
                     <i className="fa fa-bars" />
@@ -198,7 +198,8 @@ class ComponentName extends React.Component {
     }
 }
 
-ComponentName.propTypes = {};
+
+Topbar.propTypes = {};
 
 const mapStateToProps = (state, ownProps) => {
     return {
@@ -213,4 +214,5 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         }
     }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(ComponentName);
+export default connect(mapStateToProps, mapDispatchToProps)(Topbar);
+
