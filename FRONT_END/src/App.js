@@ -31,7 +31,7 @@ class App extends Component {
                 })
             } */}
             <Question 
-              type="ABCD"
+              type="choose"
             />
             <Footer/>
           </div>
