@@ -9,6 +9,7 @@ class Login extends React.Component {
         this.state = {
             email: '',
             password: '',
+            isCreateAccount: false,
         };
     }
 
@@ -40,8 +41,14 @@ class Login extends React.Component {
           })
     }
 
+    handleRedirectCreateAccount = event => {
+        event.preventDefault();
+        this.setState({isCreateAccount : true});
+    }
+
     render() {
-        if(localStorage.getItem('user') !== null) return <Redirect to='/list'  />;
+        if(localStorage.getItem('user') !== null){ return <Redirect to='/list'  />;}
+        if(this.state.isCreateAccount === true){ return <Redirect to='/register'  />;}
         return (
             <div className="login--content body--login">
                 <div className="container">
@@ -80,7 +87,7 @@ class Login extends React.Component {
                                                     <a className="small" href="forgot-password.html">Forgot Password?</a>
                                                 </div>
                                                 <div className="text-center">
-                                                    <a className="small" href="register.html">Create an Account!</a>
+                                                    <a className="small" onClick={this.handleRedirectCreateAccount} href="register.html">Create an Account!</a>
                                                 </div>
                                             </div>
                                         </div>
