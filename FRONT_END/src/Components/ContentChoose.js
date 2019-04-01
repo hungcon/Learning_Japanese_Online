@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 class ContentChoose extends Component {
+    
     render() {
         return (
             <p className="q-question q-question-choose"></p>
