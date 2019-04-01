@@ -19,10 +19,13 @@ class CheckApiLogin
         $password = $request->password;
 
         if(!isset($email)){
-            return response()->json(['message' => "Email is empty"], 400);
+            return response()->json(['error' => "Email is empty"], 200);
         }
         if(!isset($password)){
-            return response()->json(['message' => "Password is empty"], 400);
+            return response()->json(['error' => "Password is empty"], 200);
+        }
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            return response()->json(['error' => "Invalid email format"], 200);
         }
         return $next($request);
     }

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import $ from 'jquery';
 
 class ContentChoose extends Component {
     
     render() {
+<<<<<<< HEAD
         const question = this.props.question;
         console.log(question);
         
@@ -25,9 +25,19 @@ class ContentChoose extends Component {
         });
         
 
+=======
+>>>>>>> 07be3253207d6d02d8cebfab618449a2a306c2a6
         return (
             <p className="q-question q-question-choose"></p>
         );
+    }
+
+    componentDidMount = () => {
+        const rawQuestion = this.props.question;    
+        var box = '<span class="q-3-dot">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>';
+       var abc = document.getElementsByClassName('q-question-choose');
+       var question = rawQuestion.replace(/-/g, box);
+       abc[0].innerHTML = question;
     }
 }
 

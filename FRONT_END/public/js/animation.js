@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", function(){
     var blank = document.getElementsByClassName('blank');
     //Biến lưu chỗ trống điền đáp án
     var placeMountText;
+
+    
     for (let i = 0; i < answer.length; i++) {
         //Click vào đáp án
         answer[i].onclick = function(){

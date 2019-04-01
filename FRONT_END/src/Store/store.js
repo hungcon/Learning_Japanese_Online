@@ -4,7 +4,12 @@ const allReducerInitialState = {
     isRegistered: false,
     currentLocationQs : 0,
     userAnswer: [],
-    answerData: ''
+    answerData: '',
+    notification: {
+        status: false,
+        class: '',
+        message: ''
+    }
 }
 
 const allReducer = (state = allReducerInitialState, action) => {
@@ -26,6 +31,10 @@ const allReducer = (state = allReducerInitialState, action) => {
                 newUserAnswer.push(state.userAnswer[i]);
             }
             return {...state, userAnswer:newUserAnswer }
+        case 'SHOW_MESSAGE':
+            return {...state, notification: {...state.notification, status: true, class: action.class, message: action.message} };
+        case 'HIDE_MESSAGE':
+            return {...state, notification: {...state.notification, status: false, class: '', message: ''} };
         default:
             return state
     }

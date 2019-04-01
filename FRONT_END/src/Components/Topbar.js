@@ -1,10 +1,26 @@
 import React from 'react';
-
+import  { Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 class Topbar extends React.Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            isLogout: false,
+            user: JSON.parse(localStorage.getItem('user')),
+        };
+    }
+
+    handleLogout = event => {
+        event.preventDefault();
+        localStorage.clear();
+        this.setState({isLogout: true});
+        this.props.AlertOn("Logout successful","success");
+    }
 
     render() {
+        if(this.state.isLogout === true) return <Redirect to="/" />;
         return (
             <nav className="navbar navbar-expand navbar-light bg-white topbar mb-1 static-top shadow">
 
@@ -151,7 +167,7 @@ class Topbar extends React.Component {
 
                     <li className="nav-item dropdown no-arrow">
                         <a className="nav-link dropdown-toggle" href="/" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span className="mr-2 d-none d-lg-inline text-gray-600 small">Phạm Hoàn</span>
+                            <span className="mr-2 d-none d-lg-inline text-gray-600 small">{this.state.user.name}</span>
                             <img className="img-profile rounded-circle" src="img/ava1.jpg" alt="img" />
                         </a>
 
@@ -169,7 +185,7 @@ class Topbar extends React.Component {
                                 Activity Log
                             </a>
                             <div className="dropdown-divider" />
-                            <a className="dropdown-item" href="/" data-toggle="modal" data-target="#logoutModal">
+                            <a className="dropdown-item" href="/" onClick={this.handleLogout} data-toggle="modal" data-target="#logoutModal">
                                 <i className="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400" />
                                 Logout
                             </a>
@@ -181,4 +197,22 @@ class Topbar extends React.Component {
         );
     }
 }
-export default Topbar;
+
+
+Topbar.propTypes = {};
+
+const mapStateToProps = (state, ownProps) => {
+    return {
+        notification: state.notification
+    }
+}
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+    return {
+        AlertOn: (data,classDispath) => {
+            dispatch({type:'SHOW_MESSAGE', message: data, class: classDispath});
+        }
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Topbar);
+
