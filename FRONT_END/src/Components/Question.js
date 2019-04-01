@@ -16,16 +16,20 @@ class Question extends Component {
     }
 
     increaseQuestionId = () => {
-        this.getAnswerData();
         this.setState(
             { id: this.state.id + 1 }
         );
+        this.getAnswerData();
     }
 
     decreaseQuestionId = () => {
         this.setState(
             { id: this.state.id - 1 }
         );
+        var updateAnswer = {};
+        updateAnswer.idQuestion = this.state.id;
+        updateAnswer.answerData = this.props.answerData;
+        this.props.updateAnswerQs(updateAnswer);
     }
 
     displayPreButton = () => {
@@ -35,6 +39,7 @@ class Question extends Component {
                     </button>
         }
     }
+
     displayNextButton = () => {
         if (this.state.id !== 10) {
             return <button className="btn btn-info w-20 btn-lg float-right mt-3" onClick={() => this.increaseQuestionId()}>
@@ -47,16 +52,39 @@ class Question extends Component {
                     </button>
         }
     }
+
     getAnswerData = () => {
-        var answer = {};
-        answer.idQuestion = this.state.id;
-        answer.answerData = this.props.answerData;
-        this.props.addData(answer);
+        // console.log(this.state.id);
+        var userAnswers = this.props.userAnswer;
+        var temp = 0;
+        for(var i=0;i< userAnswers.length;i++){
+            if(userAnswers[i].idQuestion ===this.state.id){
+                temp=1;
+                break;
+            }
+        }
+        if(temp===0){
+            var newAnswer = {};
+            newAnswer.idQuestion = this.state.id;
+            newAnswer.answerData = this.props.answerData;
+            this.props.addData(newAnswer);
+        }else{
+            var updateAnswer = {};
+            updateAnswer.idQuestion = this.state.id;
+            updateAnswer.answerData = this.props.answerData;
+            this.props.updateAnswerQs(updateAnswer);
+        }
+
+        this.props.updateLocationQs(this.state.id+1);
     }
+ 
     submitTest = () => {
         console.log(this.props.userAnswer);
     }
+
     render() {
+
+        // console.log("Render");// Mỗi lần click lại render ,cmw và cmd chạy đúng 1 lần 
         var data;
         const typeQuestion = this.props.type;
         if (typeQuestion === "ABCD") {
@@ -64,7 +92,6 @@ class Question extends Component {
         } else {
             data = ChooseData; 
         }
-        
         
         $(function () {
             $('.q-abcd-answer').click(function (event) {
@@ -76,6 +103,9 @@ class Question extends Component {
                 $(this).addClass('actived')
             });
         });
+
+        console.log("Render !!!");
+
         return (
             <div>
                 {data.map((value, key) => {
@@ -96,14 +126,14 @@ class Question extends Component {
                                         </div>
                                         <div className="card-body">
                                             <div className="text-center">
-                                                <img className="img-fluid px-3 px-sm-4 mb-2 q-image" style={{ width: '20rem' }} src={value.questionImagePath} alt />
+                                                <img className="img-fluid px-3 px-sm-4 mb-2 q-image" style={{ width: '20rem' }} src={value.questionImagePath} alt="" />
                                             </div>
                                             <p className="q-question mt-2 q">{value.questionContent}</p>
                                             <p>Select one: </p>
-                                            <Answer answerImagePath={value.answerA.answerImagePath} answerContent={value.answerA.answerContent} answerName={value.answerA.answerName} />
-                                            <Answer answerImagePath={value.answerB.answerImagePath} answerContent={value.answerB.answerContent} answerName={value.answerB.answerName} />
-                                            <Answer answerImagePath={value.answerC.answerImagePath} answerContent={value.answerC.answerContent} answerName={value.answerC.answerName} />
-                                            <Answer answerImagePath={value.answerD.answerImagePath} answerContent={value.answerD.answerContent} answerName={value.answerD.answerName} />
+                                            <Answer answerImagePath={value.answerA.answerImagePath} answerContent={value.answerA.answerContent} answerName={value.answerA.answerName} answerId={value.id}/>
+                                            <Answer answerImagePath={value.answerB.answerImagePath} answerContent={value.answerB.answerContent} answerName={value.answerB.answerName} answerId={value.id}/>
+                                            <Answer answerImagePath={value.answerC.answerImagePath} answerContent={value.answerC.answerContent} answerName={value.answerC.answerName} answerId={value.id}/>
+                                            <Answer answerImagePath={value.answerD.answerImagePath} answerContent={value.answerD.answerContent} answerName={value.answerD.answerName} answerId={value.id}/>
                                         </div>
                                         <div className="q-continue mb-3 mr-2">
                                             {this.displayPreButton()}
@@ -131,7 +161,7 @@ class Question extends Component {
                                         </div>
                                         <div className="card-body">
                                             <div className="text-center">
-                                                <img className="img-fluid px-3 px-sm-4 mb-2 q-image" style={{ width: '20rem' }} src={value.questionImagePath} alt />
+                                                <img className="img-fluid px-3 px-sm-4 mb-2 q-image" style={{ width: '20rem' }} src={value.questionImagePath} alt="" />
                                             </div>
                                             <ContentChoose
                                                 key
@@ -155,7 +185,9 @@ class Question extends Component {
 
                             </div>
                         }
+
                     }
+                    return '';
                 }
                 )}
             </div>
@@ -166,13 +198,21 @@ class Question extends Component {
 const mapStateToProps = (state, ownProps) => {
     return {
         answerData: state.answerData,
-        userAnswer: state.userAnswer
+        userAnswer: state.userAnswer,
+        previousLocation : state.currentLocationQs
     }
 }
+
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
         addData: (answer) => {
             dispatch({ type: 'ADD_ANSWER', answerAdd: answer })
+        },
+        updateLocationQs: (currentLocation) => {
+            dispatch({ type: 'UPDATE_LOCATION_QUESTION', currentLocation: currentLocation })
+        },
+        updateAnswerQs: (updateAnswer) => {
+            dispatch({ type: 'UPDATE_ANSWER', answerUpdate: updateAnswer })
         }
     }
 }

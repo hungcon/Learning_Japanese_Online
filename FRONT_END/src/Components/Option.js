@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 
 class Option extends Component {
     render() {
+        
         var arrButton = this.props.option.split("+");
         const listOption = arrButton.map((value, key) => {
             return (
@@ -13,6 +14,7 @@ class Option extends Component {
                 </div>
             );
         });
+
         return (
             <div className="q-list-button ml-5">
                 {listOption}
