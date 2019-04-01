@@ -56,6 +56,7 @@ class Question extends Component {
     submitTest = () => {
         console.log(this.props.userAnswer);
     }
+
     render() {
         var data;
         const typeQuestion = this.props.type;
@@ -65,17 +66,16 @@ class Question extends Component {
             data = ChooseData; 
         }
         
-        
-        // $(function () {
-        //     $('.q-abcd-answer').click(function (event) {
-        //         var arr = $(".q-abcd-answer");
+        $(function () {
+            $('.q-abcd-answer').click(function (event) {
+                var arr = $(".q-abcd-answer");
                
-        //         arr.each(function (index, el) {
-        //             $(el).removeClass('actived');
-        //         });
-        //         $(this).addClass('actived')
-        //     });
-        // });
+                arr.each(function (index, el) {
+                    $(el).removeClass('actived');
+                });
+                $(this).addClass('actived')
+            });
+        });
         return (       
             <div>
                 {data.map((value, key) => {
