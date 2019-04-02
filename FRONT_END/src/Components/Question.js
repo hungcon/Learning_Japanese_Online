@@ -30,7 +30,7 @@ class Question extends Component {
 
     displayPreButton = () => {
         if (this.state.id !== 1) {
-            return <button className="btn btn-danger w-20 btn-lg float-left mt-3" onClick={() => this.decreaseQuestionId()}>
+            return <button className="btn btn-danger w-20 btn-lg float-left mt-3 ml-2" onClick={() => this.decreaseQuestionId()}>
                 Previous
                     </button>
         }
@@ -56,6 +56,7 @@ class Question extends Component {
     submitTest = () => {
         console.log(this.props.userAnswer);
     }
+
     render() {
         var data;
         const typeQuestion = this.props.type;
@@ -65,29 +66,28 @@ class Question extends Component {
             data = ChooseData; 
         }
         
-        
         $(function () {
             $('.q-abcd-answer').click(function (event) {
                 var arr = $(".q-abcd-answer");
-                console.log(arr.length);
+               
                 arr.each(function (index, el) {
                     $(el).removeClass('actived');
                 });
                 $(this).addClass('actived')
             });
         });
-        return (
+        return (       
             <div>
                 {data.map((value, key) => {
                     if (value.id === this.state.id) {
                         if (typeQuestion === "ABCD") {
-                            return <div className="row">
+                            return <div className="row" key={key}>
                                 <div className="col-lg-3" />
                                 <div className="col-lg-6 mb-4">
                                     <div className="card shadow">
                                         <div className="card-header">
                                             <h6 className="m-0 font-weight-bold text-primary q-number">
-                                                Question +{value.id}  + ({value.id}/10)
+                                                Question  {value.id}    ({value.id}/10)
                                         </h6>
                                             <div className="result-btn q-result btn btn-success btn-circle btn-md q">
                                                 <i className="fas fa-check">
@@ -116,13 +116,13 @@ class Question extends Component {
 
                             </div>
                         } else {
-                            return <div className="row">
+                            return <div className="row" key={key}>
                                 <div className="col-lg-3" />
                                 <div className="col-lg-6 mb-4">
                                     <div className="card shadow">
                                         <div className="card-header">
                                             <h6 className="m-0 font-weight-bold text-primary q-number">
-                                                Question +{value.id}  + ({value.id}/10)
+                                                Question {value.id}  ({value.id}/10)
                                         </h6>
                                             <div className="result-btn q-result btn btn-success btn-circle btn-md q">
                                                 <i className="fas fa-check">
@@ -131,15 +131,15 @@ class Question extends Component {
                                         </div>
                                         <div className="card-body">
                                             <div className="text-center">
-                                                <img className="img-fluid px-3 px-sm-4 mb-2 q-image" style={{ width: '20rem' }} src={value.questionImagePath} alt />
+                                                <img className="img-fluid px-3 px-sm-4 mb-2 q-image" style={{ width: '20rem' }} src={value.questionImagePath} alt = '' />
                                             </div>
                                             <ContentChoose
-                                                key
+                                                
                                                 question={value.questionContent}
                                             />
                                             <p>Choose: </p>
                                             <Option
-                                                key
+                                                
                                                 type={this.props.type}
                                                 option={value.option}
                                             />
