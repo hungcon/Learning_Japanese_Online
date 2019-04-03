@@ -6,22 +6,22 @@
         "answerA":{
             "answerImagePath": "./img/q-answer-a.png",
             "answerContent": "あ",
-            "answerName": "A"
+            "answerName":"A"
         },
         "answerB":{
             "answerImagePath": "./img/q-answer-b.png",
             "answerContent": "い",
-            "answerName": "B"
+            "answerName":"B"
         },
         "answerC":{
             "answerImagePath": "./img/q-answer-c.png",
             "answerContent": "う",
-            "answerName": "C"
+            "answerName":"C"
         },
         "answerD":{
             "answerImagePath": "./img/q-answer-d.png",
             "answerContent": "え",
-            "answerName": "D"
+            "answerName":"D"
         }
     },
     {
@@ -30,19 +30,23 @@
         "questionContent": "Câu hỏi số 2",
         "answerA":{
             "answerImagePath": "./img/q-answer-a.png",
-            "answerContent": "あ2"
+            "answerContent": "あ2",
+            "answerName": "A"
         },
         "answerB":{
             "answerImagePath": "./img/q-answer-b.png",
-            "answerContent": "い2"
+            "answerContent": "い2",
+            "answerName": "B"
         },
         "answerC":{
             "answerImagePath": "./img/q-answer-c.png",
-            "answerContent": "う2"
+            "answerContent": "う2",
+            "answerName": "C"
         },
         "answerD":{
             "answerImagePath": "./img/q-answer-d.png",
-            "answerContent": "え2"
+            "answerContent": "え2",
+            "answerName": "D"
         }
     },
     {
@@ -51,19 +55,23 @@
         "questionContent": "Câu hỏi số 3",
         "answerA":{
             "answerImagePath": "./img/q-answer-a.png",
-            "answerContent": "3"
+            "answerContent": "3",
+            "answerName": "A"
         },
         "answerB":{
             "answerImagePath": "./img/q-answer-b.png",
-            "answerContent": "3"
+            "answerContent": "3",
+            "answerName": "B"
         },
         "answerC":{
             "answerImagePath": "./img/q-answer-c.png",
-            "answerContent": "3"
+            "answerContent": "3",
+            "answerName": "C"
         },
         "answerD":{
             "answerImagePath": "./img/q-answer-d.png",
-            "answerContent": "3"
+            "answerContent": "3",
+            "answerName": "D"
         }
     },
     {
@@ -72,19 +80,23 @@
         "questionContent": "Câu hỏi số 4",
         "answerA":{
             "answerImagePath": "./img/q-answer-a.png",
-            "answerContent": "4"
+            "answerContent": "4",
+            "answerName": "A"
         },
         "answerB":{
             "answerImagePath": "./img/q-answer-b.png",
-            "answerContent": "4"
+            "answerContent": "4",
+            "answerName": "B"
         },
         "answerC":{
             "answerImagePath": "./img/q-answer-c.png",
-            "answerContent": "4"
+            "answerContent": "4",
+            "answerName": "C"
         },
         "answerD":{
             "answerImagePath": "./img/q-answer-d.png",
-            "answerContent": "4"
+            "answerContent": "4",
+            "answerName": "D"
         }
     },
     {
@@ -93,19 +105,23 @@
         "questionContent": "Câu hỏi số 5",
         "answerA":{
             "answerImagePath": "./img/q-answer-a.png",
-            "answerContent": "5"
+            "answerContent": "5",
+            "answerName": "A"
         },
         "answerB":{
             "answerImagePath": "./img/q-answer-b.png",
-            "answerContent": "5"
+            "answerContent": "5",
+            "answerName": "B"
         },
         "answerC":{
             "answerImagePath": "./img/q-answer-c.png",
-            "answerContent": "5"
+            "answerContent": "5",
+            "answerName": "C"
         },
         "answerD":{
             "answerImagePath": "./img/q-answer-d.png",
-            "answerContent": "5"
+            "answerContent": "5",
+            "answerName": "D"
         }
     },
     {
@@ -114,19 +130,23 @@
         "questionContent": "Câu hỏi số 6",
         "answerA":{
             "answerImagePath": "./img/q-answer-a.png",
-            "answerContent": "6"
+            "answerContent": "6",
+            "answerName": "A"
         },
         "answerB":{
             "answerImagePath": "./img/q-answer-b.png",
-            "answerContent": "6"
+            "answerContent": "6",
+            "answerName": "B"
         },
         "answerC":{
             "answerImagePath": "./img/q-answer-c.png",
-            "answerContent": "6"
+            "answerContent": "6",
+            "answerName": "C"
         },
         "answerD":{
             "answerImagePath": "./img/q-answer-d.png",
-            "answerContent": "6"
+            "answerContent": "6",
+            "answerName": "D"
         }
     },
     {
@@ -135,19 +155,23 @@
         "questionContent": "Câu hỏi số 7",
         "answerA":{
             "answerImagePath": "./img/q-answer-a.png",
-            "answerContent": "7"
+            "answerContent": "7",
+            "answerName": "A"
         },
         "answerB":{
             "answerImagePath": "./img/q-answer-b.png",
-            "answerContent": "7"
+            "answerContent": "7",
+            "answerName": "B"
         },
         "answerC":{
             "answerImagePath": "./img/q-answer-c.png",
-            "answerContent": "7"
+            "answerContent": "7",
+            "answerName": "C"
         },
         "answerD":{
             "answerImagePath": "./img/q-answer-d.png",
-            "answerContent": "7"
+            "answerContent": "7",
+            "answerName": "D"
         }
     },
     {
@@ -156,19 +180,23 @@
         "questionContent": "Câu hỏi số 8",
         "answerA":{
             "answerImagePath": "./img/q-answer-a.png",
-            "answerContent": "8"
+            "answerContent": "8",
+            "answerName": "A"
         },
         "answerB":{
             "answerImagePath": "./img/q-answer-b.png",
-            "answerContent": "8"
+            "answerContent": "8",
+            "answerName": "B"
         },
         "answerC":{
             "answerImagePath": "./img/q-answer-c.png",
-            "answerContent": "8"
+            "answerContent": "8",
+            "answerName": "C"
         },
         "answerD":{
             "answerImagePath": "./img/q-answer-d.png",
-            "answerContent": "8"
+            "answerContent": "8",
+            "answerName": "D"
         }
     },
     {
@@ -177,19 +205,23 @@
         "questionContent": "Câu hỏi số 9",
         "answerA":{
             "answerImagePath": "./img/q-answer-a.png",
-            "answerContent": "9"
+            "answerContent": "9",
+            "answerName": "A"
         },
         "answerB":{
             "answerImagePath": "./img/q-answer-b.png",
-            "answerContent": "9"
+            "answerContent": "9",
+            "answerName": "B"
         },
         "answerC":{
             "answerImagePath": "./img/q-answer-c.png",
-            "answerContent": "9"
+            "answerContent": "9", 
+            "answerName": "C"
         },
         "answerD":{
             "answerImagePath": "./img/q-answer-d.png",
-            "answerContent": "9"
+            "answerContent": "9",
+            "answerName": "D"
         }
     },
     {
@@ -198,19 +230,23 @@
         "questionContent": "Câu hỏi số 10",
         "answerA":{
             "answerImagePath": "./img/q-answer-a.png",
-            "answerContent": "10"
+            "answerContent": "10",
+            "answerName": "A"
         },
         "answerB":{
             "answerImagePath": "./img/q-answer-b.png",
-            "answerContent": "10"
+            "answerContent": "10",
+            "answerName": "B"
         },
         "answerC":{
             "answerImagePath": "./img/q-answer-c.png",
-            "answerContent": "10"
+            "answerContent": "10",
+            "answerName": "C"
         },
         "answerD":{
             "answerImagePath": "./img/q-answer-d.png",
-            "answerContent": "10"
+            "answerContent": "10",
+            "answerName": "D"
         }
     }
 ]

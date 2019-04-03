@@ -3,7 +3,6 @@ import Answer from './Answer';
 import TestData from '../TestData/Question.json';
 import ChooseData from '../TestData/Choose.json';
 import { connect } from 'react-redux';
-import $ from 'jquery';
 import Option from './Option';
 import ContentChoose from './ContentChoose';
 
@@ -16,16 +15,25 @@ class Question extends Component {
     }
 
     increaseQuestionId = () => {
-        this.getAnswerData();
+        
         this.setState(
             { id: this.state.id + 1 }
         );
+        this.getAnswerData();
     }
 
     decreaseQuestionId = () => {
         this.setState(
             { id: this.state.id - 1 }
         );
+        
+        // Xử lí không click đáp án mà vẫn back 
+        if(this.props.answeredQs === true){
+            this.getAnswerData();
+        }
+
+        this.props.displayNextButtonQs();
+        
     }
 
     displayPreButton = () => {
@@ -35,8 +43,9 @@ class Question extends Component {
                     </button>
         }
     }
+
     displayNextButton = () => {
-        if (this.state.id !== 10) {
+        if (this.state.id !== 10 && this.props.displayNextButton) {
             return <button className="btn btn-info w-20 btn-lg float-right mt-3" onClick={() => this.increaseQuestionId()}>
                 Next
                     </button>
@@ -47,14 +56,69 @@ class Question extends Component {
                     </button>
         }
     }
+
+
+    // Hàm xử lí thêm mới hay cập nhật dữ liệu vào mảng đáp án lưu trong store 
     getAnswerData = () => {
-        var answer = {};
-        answer.idQuestion = this.state.id;
-        answer.answerData = this.props.answerData;
-        this.props.addData(answer);
+        // Quay trở  trạng thái click chọn đáp án  mỗi lần next hay pre câu hỏi 
+        this.props.resetAnsweredQs();
+        console.log(this.props.previousLocation);
+        console.log(this.state.id);
+        var userAnswers = this.props.userAnswer;
+        var temp = 0;
+
+        // Kiểm tra vị trí đang đứng thuộc câu hỏi nào để thêm mới hay cập nhật câu trả lời 
+        for(var j=0;j< userAnswers.length;j++){
+            if(userAnswers[j].idQuestion ===(this.state.id)){
+                temp=1;
+                break;
+            }
+        }
+        // console.log(temp);
+        if(temp===0){
+            this.props.hideNextButton();
+            var newAnswer = {};
+            newAnswer.idQuestion = this.state.id;
+            newAnswer.answerData = this.props.answerData;
+            this.props.addData(newAnswer);
+            this.props.updateLocationQs(this.state.id+1);
+        }else{
+            
+            var updateAnswer = {};
+            updateAnswer.idQuestion = this.state.id;
+            var oldUserAnswers = this.props.userAnswer;
+            var oldAnswer = '';
+
+            for(var i=0;i<oldUserAnswers.length;i++){
+                if(oldUserAnswers[i].idQuestion ===this.state.id){
+                    oldAnswer = oldUserAnswers[i].answerData;
+                }
+            }
+            
+            // Nếu người back lại và chọn lại đáp án , cập nhật đáp án mới , ngược lại lấy đáp án cũ 
+            if(this.props.answeredQs ===true){
+                updateAnswer.answerData = this.props.answerData;
+            }else{
+                updateAnswer.answerData = oldAnswer;
+            }
+            this.props.updateAnswerQs(updateAnswer);
+
+            // Vị sau sau lần back đầu tiền phải ẩn đi nút button 
+            if(this.state.id === userAnswers.length ){
+                this.props.hideNextButton();
+            }else{
+                this.props.displayNextButtonQs();
+            }
+            
+
+        }
     }
+ 
+    // Hàm xử lí khi click kết thúc bài test 
     submitTest = () => {
-        console.log(this.props.userAnswer);
+        this.props.resetAnsweredQs();
+        this.getAnswerData();
+        console.log("Hoan Thanh bai test ");
     }
 
     render() {
@@ -65,17 +129,7 @@ class Question extends Component {
         } else {
             data = ChooseData; 
         }
-        
-        $(function () {
-            $('.q-abcd-answer').click(function (event) {
-                var arr = $(".q-abcd-answer");
-               
-                arr.each(function (index, el) {
-                    $(el).removeClass('actived');
-                });
-                $(this).addClass('actived')
-            });
-        });
+        // console.log("Render !!!");
         return (       
             <div>
                 {data.map((value, key) => {
@@ -96,14 +150,14 @@ class Question extends Component {
                                         </div>
                                         <div className="card-body">
                                             <div className="text-center">
-                                                <img className="img-fluid px-3 px-sm-4 mb-2 q-image" style={{ width: '20rem' }} src={value.questionImagePath} alt />
+                                                <img className="img-fluid px-3 px-sm-4 mb-2 q-image" style={{ width: '20rem' }} src={value.questionImagePath} alt="" />
                                             </div>
                                             <p className="q-question mt-2 q">{value.questionContent}</p>
                                             <p>Select one: </p>
-                                            <Answer answerImagePath={value.answerA.answerImagePath} answerContent={value.answerA.answerContent} answerName={value.answerA.answerName} />
-                                            <Answer answerImagePath={value.answerB.answerImagePath} answerContent={value.answerB.answerContent} answerName={value.answerB.answerName} />
-                                            <Answer answerImagePath={value.answerC.answerImagePath} answerContent={value.answerC.answerContent} answerName={value.answerC.answerName} />
-                                            <Answer answerImagePath={value.answerD.answerImagePath} answerContent={value.answerD.answerContent} answerName={value.answerD.answerName} />
+                                            <Answer answerImagePath={value.answerA.answerImagePath} answerContent={value.answerA.answerContent} answerName={value.answerA.answerName} answerId={value.id} />
+                                            <Answer answerImagePath={value.answerB.answerImagePath} answerContent={value.answerB.answerContent} answerName={value.answerB.answerName} answerId={value.id} />
+                                            <Answer answerImagePath={value.answerC.answerImagePath} answerContent={value.answerC.answerContent} answerName={value.answerC.answerName} answerId={value.id} />
+                                            <Answer answerImagePath={value.answerD.answerImagePath} answerContent={value.answerD.answerContent} answerName={value.answerD.answerName} answerId={value.id} />
                                         </div>
                                         <div className="q-continue mb-3 mr-2">
                                             {this.displayPreButton()}
@@ -155,7 +209,9 @@ class Question extends Component {
 
                             </div>
                         }
+
                     }
+                    return '';
                 }
                 )}
             </div>
@@ -166,13 +222,32 @@ class Question extends Component {
 const mapStateToProps = (state, ownProps) => {
     return {
         answerData: state.answerData,
-        userAnswer: state.userAnswer
+        userAnswer: state.userAnswer,
+        answeredQs : state.answeredQs,
+        previousLocation : state.currentLocationQs,
+        displayNextButton: state.displayNextButton
     }
 }
+
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
         addData: (answer) => {
             dispatch({ type: 'ADD_ANSWER', answerAdd: answer })
+        },
+        updateLocationQs: (currentLocation) => {
+            dispatch({ type: 'UPDATE_LOCATION_QUESTION', currentLocation: currentLocation })
+        },
+        updateAnswerQs: (updateAnswer) => {
+            dispatch({ type: 'UPDATE_ANSWER', answerUpdate: updateAnswer })
+        },
+        resetAnsweredQs: () => {
+            dispatch({type:'RESET_STATUS_ANSWERED'})
+        },
+        hideNextButton: () => {
+            dispatch({ type: 'HIDE_NEXT_BUTTON' })
+        },
+        displayNextButtonQs: () => {
+            dispatch({ type: 'DISPLAY_NEXT_BUTTON' })
         }
     }
 }
