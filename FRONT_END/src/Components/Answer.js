@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 class Answer extends Component {
     getAnswer = () => {
         this.props.sendData(this.props.answerName);
+        this.props.displayNextButton();
     }
     render() {
         return (
@@ -26,6 +27,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     return {
         sendData: (answerData) => {
             dispatch({type:'GET_ANSWER_NAME', answerData:answerData})
+        },
+        displayNextButton: () => {
+            dispatch({type:'DISPLAY_NEXT_BUTTON'})
         }
     }
 }

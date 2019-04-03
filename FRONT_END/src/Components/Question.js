@@ -17,6 +17,7 @@ class Question extends Component {
 
     increaseQuestionId = () => {
         this.getAnswerData();
+        this.props.hideNextButton();
         this.setState(
             { id: this.state.id + 1 }
         );
@@ -36,7 +37,7 @@ class Question extends Component {
         }
     }
     displayNextButton = () => {
-        if (this.state.id !== 10) {
+        if (this.state.id !== 10 && this.props.displayNextButton) {
             return <button className="btn btn-info w-20 btn-lg float-right mt-3" onClick={() => this.increaseQuestionId()}>
                 Next
                     </button>
@@ -54,7 +55,9 @@ class Question extends Component {
         this.props.addData(answer);
     }
     submitTest = () => {
+        this.getAnswerData();
         console.log(this.props.userAnswer);
+        
     }
 
     render() {
@@ -166,13 +169,17 @@ class Question extends Component {
 const mapStateToProps = (state, ownProps) => {
     return {
         answerData: state.answerData,
-        userAnswer: state.userAnswer
+        userAnswer: state.userAnswer,
+        displayNextButton: state.displayNextButton
     }
 }
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
         addData: (answer) => {
             dispatch({ type: 'ADD_ANSWER', answerAdd: answer })
+        },
+        hideNextButton: () => {
+            dispatch({ type: 'HIDE_NEXT_BUTTON' })
         }
     }
 }
