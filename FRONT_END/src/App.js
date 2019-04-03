@@ -47,7 +47,7 @@ class App extends Component {
                 })
             } */}
             <Question 
-              type=""
+              type="ABCD"
             />
             <Footer/>
           </div>
