@@ -3,7 +3,7 @@ import Answer from './Answer';
 import TestData from '../TestData/Question.json';
 import ChooseData from '../TestData/Choose.json';
 import { connect } from 'react-redux';
-import $ from 'jquery';
+// import $ from 'jquery';
 import Option from './Option';
 import ContentChoose from './ContentChoose';
 
@@ -19,6 +19,7 @@ class Question extends Component {
         this.setState(
             { id: this.state.id + 1 }
         );
+        this.props.resetAnsweredQs();
         this.getAnswerData();
     }
 
@@ -26,10 +27,10 @@ class Question extends Component {
         this.setState(
             { id: this.state.id - 1 }
         );
-        var updateAnswer = {};
-        updateAnswer.idQuestion = this.state.id;
-        updateAnswer.answerData = this.props.answerData;
-        this.props.updateAnswerQs(updateAnswer);
+
+        this.props.resetAnsweredQs();
+        this.getAnswerData();
+        
     }
 
     displayPreButton = () => {
@@ -57,8 +58,8 @@ class Question extends Component {
         // console.log(this.state.id);
         var userAnswers = this.props.userAnswer;
         var temp = 0;
-        for(var i=0;i< userAnswers.length;i++){
-            if(userAnswers[i].idQuestion ===this.state.id){
+        for(var j=0;j< userAnswers.length;j++){
+            if(userAnswers[j].idQuestion ===this.state.id){
                 temp=1;
                 break;
             }
@@ -66,25 +67,56 @@ class Question extends Component {
         if(temp===0){
             var newAnswer = {};
             newAnswer.idQuestion = this.state.id;
-            newAnswer.answerData = this.props.answerData;
+            if(this.props.answeredQs === false){
+                newAnswer.answerData = "";
+            }else{
+                newAnswer.answerData = this.props.answerData;
+            }
+            newAnswer.checkAnswered = this.props.answeredQs;
             this.props.addData(newAnswer);
         }else{
+
             var updateAnswer = {};
             updateAnswer.idQuestion = this.state.id;
-            updateAnswer.answerData = this.props.answerData;
+            var oldUserAnswers = this.props.userAnswer;
+            var checkAnswered = '';
+            var oldAnswer = '';
+
+            for(var i=0;i<oldUserAnswers.length;i++){
+                if(oldUserAnswers[i].idQuestion ===this.state.id){
+                    checkAnswered = oldUserAnswers[i].checkAnswered;
+                    oldAnswer = oldUserAnswers[i].answerData;
+                }
+            }
+    
+            if(this.props.answeredQs ===true){
+                updateAnswer.answerData = this.props.answerData;
+                updateAnswer.checkAnswered = true;
+            }
+            if(checkAnswered === true && this.props.answeredQs ===false){
+                updateAnswer.answerData = oldAnswer;
+                updateAnswer.checkAnswered = checkAnswered;
+            }
+    
+            if(checkAnswered === false && this.props.answeredQs ===false){
+                updateAnswer.answerData = "";
+                updateAnswer.checkAnswered =checkAnswered;
+            }
+            
             this.props.updateAnswerQs(updateAnswer);
+
         }
 
         this.props.updateLocationQs(this.state.id+1);
     }
  
     submitTest = () => {
-        console.log(this.props.userAnswer);
+        this.props.resetAnsweredQs();
+        this.getAnswerData();
+        alert("Bạn đã hoàn thành bài test ");
     }
 
     render() {
-
-        // console.log("Render");// Mỗi lần click lại render ,cmw và cmd chạy đúng 1 lần 
         var data;
         const typeQuestion = this.props.type;
         if (typeQuestion === "ABCD") {
@@ -92,19 +124,7 @@ class Question extends Component {
         } else {
             data = ChooseData; 
         }
-        
-        $(function () {
-            $('.q-abcd-answer').click(function (event) {
-                var arr = $(".q-abcd-answer");
-               
-                arr.each(function (index, el) {
-                    $(el).removeClass('actived');
-                });
-                $(this).addClass('actived')
-            });
-        });
-
-        console.log("Render !!!");
+        // console.log("Render !!!");
         return (       
             <div>
                 {data.map((value, key) => {
@@ -129,10 +149,10 @@ class Question extends Component {
                                             </div>
                                             <p className="q-question mt-2 q">{value.questionContent}</p>
                                             <p>Select one: </p>
-                                            <Answer answerImagePath={value.answerA.answerImagePath} answerContent={value.answerA.answerContent} answerName={value.answerA.answerName} answerId={value.id}/>
-                                            <Answer answerImagePath={value.answerB.answerImagePath} answerContent={value.answerB.answerContent} answerName={value.answerB.answerName} answerId={value.id}/>
-                                            <Answer answerImagePath={value.answerC.answerImagePath} answerContent={value.answerC.answerContent} answerName={value.answerC.answerName} answerId={value.id}/>
-                                            <Answer answerImagePath={value.answerD.answerImagePath} answerContent={value.answerD.answerContent} answerName={value.answerD.answerName} answerId={value.id}/>
+                                            <Answer answerImagePath={value.answerA.answerImagePath} answerContent={value.answerA.answerContent} answerName={value.answerA.answerName} answerId={value.id} />
+                                            <Answer answerImagePath={value.answerB.answerImagePath} answerContent={value.answerB.answerContent} answerName={value.answerB.answerName} answerId={value.id} />
+                                            <Answer answerImagePath={value.answerC.answerImagePath} answerContent={value.answerC.answerContent} answerName={value.answerC.answerName} answerId={value.id} />
+                                            <Answer answerImagePath={value.answerD.answerImagePath} answerContent={value.answerD.answerContent} answerName={value.answerD.answerName} answerId={value.id} />
                                         </div>
                                         <div className="q-continue mb-3 mr-2">
                                             {this.displayPreButton()}
@@ -198,6 +218,7 @@ const mapStateToProps = (state, ownProps) => {
     return {
         answerData: state.answerData,
         userAnswer: state.userAnswer,
+        answeredQs : state.answeredQs,
         previousLocation : state.currentLocationQs
     }
 }
@@ -212,6 +233,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         },
         updateAnswerQs: (updateAnswer) => {
             dispatch({ type: 'UPDATE_ANSWER', answerUpdate: updateAnswer })
+        },
+        resetAnsweredQs: () => {
+            dispatch({type:'RESET_STATUS_ANSWERED'})
         }
     }
 }

@@ -2,6 +2,7 @@ var redux = require('redux');
 
 const allReducerInitialState = {
     isRegistered: false,
+    answeredQs : false,
     currentLocationQs : 0,
     userAnswer: [],
     answerData: '',
@@ -22,11 +23,16 @@ const allReducer = (state = allReducerInitialState, action) => {
             return {...state, userAnswer:[...state.userAnswer, action.answerAdd] }
         case 'UPDATE_LOCATION_QUESTION':
             return {...state,currentLocationQs:action.currentLocation}
+        case 'UPDATE_STATUS_ANSWERED':
+            return {...state,answeredQs:true}      
+        case 'RESET_STATUS_ANSWERED':
+            return {...state,answeredQs:false}    
         case 'UPDATE_ANSWER':
             var newUserAnswer = [];
             for(var i=0;i<state.userAnswer.length;i++){
                 if(state.userAnswer[i].idQuestion === (action.answerUpdate.idQuestion)){
-                    state.userAnswer[i].answerData = action.answerUpdate.answerData
+                    state.userAnswer[i].answerData = action.answerUpdate.answerData;
+                    state.userAnswer[i].checkAnswered = action.answerUpdate.checkAnswered
                 }
                 newUserAnswer.push(state.userAnswer[i]);
             }
