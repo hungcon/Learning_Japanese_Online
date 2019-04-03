@@ -1,6 +1,5 @@
     
 import React, { Component } from 'react';
-import './App.css';
 import RegAndChoose from './Components/RegAndChoose';
 import Level from './Components/Level';
 import List from './Components/List';
@@ -47,7 +46,7 @@ class App extends Component {
                 })
             } */}
             <Question 
-              type="ABCD"
+              type="choose"
             />
             <Footer/>
           </div>

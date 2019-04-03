@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 
 class Option extends Component {
+    constructor(props) {
+        super(props);
+        this.state = { numberChoose: 0 };
+    }
     
-    click = (event) => {
+    
+    click = (event) => {  
         //Lấy ra các span lưu text câu trả lời
         var blank = document.getElementsByClassName('blank');
         var placeMountText;
@@ -35,6 +41,35 @@ class Option extends Component {
                 place[i].innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
             }
         }
+
+        // edit by Chung
+        var optionArr = document.getElementsByClassName("q-button-answer"); 
+        console.log(this.checkHaveButton(optionArr));
+        
+        if(!this.checkHaveButton(optionArr)){
+            this.props.displayButton();
+        } else {
+            this.props.hideButton();
+        }
+
+    }
+    /**
+     * Kiểm tra xem còn button nào ở dưới nữa không
+     */
+    checkHaveButton = (arrBtn) => {
+        for(var i = 0; i < arrBtn.length; i++){
+            // vẫn còn btn ở dưới option
+            if(arrBtn[i].style.display !== "none"){
+                return true;
+            }
+        }
+        return false;
+    }
+    /**
+     * Khi render 1 câu mới thì phải ẩn đi
+     */
+    componentWillMount() {
+        this.props.hideButton();
     }
     render() {
         var arrButton = this.props.option.split("+");
@@ -54,5 +89,23 @@ class Option extends Component {
         );
     }
 }
-
-export default Option;
+const mapDispatchToProps = (dispatch, ownProps) => {
+    return {
+        displayButton: () => {
+            dispatch({
+                type:"DISPLAY_NEXT_BUTTON_CHOOSE"
+            })
+        },
+        hideButton: () => {
+            dispatch({
+                type:"HIDE_NEXT_BUTTON_CHOOSE"
+            });
+        }
+    }
+}
+const mapStateToProps = (state, ownProps) => {
+    return {
+        numberBox: state.numberOfBox
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Option)

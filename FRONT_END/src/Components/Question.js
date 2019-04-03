@@ -6,21 +6,30 @@ import { connect } from 'react-redux';
 import $ from 'jquery';
 import Option from './Option';
 import ContentChoose from './ContentChoose';
+import store from '../Store/store';
+
 
 class Question extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            id: 1
+            id: 1,
+            displayButtonChoose:false
         }
     }
 
     increaseQuestionId = () => {
+       
+        var contentBox = document.getElementsByClassName("q-3-dot");
+        console.log(contentBox);
+        
         this.getAnswerData();
         this.props.hideNextButton();
-        this.setState(
-            { id: this.state.id + 1 }
-        );
+        this.setState({ 
+                id: this.state.id + 1,
+                displayButtonChoose:false 
+            });
+        
     }
 
     decreaseQuestionId = () => {
@@ -60,6 +69,27 @@ class Question extends Component {
         
     }
 
+    // edit by Chung ẩn hiện button next cho câu hỏi dạng choose
+    displayNextButtonChoose = () => {
+        console.log(this.state.displayButtonChoose);
+        
+        if(this.state.displayButtonChoose){
+            if(this.state.id != 10){
+                return <button className="btn btn-info w-20 btn-lg float-right mt-3" onClick={() => this.increaseQuestionId()}>
+                    Next
+                </button>
+            } else {
+                return <button className="btn btn-info w-20 btn-lg float-right mt-3" onClick={() => this.submitTest()}>
+                Finish
+                    </button>
+            }
+            
+        } else {
+            console.log("vẫn còn");
+            
+            return <div></div>
+        }
+    }
     render() {
         var data;
         const typeQuestion = this.props.type;
@@ -68,7 +98,15 @@ class Question extends Component {
         } else {
             data = ChooseData; 
         }
-        
+        // edit by Chung
+        store.subscribe(() => {
+           
+               this.setState({
+                    displayButtonChoose:store.getState().displayNextForChoose
+               });
+            
+         });
+
         $(function () {
             $('.q-abcd-answer').click(function (event) {
                 var arr = $(".q-abcd-answer");
@@ -79,6 +117,7 @@ class Question extends Component {
                 $(this).addClass('actived')
             });
         });
+       
         return (       
             <div>
                 {data.map((value, key) => {
@@ -149,7 +188,7 @@ class Question extends Component {
                                         </div>
                                         <div className="q-continue mb-3 mr-2">
                                             {this.displayPreButton()}
-                                            {this.displayNextButton()}
+                                            {this.displayNextButtonChoose()}
                                         </div>
                                     </div>
                                 </div>
