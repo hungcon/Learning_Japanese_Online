@@ -56,15 +56,46 @@ class Answer extends Component {
             }
         }
     }
-    
+
+    getAnswer = (e,key) => {
+        // Cập nhật trang thái đã trả lời câu hỏi 
+
+        this.props.checkAnsweredQs();
+        
+        var domAllAnswer = document.getElementsByClassName("q-abcd-answer");
+        for(var i=0;i<domAllAnswer.length;i++){
+            domAllAnswer[i].classList.remove("actived");
+        }
+
+        var domclick = '';
+        if(key ==="div_parentAnwser"){
+            domclick = document.getElementById(e.target.getAttribute('id'));
+            domclick.classList.add("actived");
+        }
+
+        if(key ==="Image"){
+            // console.log(e.target);
+            e.target.parentElement.parentElement.classList.add("actived");
+            e.stopPropagation();
+        }
+
+        if(key ==="div_content" || key ==="div_image"){
+            e.target.parentElement.classList.add("actived");
+            // Hàm prevent click of parent when child trigger 
+            e.stopPropagation();
+        }
+        
+        this.props.sendData(this.props.answerName);
+        this.props.displayNextButton();
+    }
     render() {
         return (
-            <div className="q-abcd-answer clearfix"  id={"QsABCD"+this.props.answerId.toString()+this.props.answerName} onClick={(e) =>this.getAnswer(e) }>
-                <div className="q-abcd-btn float-left">
-                    <img src={this.props.answerImagePath} alt="B" className="img-fluid q-op-image q-option" />
+            <div className="q-abcd-answer clearfix"  id={"QsABCD"+this.props.answerId.toString()+this.props.answerName} onClick={(e) =>this.getAnswer(e,"div_parentAnwser") }>
+                <div className="q-abcd-btn float-left"  onClick={(e) =>this.getAnswer(e,"div_image") }>
+                    <img src={this.props.answerImagePath} alt="B" className="img-fluid q-op-image q-option" onClick={(e) =>this.getAnswer(e,"Image") }/>
                 </div>
-                <div className="q-abcd-content float-left">{this.props.answerContent}</div>
-                <div className="hidden-div d-none">{this.props.answerName}</div>
+                <div className="q-abcd-content float-left" onClick={(e) =>this.getAnswer(e,"div_content") }>{this.props.answerContent}</div>
+                <div className="hidden-div d-none" onClick={(e) =>this.getAnswer(e) }>{this.props.answerName}</div>
             </div>
         );
     }
