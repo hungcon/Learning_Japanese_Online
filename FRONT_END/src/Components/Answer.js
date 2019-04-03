@@ -23,6 +23,7 @@ class Answer extends Component {
             }
         }
         return resAnswer;
+
     }
 
     componentDidMount =()=>{
@@ -83,13 +84,12 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         sendData: (answerData) => {
             dispatch({type:'GET_ANSWER_NAME', answerData:answerData})
         },
-<<<<<<< HEAD
+
         checkAnsweredQs: () => {
             dispatch({type:'UPDATE_STATUS_ANSWERED'})
-=======
+        },
         displayNextButton: () => {
             dispatch({type:'DISPLAY_NEXT_BUTTON'})
->>>>>>> afea076496c503c7e524f979b5d3687d1fc2533f
         }
     }
 }

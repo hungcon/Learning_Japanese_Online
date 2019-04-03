@@ -112,10 +112,10 @@ class Question extends Component {
     }
  
     submitTest = () => {
-
         this.props.resetAnsweredQs();
         this.getAnswerData();
         console.log(this.props.userAnswer);
+        
     }
 
     render() {
@@ -231,7 +231,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         addData: (answer) => {
             dispatch({ type: 'ADD_ANSWER', answerAdd: answer })
         },
-
         updateLocationQs: (currentLocation) => {
             dispatch({ type: 'UPDATE_LOCATION_QUESTION', currentLocation: currentLocation })
         },
