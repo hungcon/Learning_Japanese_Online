@@ -53,6 +53,8 @@ class Question extends Component {
         }
     }
 
+
+    // Hàm xử lí thêm mới hay cập nhật dữ liệu vào mảng đáp án lưu trong store 
     getAnswerData = () => {
         // Quay trở  trạng thái click chọn đáp án  mỗi lần next hay pre câu hỏi 
         this.props.resetAnsweredQs();
@@ -108,6 +110,7 @@ class Question extends Component {
         }
     }
  
+    // Hàm xử lí khi click kết thúc bài test 
     submitTest = () => {
         this.props.resetAnsweredQs();
         this.getAnswerData();

@@ -2,19 +2,7 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 class Answer extends Component {
 
-    getAnswer = (e) => {
-        // Cập nhật trang thái đã trả lời câu hỏi 
-        this.props.checkAnsweredQs();
-        var domAllAnswer = document.getElementsByClassName("q-abcd-answer");
-        var domClickAnswer = document.getElementById(e.target.getAttribute('id'));
-        for(var i=0;i<domAllAnswer.length;i++){
-            domAllAnswer[i].classList.remove("actived");
-        }
-        domClickAnswer.classList.add("actived");
-        this.props.sendData(this.props.answerName);
-        this.props.displayNextButton();
-    }
-
+    // Hàm lấy ra câu trả lời của người test
     getAnswerResponse =()=>{
         var resAnswer = '';
         for(var i=0;i<this.props.userAnswer.length;i++){
@@ -24,7 +12,7 @@ class Answer extends Component {
         }
         return resAnswer;
     }
-
+    
     componentDidMount =()=>{
         var previousLocationQS = this.props.previousLocation;
         // console.log(this.props.answerId);
@@ -57,8 +45,8 @@ class Answer extends Component {
         }
     }
 
+    // Hàm xử lí css màu đỏ khi click vào đáp án 
     getAnswer = (e,key) => {
-        // Cập nhật trang thái đã trả lời câu hỏi 
 
         this.props.checkAnsweredQs();
         
@@ -84,7 +72,7 @@ class Answer extends Component {
             // Hàm prevent click of parent when child trigger 
             e.stopPropagation();
         }
-        
+
         this.props.sendData(this.props.answerName);
         this.props.displayNextButton();
     }
