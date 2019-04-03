@@ -15,12 +15,11 @@ class Question extends Component {
     }
 
     increaseQuestionId = () => {
+        
         this.setState(
             { id: this.state.id + 1 }
         );
-        this.props.resetAnsweredQs();
         this.getAnswerData();
-        this.props.hideNextButton();
     }
 
     decreaseQuestionId = () => {
@@ -28,8 +27,8 @@ class Question extends Component {
             { id: this.state.id - 1 }
         );
 
-        this.props.resetAnsweredQs();
         this.getAnswerData();
+        this.props.displayNextButtonQs();
         
     }
 
@@ -55,66 +54,64 @@ class Question extends Component {
     }
 
     getAnswerData = () => {
+        // Quay trở  trạng thái click chọn đáp án  mỗi lần next hay pre câu hỏi 
+        this.props.resetAnsweredQs();
+        // console.log(this.props.previousLocation);
         // console.log(this.state.id);
         var userAnswers = this.props.userAnswer;
         var temp = 0;
+
+        // Kiểm tra vị trí đang đứng thuộc câu hỏi nào để thêm mới hay cập nhật câu trả lời 
         for(var j=0;j< userAnswers.length;j++){
-            if(userAnswers[j].idQuestion ===this.state.id){
+            if(userAnswers[j].idQuestion ===(this.state.id)){
                 temp=1;
                 break;
             }
         }
+        // console.log(temp);
         if(temp===0){
+            this.props.hideNextButton();
             var newAnswer = {};
             newAnswer.idQuestion = this.state.id;
-            if(this.props.answeredQs === false){
-                newAnswer.answerData = "";
-            }else{
-                newAnswer.answerData = this.props.answerData;
-            }
-            newAnswer.checkAnswered = this.props.answeredQs;
+            newAnswer.answerData = this.props.answerData;
             this.props.addData(newAnswer);
+            this.props.updateLocationQs(this.state.id+1);
         }else{
-
+            
             var updateAnswer = {};
             updateAnswer.idQuestion = this.state.id;
             var oldUserAnswers = this.props.userAnswer;
-            var checkAnswered = '';
             var oldAnswer = '';
 
             for(var i=0;i<oldUserAnswers.length;i++){
                 if(oldUserAnswers[i].idQuestion ===this.state.id){
-                    checkAnswered = oldUserAnswers[i].checkAnswered;
                     oldAnswer = oldUserAnswers[i].answerData;
                 }
             }
-    
+            
+            // Nếu người back lại và chọn lại đáp án , cập nhật đáp án mới , ngược lại lấy đáp án cũ 
             if(this.props.answeredQs ===true){
                 updateAnswer.answerData = this.props.answerData;
-                updateAnswer.checkAnswered = true;
-            }
-            if(checkAnswered === true && this.props.answeredQs ===false){
+            }else{
                 updateAnswer.answerData = oldAnswer;
-                updateAnswer.checkAnswered = checkAnswered;
             }
-    
-            if(checkAnswered === false && this.props.answeredQs ===false){
-                updateAnswer.answerData = "";
-                updateAnswer.checkAnswered =checkAnswered;
-            }
-            
             this.props.updateAnswerQs(updateAnswer);
 
-        }
+            // Vị sau sau lần back đầu tiền phải ẩn đi nút button 
+            if(this.state.id === userAnswers.length ){
+                this.props.hideNextButton();
+            }else{
+                this.props.displayNextButtonQs();
+            }
+            
 
-        this.props.updateLocationQs(this.state.id+1);
+        }
     }
  
     submitTest = () => {
         this.props.resetAnsweredQs();
         this.getAnswerData();
-        console.log(this.props.userAnswer);
-        
+        console.log("Hoan Thanh bai test ");
     }
 
     render() {
@@ -241,6 +238,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         },
         hideNextButton: () => {
             dispatch({ type: 'HIDE_NEXT_BUTTON' })
+        },
+        displayNextButtonQs: () => {
+            dispatch({ type: 'DISPLAY_NEXT_BUTTON' })
         }
     }
 }

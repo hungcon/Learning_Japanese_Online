@@ -2,6 +2,7 @@ var redux = require('redux');
 
 const allReducerInitialState = {
     isRegistered: false,
+    // Biến để check xem người dùng xem lại  đáp án có chọn lại  hay không  bỏ qua next tiếp 
     answeredQs : false,
     currentLocationQs : 0,
     displayNextButton: false,
@@ -22,6 +23,10 @@ const allReducer = (state = allReducerInitialState, action) => {
             return {...state, displayNextButton: true}
         case 'HIDE_NEXT_BUTTON':
             return {...state, displayNextButton: false}
+        case 'DISPLAY_PRE_BUTTON':
+            return {...state, displayPreButton: true}
+        case 'HIDE_PRE_BUTTON':
+            return {...state, displayPreButton: false}    
         case 'GET_ANSWER_NAME':
             return {...state, answerData: action.answerData,idCurrentQuestion:action.answerData.idQuestion}
         case 'ADD_ANSWER':
@@ -37,7 +42,7 @@ const allReducer = (state = allReducerInitialState, action) => {
             for(var i=0;i<state.userAnswer.length;i++){
                 if(state.userAnswer[i].idQuestion === (action.answerUpdate.idQuestion)){
                     state.userAnswer[i].answerData = action.answerUpdate.answerData;
-                    state.userAnswer[i].checkAnswered = action.answerUpdate.checkAnswered
+                    // state.userAnswer[i].checkAnswered = action.answerUpdate.checkAnswered
                 }
                 newUserAnswer.push(state.userAnswer[i]);
             }
