@@ -15,7 +15,6 @@ class Question extends Component {
     }
 
     increaseQuestionId = () => {
-
         this.setState(
             { id: this.state.id + 1 }
         );
