@@ -4,6 +4,7 @@ const allReducerInitialState = {
     isRegistered: false,
     answeredQs : false,
     currentLocationQs : 0,
+    displayNextButton: false,
     userAnswer: [],
     answerData: '',
     notification: {
@@ -17,6 +18,10 @@ const allReducer = (state = allReducerInitialState, action) => {
     switch (action.type) {
         case 'DISPLAY_FORM_CHOOSE_LEVEL':
             return {...state, isRegistered: !state.isRegistered}
+        case 'DISPLAY_NEXT_BUTTON':
+            return {...state, displayNextButton: true}
+        case 'HIDE_NEXT_BUTTON':
+            return {...state, displayNextButton: false}
         case 'GET_ANSWER_NAME':
             return {...state, answerData: action.answerData,idCurrentQuestion:action.answerData.idQuestion}
         case 'ADD_ANSWER':

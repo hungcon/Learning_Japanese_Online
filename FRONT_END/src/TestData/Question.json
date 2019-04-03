@@ -215,7 +215,7 @@
         },
         "answerC":{
             "answerImagePath": "./img/q-answer-c.png",
-            "answerContent": "9",
+            "answerContent": "9", 
             "answerName": "C"
         },
         "answerD":{

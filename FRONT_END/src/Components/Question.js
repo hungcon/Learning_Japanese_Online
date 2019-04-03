@@ -3,7 +3,6 @@ import Answer from './Answer';
 import TestData from '../TestData/Question.json';
 import ChooseData from '../TestData/Choose.json';
 import { connect } from 'react-redux';
-// import $ from 'jquery';
 import Option from './Option';
 import ContentChoose from './ContentChoose';
 
@@ -16,11 +15,13 @@ class Question extends Component {
     }
 
     increaseQuestionId = () => {
+
         this.setState(
             { id: this.state.id + 1 }
         );
         this.props.resetAnsweredQs();
         this.getAnswerData();
+        this.props.hideNextButton();
     }
 
     decreaseQuestionId = () => {
@@ -42,7 +43,7 @@ class Question extends Component {
     }
 
     displayNextButton = () => {
-        if (this.state.id !== 10) {
+        if (this.state.id !== 10 && this.props.displayNextButton) {
             return <button className="btn btn-info w-20 btn-lg float-right mt-3" onClick={() => this.increaseQuestionId()}>
                 Next
                     </button>
@@ -111,9 +112,10 @@ class Question extends Component {
     }
  
     submitTest = () => {
+
         this.props.resetAnsweredQs();
         this.getAnswerData();
-        alert("Bạn đã hoàn thành bài test ");
+        console.log(this.props.userAnswer);
     }
 
     render() {
@@ -219,7 +221,8 @@ const mapStateToProps = (state, ownProps) => {
         answerData: state.answerData,
         userAnswer: state.userAnswer,
         answeredQs : state.answeredQs,
-        previousLocation : state.currentLocationQs
+        previousLocation : state.currentLocationQs,
+        displayNextButton: state.displayNextButton
     }
 }
 
@@ -228,6 +231,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         addData: (answer) => {
             dispatch({ type: 'ADD_ANSWER', answerAdd: answer })
         },
+
         updateLocationQs: (currentLocation) => {
             dispatch({ type: 'UPDATE_LOCATION_QUESTION', currentLocation: currentLocation })
         },
@@ -236,6 +240,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         },
         resetAnsweredQs: () => {
             dispatch({type:'RESET_STATUS_ANSWERED'})
+        },
+        hideNextButton: () => {
+            dispatch({ type: 'HIDE_NEXT_BUTTON' })
         }
     }
 }

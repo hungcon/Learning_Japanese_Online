@@ -12,6 +12,7 @@ class Answer extends Component {
         }
         domClickAnswer.classList.add("actived");
         this.props.sendData(this.props.answerName);
+        this.props.displayNextButton();
     }
 
     getAnswerResponse =()=>{
@@ -82,8 +83,13 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         sendData: (answerData) => {
             dispatch({type:'GET_ANSWER_NAME', answerData:answerData})
         },
+<<<<<<< HEAD
         checkAnsweredQs: () => {
             dispatch({type:'UPDATE_STATUS_ANSWERED'})
+=======
+        displayNextButton: () => {
+            dispatch({type:'DISPLAY_NEXT_BUTTON'})
+>>>>>>> afea076496c503c7e524f979b5d3687d1fc2533f
         }
     }
 }
