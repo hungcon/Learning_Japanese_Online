@@ -26,8 +26,12 @@ class Question extends Component {
         this.setState(
             { id: this.state.id - 1 }
         );
+        
+        // Xử lí không click đáp án mà vẫn back 
+        if(this.props.answeredQs === true){
+            this.getAnswerData();
+        }
 
-        this.getAnswerData();
         this.props.displayNextButtonQs();
         
     }
@@ -58,8 +62,8 @@ class Question extends Component {
     getAnswerData = () => {
         // Quay trở  trạng thái click chọn đáp án  mỗi lần next hay pre câu hỏi 
         this.props.resetAnsweredQs();
-        // console.log(this.props.previousLocation);
-        // console.log(this.state.id);
+        console.log(this.props.previousLocation);
+        console.log(this.state.id);
         var userAnswers = this.props.userAnswer;
         var temp = 0;
 
