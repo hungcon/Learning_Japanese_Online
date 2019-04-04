@@ -2,19 +2,10 @@ import React, { Component } from 'react';
 
 import {connect} from 'react-redux';
 class ContentChoose extends Component {
-<<<<<<< HEAD
-=======
-    
-    clickPutDown = () => {
-        console.log("heelo");
-        
-    }
-    
+
     componentWillMount() {
         
     }
-    
->>>>>>> master
     render() {
         return (
             <p className="q-question q-question-choose">

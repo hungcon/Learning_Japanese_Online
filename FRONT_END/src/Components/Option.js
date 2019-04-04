@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-<<<<<<< HEAD
+
 import { connect } from 'react-redux';
 
-=======
-import {connect} from 'react-redux';
->>>>>>> bd29baeb3f571abbc5f2d7323530170e0d9bc71f
+
 
 class Option extends Component {
     constructor(props) {
@@ -13,9 +11,7 @@ class Option extends Component {
     }
     
     
-<<<<<<< HEAD
-    click = (event) => {  
-=======
+
     constructor(props){
         super(props);
         this.state = {
@@ -24,8 +20,6 @@ class Option extends Component {
     }
 
     click = (event) => {
-        
->>>>>>> bd29baeb3f571abbc5f2d7323530170e0d9bc71f
         //Lấy ra các span lưu text câu trả lời
         var blank = document.getElementsByClassName('blank');
         var placeMountText;
@@ -124,7 +118,6 @@ class Option extends Component {
         );
     }
 }
-<<<<<<< HEAD
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
         displayButton: () => {
@@ -136,6 +129,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
             dispatch({
                 type:"HIDE_NEXT_BUTTON_CHOOSE"
             });
+        },
+        sendAnswerChoose: (answersChoose) => {
+            dispatch({type:'GET_ANSWER_NAME', answerData:answersChoose})
         }
     }
 }
@@ -145,21 +141,4 @@ const mapStateToProps = (state, ownProps) => {
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Option)
-=======
 
-const mapStateToProps = (state, ownProps) => {
-    return {
-      
-    }
-}
-
-const mapDispatchToProps = (dispatch, ownProps) => {
-    return {
-        sendAnswerChoose: (answersChoose) => {
-            dispatch({type:'GET_ANSWER_NAME', answerData:answersChoose})
-        }
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Option)
->>>>>>> bd29baeb3f571abbc5f2d7323530170e0d9bc71f
