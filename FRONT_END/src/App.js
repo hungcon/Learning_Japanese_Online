@@ -1,15 +1,23 @@
     
 import React, { Component } from 'react';
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 import RegAndChoose from './Components/RegAndChoose';
 import Level from './Components/Level';
 import List from './Components/List';
 import Lession from './Components/Lession';
+<<<<<<< HEAD
 // import RegAndChoose from './Components/RegAndChoose';
 // import Level from './Components/Level';
 // import List from './Components/List';
 // import Lession from './Components/Lession';
+=======
+
+
+>>>>>>> master
 import Navbar from './Components/Navbar';
 // import Topbar from './Components/Topbar';
 import Question from './Components/Question';
@@ -52,7 +60,6 @@ class App extends Component {
             /> */}
             <Question 
               type="choose"
-
             />
             <Footer/>
           </div>

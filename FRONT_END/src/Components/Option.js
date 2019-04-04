@@ -1,8 +1,21 @@
 import React, { Component } from 'react';
+<<<<<<< HEAD
+import { connect } from 'react-redux';
+
+=======
 import {connect} from 'react-redux';
+>>>>>>> bd29baeb3f571abbc5f2d7323530170e0d9bc71f
 
 class Option extends Component {
+    constructor(props) {
+        super(props);
+        this.state = { numberChoose: 0 };
+    }
     
+    
+<<<<<<< HEAD
+    click = (event) => {  
+=======
     constructor(props){
         super(props);
         this.state = {
@@ -12,6 +25,7 @@ class Option extends Component {
 
     click = (event) => {
         
+>>>>>>> bd29baeb3f571abbc5f2d7323530170e0d9bc71f
         //Lấy ra các span lưu text câu trả lời
         var blank = document.getElementsByClassName('blank');
         var placeMountText;
@@ -59,6 +73,35 @@ class Option extends Component {
                 place[i].innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
             }
         }
+
+        // edit by Chung
+        var optionArr = document.getElementsByClassName("q-button-answer"); 
+        console.log(this.checkHaveButton(optionArr));
+        
+        if(!this.checkHaveButton(optionArr)){
+            this.props.displayButton();
+        } else {
+            this.props.hideButton();
+        }
+
+    }
+    /**
+     * Kiểm tra xem còn button nào ở dưới nữa không
+     */
+    checkHaveButton = (arrBtn) => {
+        for(var i = 0; i < arrBtn.length; i++){
+            // vẫn còn btn ở dưới option
+            if(arrBtn[i].style.display !== "none"){
+                return true;
+            }
+        }
+        return false;
+    }
+    /**
+     * Khi render 1 câu mới thì phải ẩn đi
+     */
+    componentWillMount() {
+        this.props.hideButton();
     }
 
     render() {
@@ -81,6 +124,28 @@ class Option extends Component {
         );
     }
 }
+<<<<<<< HEAD
+const mapDispatchToProps = (dispatch, ownProps) => {
+    return {
+        displayButton: () => {
+            dispatch({
+                type:"DISPLAY_NEXT_BUTTON_CHOOSE"
+            })
+        },
+        hideButton: () => {
+            dispatch({
+                type:"HIDE_NEXT_BUTTON_CHOOSE"
+            });
+        }
+    }
+}
+const mapStateToProps = (state, ownProps) => {
+    return {
+        numberBox: state.numberOfBox
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Option)
+=======
 
 const mapStateToProps = (state, ownProps) => {
     return {
@@ -97,3 +162,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Option)
+>>>>>>> bd29baeb3f571abbc5f2d7323530170e0d9bc71f
