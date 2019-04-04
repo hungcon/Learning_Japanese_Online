@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
+<<<<<<< HEAD
 import { connect } from 'react-redux';
 
+=======
+import {connect} from 'react-redux';
+>>>>>>> bd29baeb3f571abbc5f2d7323530170e0d9bc71f
 
 class Option extends Component {
     constructor(props) {
@@ -9,7 +13,19 @@ class Option extends Component {
     }
     
     
+<<<<<<< HEAD
     click = (event) => {  
+=======
+    constructor(props){
+        super(props);
+        this.state = {
+            answerChoose : ''
+        }
+    }
+
+    click = (event) => {
+        
+>>>>>>> bd29baeb3f571abbc5f2d7323530170e0d9bc71f
         //Lấy ra các span lưu text câu trả lời
         var blank = document.getElementsByClassName('blank');
         var placeMountText;
@@ -17,14 +33,30 @@ class Option extends Component {
         var indexAnswer = event.currentTarget.getAttribute('data-index');
         var place = document.getElementsByClassName('q-3-dot');
         //Lấy ra ô đầu tiên trống
+        var countWrited = 0;
         for (let j = 0; j < place.length; j++) {
-            if(place[j].innerText.trim() == ''){
+            if(place[j].innerText.trim() === ''){
+                countWrited = j+1;
                 placeMountText = place[j];
                 break;
             }
         }
         //Gán text
         placeMountText.innerHTML = blank[indexAnswer].innerText;
+        var temp = this.state.answerChoose;
+        if(countWrited ===5){
+            temp +=blank[indexAnswer].innerText
+            this.setState({
+                answerChoose : temp
+            })
+        }else{
+            temp +=blank[indexAnswer].innerText+"+"
+            this.setState({
+                answerChoose : temp
+            })
+        }
+        // Cập nhật dữ liệu câu trả lời vào store 
+        this.props.sendAnswerChoose(this.state.answerChoose);
         //Gán thuộc tính
         placeMountText.setAttribute('data-indexSTPlace', indexAnswer);
         //Ẩn text ở button câu trả lời
@@ -71,7 +103,9 @@ class Option extends Component {
     componentWillMount() {
         this.props.hideButton();
     }
+
     render() {
+        
         var arrButton = this.props.option.split("+");
         const listOption = arrButton.map((value, key) => {
             return (
@@ -82,6 +116,7 @@ class Option extends Component {
                 </div>
             );
         });
+
         return (
             <div className="q-list-button ml-5">
                 {listOption}
@@ -89,6 +124,7 @@ class Option extends Component {
         );
     }
 }
+<<<<<<< HEAD
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
         displayButton: () => {
@@ -109,3 +145,21 @@ const mapStateToProps = (state, ownProps) => {
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Option)
+=======
+
+const mapStateToProps = (state, ownProps) => {
+    return {
+      
+    }
+}
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+    return {
+        sendAnswerChoose: (answersChoose) => {
+            dispatch({type:'GET_ANSWER_NAME', answerData:answersChoose})
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Option)
+>>>>>>> bd29baeb3f571abbc5f2d7323530170e0d9bc71f

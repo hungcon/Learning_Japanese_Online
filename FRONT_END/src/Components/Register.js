@@ -36,9 +36,9 @@ class Register extends Component {
                                     <input type="password" className="form-control form-control-user" id="exampleRepeatPassword" placeholder="Repeat Password" />
                                     </div>
                                 </div>
-                                <a href="#4N" className="btn btn-primary btn-user btn-block" onClick = {() => this.props.handleFormChooseLevel()}>
+                                <button className="btn btn-primary btn-user btn-block" onClick = {() => this.props.handleFormChooseLevel()}>
                                     Register Account
-                                </a>
+                                </button>
                                 </form>
                                 <hr />
                                 <div className="text-center">

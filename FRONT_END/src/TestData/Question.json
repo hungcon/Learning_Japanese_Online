@@ -6,22 +6,22 @@
         "answerA":{
             "answerImagePath": "./img/q-answer-a.png",
             "answerContent": "あ",
-            "answerName": "A"
+            "answerName":"A"
         },
         "answerB":{
             "answerImagePath": "./img/q-answer-b.png",
             "answerContent": "い",
-            "answerName": "B"
+            "answerName":"B"
         },
         "answerC":{
             "answerImagePath": "./img/q-answer-c.png",
             "answerContent": "う",
-            "answerName": "C"
+            "answerName":"C"
         },
         "answerD":{
             "answerImagePath": "./img/q-answer-d.png",
             "answerContent": "え",
-            "answerName": "D"
+            "answerName":"D"
         }
     },
     {

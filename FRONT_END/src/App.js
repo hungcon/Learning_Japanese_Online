@@ -1,24 +1,23 @@
     
 import React, { Component } from 'react';
+
 import RegAndChoose from './Components/RegAndChoose';
 import Level from './Components/Level';
 import List from './Components/List';
 import Lession from './Components/Lession';
 
+
 import Navbar from './Components/Navbar';
-import Topbar from './Components/Topbar';
+// import Topbar from './Components/Topbar';
 import Question from './Components/Question';
 import Footer from './Components/Footer';
 
-
-
-import AlertInformation from './Components/AlertInformation';
-import { BrowserRouter as Router } from "react-router-dom";
-import MyRoutes from './Components/Routes/MyRoutes';
+// import AlertInformation from './Components/AlertInformation';
+// import { BrowserRouter as Router } from "react-router-dom";
+// import MyRoutes from './Components/Routes/MyRoutes';
 
 class App extends Component {
  
-  
   render() {
     return (
       // <Router>
@@ -45,6 +44,9 @@ class App extends Component {
                     />
                 })
             } */}
+            {/* <Question 
+              type="Choose"
+            /> */}
             <Question 
               type="choose"
             />

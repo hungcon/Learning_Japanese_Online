@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import {connect} from 'react-redux';
 
+import {connect} from 'react-redux';
 class ContentChoose extends Component {
     
     clickPutDown = () => {
@@ -19,7 +19,7 @@ class ContentChoose extends Component {
             </p>
         );
     }
-
+    
     componentDidMount = () => {
         // replace - to box
         const rawQuestion = this.props.question;    
@@ -27,12 +27,13 @@ class ContentChoose extends Component {
         var abc = document.getElementsByClassName('q-question-choose');
         var question = rawQuestion.replace(/-/g, box);
         abc[0].innerHTML = question;
+
         var countBox = rawQuestion.match(/-/g).length;
         //console.log(countBox + "hello morther fucker");
         this.props.addCountBoxInQuestion(countBox);
-        
     }
 }
+
 
 const mapStateToProps = (state, ownProps) => {
     return {
@@ -55,4 +56,5 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         }
     }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(ContentChoose)
+export default connect(mapStateToProps, mapDispatchToProps)(ContentChoose);
+
