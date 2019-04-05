@@ -17,15 +17,14 @@ class Question extends Component {
             displayButtonChoose:false
         }
     }
-
     increaseQuestionId = () => {
        
         this.getAnswerData();
         this.props.hideNextButton();
         this.setState({ 
                 id: this.state.id + 1,
-                displayButtonChoose:false 
-            });
+                displayButtonChoose:false,
+            });        
     }
 
     decreaseQuestionId = () => {
@@ -49,10 +48,10 @@ class Question extends Component {
                     </button>
         }
     }
-
+    
     displayNextButton = () => {
         if (this.state.id !== 10 && this.props.displayNextButton) {
-            return <button className="btn btn-info w-20 btn-lg float-right mt-3" onClick={() => this.getChooseString()}>
+            return <button className="btn btn-info w-20 btn-lg float-right mt-3" onClick={() => this.increaseQuestionId()}>
                 Next
                     </button>
         }
@@ -63,18 +62,11 @@ class Question extends Component {
         }
     }
 
-    // lấy chuỗi trả lời của người dùng : câu hỏi choose
-    getChooseString = () => {
-        var contentBox = document.getElementsByClassName("q-3-dot");
-        console.log(contentBox);
-    }
 
     // Hàm xử lí thêm mới hay cập nhật dữ liệu vào mảng đáp án lưu trong store 
     getAnswerData = () => {
         // Quay trở  trạng thái click chọn đáp án  mỗi lần next hay pre câu hỏi 
         this.props.resetAnsweredQs();
-        console.log(this.props.previousLocation);
-        console.log(this.state.id);
         var userAnswers = this.props.userAnswer;
         var temp = 0;
 
@@ -137,7 +129,7 @@ class Question extends Component {
         if(this.state.displayButtonChoose){
             if(this.state.id != 10){
                 
-                return <button className="btn btn-info w-20 btn-lg float-right mt-3 btn-next" onClick={() => this.increaseQuestionId()}>
+                return <button className="btn btn-info w-20 btn-lg float-right mt-3 btn-next" onClick={() => this.getChooseString()}>
                     Next
                 </button>
             } else {
@@ -145,11 +137,30 @@ class Question extends Component {
                 Finish
                     </button>
             }
-            
         } else {           
             return <div></div>
         }
     }
+    
+    // lấy chuỗi trả lời của người dùng : câu hỏi choose
+    getChooseString = () => {
+        var contentBoxArr = document.getElementsByClassName("q-3-dot");     
+        var size = contentBoxArr.length;
+        var chooseString = "";
+        for(let i = 0; i < size - 1; i++){  
+            chooseString = chooseString.concat(contentBoxArr[i].innerText);
+            chooseString = chooseString.concat("-");
+        }
+        chooseString = chooseString.concat(contentBoxArr[size - 1].innerText);
+        var id = this.state.id;
+        var newelement={
+            "id":id,
+            "choose":chooseString
+        };
+        this.props.storeResult(newelement);
+        this.increaseQuestionId();
+    }
+
     render() {
         var data;
         const typeQuestion = this.props.type;
@@ -170,7 +181,6 @@ class Question extends Component {
         $(function () {
             $('.q-abcd-answer').click(function (event) {
                 var arr = $(".q-abcd-answer");
-               
                 arr.each(function (index, el) {
                     $(el).removeClass('actived');
                 });
@@ -236,7 +246,8 @@ class Question extends Component {
                                                 <img className="img-fluid px-3 px-sm-4 mb-2 q-image" style={{ width: '20rem' }} src={value.questionImagePath} alt = '' />
                                             </div>
                                             <ContentChoose
-                                                
+                                                numberId={this.state.id}
+                                                choosed={this.props.arrChoosed}
                                                 question={value.questionContent}
                                             />
                                             
@@ -274,7 +285,8 @@ const mapStateToProps = (state, ownProps) => {
         userAnswer: state.userAnswer,
         answeredQs : state.answeredQs,
         previousLocation : state.currentLocationQs,
-        displayNextButton: state.displayNextButton
+        displayNextButton: state.displayNextButton,
+        arrChoosed: state.chooseString
     }
 }
 
@@ -297,6 +309,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         },
         displayNextButtonQs: () => {
             dispatch({ type: 'DISPLAY_NEXT_BUTTON' })
+        },
+        storeResult: (str) => {
+            dispatch({ type: 'STORE_CHOOSE_STRING', chooseStr: str })
         }
     }
 }

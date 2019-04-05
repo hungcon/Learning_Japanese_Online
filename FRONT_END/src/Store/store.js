@@ -14,8 +14,8 @@ const allReducerInitialState = {
         class: '',
         message: ''
     },
-    numberOfBox:0,
-    displayNextForChoose:false
+    displayNextForChoose:false,
+    chooseString:[]
 }
 
 const allReducer = (state = allReducerInitialState, action) => {
@@ -55,22 +55,20 @@ const allReducer = (state = allReducerInitialState, action) => {
         case 'HIDE_MESSAGE':
             return {...state, notification: {...state.notification, status: false, class: '', message: ''} };
         // edit by Chung  3/4/2019
-        case 'GET_COUNT_BOX':
-            return {...state, numberOfBox: action.numberOfBox };
-        case 'SET_DEFAULT_NUMBER_BOX':
-            return {...state, numberOfBox: 0};
         case 'DISPLAY_NEXT_BUTTON_CHOOSE':
             return {...state, displayNextForChoose: true};
         case 'HIDE_NEXT_BUTTON_CHOOSE':
             return {...state, displayNextForChoose:false};
+        case 'STORE_CHOOSE_STRING':
+            return {...state, chooseString:[...state.chooseString, action.chooseStr]};
         default:
-            return state
+            return state;
     }
 }
 
 const store = redux.createStore(allReducer);
-store.subscribe(()=>{
-    console.log(JSON.stringify(store.getState()));
-})
+// store.subscribe(()=>{
+//     console.log(JSON.stringify(store.getState()));
+// });
 
 export default store;
