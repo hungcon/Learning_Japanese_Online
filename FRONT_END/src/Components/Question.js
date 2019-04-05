@@ -19,9 +19,7 @@ class Question extends Component {
     }
 
     increaseQuestionId = () => {
-        var contentBox = document.getElementsByClassName("q-3-dot");
-        console.log(contentBox);
-        
+       
         this.getAnswerData();
         this.props.hideNextButton();
         this.setState({ 
@@ -54,7 +52,7 @@ class Question extends Component {
 
     displayNextButton = () => {
         if (this.state.id !== 10 && this.props.displayNextButton) {
-            return <button className="btn btn-info w-20 btn-lg float-right mt-3" onClick={() => this.increaseQuestionId()}>
+            return <button className="btn btn-info w-20 btn-lg float-right mt-3" onClick={() => this.getChooseString()}>
                 Next
                     </button>
         }
@@ -65,6 +63,11 @@ class Question extends Component {
         }
     }
 
+    // lấy chuỗi trả lời của người dùng : câu hỏi choose
+    getChooseString = () => {
+        var contentBox = document.getElementsByClassName("q-3-dot");
+        console.log(contentBox);
+    }
 
     // Hàm xử lí thêm mới hay cập nhật dữ liệu vào mảng đáp án lưu trong store 
     getAnswerData = () => {

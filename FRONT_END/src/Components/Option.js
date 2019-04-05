@@ -65,7 +65,9 @@ class Option extends Component {
                 //Gán place vừa click = rỗng
                 place[i].innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"; 
                 var btn = document.getElementsByClassName('btn-next');
-                btn[0].style.display = "none";     
+                if(typeof btn[0] !== 'undefined'){
+                    btn[0].style.display = "none";     
+                }
             }
         }
          // edit by Chung
