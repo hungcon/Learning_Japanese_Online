@@ -9,6 +9,8 @@ const allReducerInitialState = {
     // Mảng hiện thị danh sách đáp án của người dùng 
     userAnswer: [],
     answerData: '',
+    // Lưu tạm thời các giá trị mà người test chọn đáp án 
+    answerDataChoose :[],
     notification: {
         status: false,
         class: '',
@@ -48,6 +50,8 @@ const allReducer = (state = allReducerInitialState, action) => {
                 newUserAnswer.push(state.userAnswer[i]);
             }
             return {...state, userAnswer:newUserAnswer }
+        case 'GET_ANSWER_CHOOSE':
+            return {...state,answerDataChoose:action.answerDataChoose}     
         case 'SHOW_MESSAGE':
             return {...state, notification: {...state.notification, status: true, class: action.class, message: action.message} };
         case 'HIDE_MESSAGE':

@@ -6,7 +6,7 @@ class Option extends Component {
     constructor(props){
         super(props);
         this.state = {
-            answerChoose : ''
+            answerChoose : []
         }
     }
 
@@ -29,18 +29,17 @@ class Option extends Component {
         }
         //Gán text
         placeMountText.innerHTML = blank[indexAnswer].innerText;
-        var temp = this.state.answerChoose;
-        if(countWrited ===5){
-            temp +=blank[indexAnswer].innerText
-            this.setState({
-                answerChoose : temp
-            })
-        }else{
-            temp +=blank[indexAnswer].innerText+"+"
-            this.setState({
-                answerChoose : temp
-            })
-        }
+
+        // Thêm giá trị vào store 
+        var arrAnswers = this.state.answerChoose;
+        var newAnswer = {};
+        newAnswer.sttAnswer = countWrited;
+        newAnswer.answerData = blank[indexAnswer].innerText;
+        arrAnswers.push(newAnswer)
+        this.setState({
+            answerChoose : arrAnswers
+        });
+    
         // Cập nhật dữ liệu câu trả lời vào store 
         this.props.sendAnswerChoose(this.state.answerChoose);
         //Gán thuộc tính
@@ -51,6 +50,8 @@ class Option extends Component {
             place[i].onclick = function(){
                 //Lấy ra id câu trả lời đã đc set (row 27)
                 var indexSTPlace = place[i].getAttribute('data-indexSTPlace');
+                console.log(place[i].innerText);
+                console.log(this.props.userAnswer);
                 //Hiện text 
                 blank[indexSTPlace].style = "opacity: 1";
                 //Bỏ disable
@@ -84,14 +85,15 @@ class Option extends Component {
 
 const mapStateToProps = (state, ownProps) => {
     return {
-      
+        userAnswer: state.userAnswer,
+        answerDataChoose : state.answerDataChoose
     }
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
         sendAnswerChoose: (answersChoose) => {
-            dispatch({type:'GET_ANSWER_NAME', answerData:answersChoose})
+            dispatch({type:'GET_ANSWER_CHOOSE',answerDataChoose:answersChoose})
         }
     }
 }
