@@ -1,6 +1,10 @@
     
 import React, { Component } from 'react';
-import './App.css';
+import RegAndChoose from './Components/RegAndChoose';
+import Level from './Components/Level';
+import List from './Components/List';
+import Lession from './Components/Lession';
+
 // import RegAndChoose from './Components/RegAndChoose';
 // import Level from './Components/Level';
 // import List from './Components/List';
@@ -47,7 +51,7 @@ class App extends Component {
               type="Choose"
             /> */}
             <Question 
-              type="ABCDs"
+              type="choose"
             />
             <Footer/>
           </div>
