@@ -59,7 +59,6 @@ class Option extends Component {
                 //Lấy ra id câu trả lời đã đc set (row 27)
                 var indexSTPlace = place[i].getAttribute('data-indexSTPlace');
                 console.log(place[i].innerText);
-                console.log(this.props.userAnswer);
                 //Hiện text 
                 blank[indexSTPlace].style = "opacity: 1";
                 //Bỏ disable

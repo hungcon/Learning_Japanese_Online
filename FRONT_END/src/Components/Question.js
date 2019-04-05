@@ -132,7 +132,7 @@ class Question extends Component {
     // edit by Chung ẩn hiện button next cho câu hỏi dạng choose
     displayNextButtonChoose = () => {     
         if(this.state.displayButtonChoose){
-            if(this.state.id != 10){
+            if(this.state.id !== 10){
                 
                 return <button className="btn btn-info w-20 btn-lg float-right mt-3 btn-next" onClick={() => this.increaseQuestionId()}>
                     Next
