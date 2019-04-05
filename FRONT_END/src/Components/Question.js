@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import Option from './Option';
 import ContentChoose from './ContentChoose';
 import store from '../Store/store';
+import $ from 'jquery';
 
 
 class Question extends Component {
@@ -129,23 +130,20 @@ class Question extends Component {
     }
 
     // edit by Chung ẩn hiện button next cho câu hỏi dạng choose
-    displayNextButtonChoose = () => {
-        console.log(this.state.displayButtonChoose);
-        
+    displayNextButtonChoose = () => {     
         if(this.state.displayButtonChoose){
             if(this.state.id != 10){
-                return <button className="btn btn-info w-20 btn-lg float-right mt-3" onClick={() => this.increaseQuestionId()}>
+                
+                return <button className="btn btn-info w-20 btn-lg float-right mt-3 btn-next" onClick={() => this.increaseQuestionId()}>
                     Next
                 </button>
             } else {
-                return <button className="btn btn-info w-20 btn-lg float-right mt-3" onClick={() => this.submitTest()}>
+                return <button className="btn btn-info w-20 btn-lg float-right mt-3 btn-next" onClick={() => this.submitTest()}>
                 Finish
                     </button>
             }
             
-        } else {
-            console.log("vẫn còn");
-            
+        } else {           
             return <div></div>
         }
     }
@@ -238,6 +236,7 @@ class Question extends Component {
                                                 
                                                 question={value.questionContent}
                                             />
+                                            
                                             <p>Choose: </p>
                                             <Option
                                                 
