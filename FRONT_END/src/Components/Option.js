@@ -70,13 +70,21 @@ class Option extends Component {
                 }
             }
         }
-         // edit by Chung
+        // edit by Chung
         var optionArr = document.getElementsByClassName("q-button-answer");
+        var btn = document.getElementsByClassName('btn-next');
+        if(typeof btn[0] !== 'undefined'){
+            if(btn[0].style.display === 'none'){
+                btn[0].style.display = "block";
+            }
+        }
         if(!this.checkHaveButton(optionArr)){
-           this.props.displayButton();
+            this.props.displayButton();
         } else {
             this.props.hideButton();
         }
+        
+       
        
     }
     /**
@@ -139,7 +147,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 }
 const mapStateToProps = (state, ownProps) => {
     return {
-        numberBox: state.numberOfBox
+        numberBox: state.numberOfBox,
+        arrChoosed: state.chooseString
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Option)

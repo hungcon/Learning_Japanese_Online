@@ -45,8 +45,6 @@ class ContentChoose extends Component {
             var arrQuestion = rawQuestion.split("-");  // A B C D 
             // 1-2-3
             var arrWord = choosed.split("-");   // 1 2 3 
-            console.log(arrQuestion);
-            console.log(arrWord);
             var countBox = arrQuestion.length;
             
             var headSpan = '<span class="q-3-dot">';
@@ -57,9 +55,7 @@ class ContentChoose extends Component {
                 question = question.concat(arrWord[i]);
                 question = question.concat(footSpan);
             }            
-            question = question.concat(arrQuestion[countBox - 1]);  
-            console.log(question);
-            
+            question = question.concat(arrQuestion[countBox - 1]);   
         // first time access
         } else{
             var box = '<span class="q-3-dot">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>';

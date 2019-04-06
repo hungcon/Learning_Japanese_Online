@@ -23,11 +23,12 @@ class Question extends Component {
         this.props.hideNextButton();
         this.setState({ 
                 id: this.state.id + 1,
-                displayButtonChoose:false,
+                displayButtonChoose:false
             });        
     }
 
     decreaseQuestionId = () => {
+    
         this.setState(
             { id: this.state.id - 1 }
         );
@@ -172,9 +173,9 @@ class Question extends Component {
 
         // edit by Chung
         store.subscribe(() => {
-               this.setState({
-                    displayButtonChoose:store.getState().displayNextForChoose
-               });
+            this.setState({
+                displayButtonChoose:store.getState().displayNextForChoose
+            });
             
          });
 
@@ -253,9 +254,10 @@ class Question extends Component {
                                             
                                             <p>Choose: </p>
                                             <Option
-                                                
+                                                numberId={this.state.id}
                                                 type={this.props.type}
                                                 option={value.option}
+                                                
                                             />
                                         </div>
                                         <div className="q-continue mb-3 mr-2">
@@ -279,6 +281,7 @@ class Question extends Component {
 
     }
 }
+
 const mapStateToProps = (state, ownProps) => {
     return {
         answerData: state.answerData,
