@@ -71,8 +71,8 @@ const allReducer = (state = allReducerInitialState, action) => {
 }
 
 const store = redux.createStore(allReducer);
-// store.subscribe(()=>{
-//     console.log(JSON.stringify(store.getState()));
-// });
+store.subscribe(()=>{
+    console.log(JSON.stringify(store.getState()));
+});
 
 export default store;

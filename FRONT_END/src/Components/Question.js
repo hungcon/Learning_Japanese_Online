@@ -20,7 +20,13 @@ class Question extends Component {
     increaseQuestionId = () => {
        
         this.getAnswerData();
-        this.props.hideNextButton();
+        var userAnswers = this.props.userAnswer;
+        if(this.state.id <userAnswers.length ){
+            this.props.displayNextButtonQs();
+        }else{
+            this.props.hideNextButton();
+        }
+        
         this.setState({ 
             id: this.state.id + 1,
             displayButtonChoose:false,

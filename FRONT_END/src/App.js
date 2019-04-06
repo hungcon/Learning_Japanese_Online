@@ -1,4 +1,4 @@
-    
+
 import React, { Component } from 'react';
 // import RegAndChoose from './Components/RegAndChoose';
 // import Level from './Components/Level';
@@ -53,14 +53,11 @@ class App extends Component {
             <Question 
               type="choose"
             />
-            {/* <List/> */}
             <Footer/>
           </div>
         </div>
       </div>
-
     );
   }
 }
-
 export default App;

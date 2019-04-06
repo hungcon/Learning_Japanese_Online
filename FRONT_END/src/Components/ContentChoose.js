@@ -31,7 +31,7 @@ class ContentChoose extends Component {
         var choosed = "";
         // get element
         element = arrChoosed.find((e) =>{
-                return e.id == id;
+                return e.id === id;
             });
         // trường hợp mới vào
         if(typeof element !== 'undefined'){
