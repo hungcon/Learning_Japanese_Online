@@ -54,11 +54,6 @@ const allReducer = (state = allReducerInitialState, action) => {
             return {...state, notification: {...state.notification, status: true, class: action.class, message: action.message} };
         case 'HIDE_MESSAGE':
             return {...state, notification: {...state.notification, status: false, class: '', message: ''} };
-        // edit by Chung  3/4/2019
-        case 'DISPLAY_NEXT_BUTTON_CHOOSE':
-            return {...state, displayNextForChoose: true};
-        case 'HIDE_NEXT_BUTTON_CHOOSE':
-            return {...state, displayNextForChoose:false};
         case 'STORE_CHOOSE_STRING':
             return {...state, chooseString:[...state.chooseString, action.chooseStr]};
         default:
@@ -67,8 +62,6 @@ const allReducer = (state = allReducerInitialState, action) => {
 }
 
 const store = redux.createStore(allReducer);
-//  store.subscribe(()=>{
-//      console.log(JSON.stringify(store.getState()));
-//  });
+
 
 export default store;

@@ -5,7 +5,6 @@ import ChooseData from '../TestData/Choose.json';
 import { connect } from 'react-redux';
 import Option from './Option';
 import ContentChoose from './ContentChoose';
-import store from '../Store/store';
 import $ from 'jquery';
 
 
@@ -17,22 +16,21 @@ class Question extends Component {
             displayButtonChoose:false
         }
     }
+
     increaseQuestionId = () => {
-       
         this.getAnswerData();
         this.props.hideNextButton();
+        // this.getChooseString();
         this.setState({ 
-                id: this.state.id + 1,
-                displayButtonChoose:false
-            });        
+            id: this.state.id + 1,
+        });        
     }
 
     decreaseQuestionId = () => {
-    
-        this.setState(
-            { id: this.state.id - 1 }
+        this.setState({ 
+            id: this.state.id - 1 
+        }
         );
-        
         // Xử lí không click đáp án mà vẫn back 
         if(this.props.answeredQs === true){
             this.getAnswerData();
@@ -122,26 +120,12 @@ class Question extends Component {
     submitTest = () => {
         this.props.resetAnsweredQs();
         this.getAnswerData();
+        console.log(this.props.userAnswer)
+        console.log(this.props.arrChoosed)
         console.log("Hoan Thanh bai test ");
     }
 
-    // edit by Chung ẩn hiện button next cho câu hỏi dạng choose
-    displayNextButtonChoose = () => {     
-        if(this.state.displayButtonChoose){
-            if(this.state.id != 10){
-                
-                return <button className="btn btn-info w-20 btn-lg float-right mt-3 btn-next" onClick={() => this.getChooseString()}>
-                    Next
-                </button>
-            } else {
-                return <button className="btn btn-info w-20 btn-lg float-right mt-3 btn-next" onClick={() => this.submitTest()}>
-                Finish
-                    </button>
-            }
-        } else {           
-            return <div></div>
-        }
-    }
+
     
     // lấy chuỗi trả lời của người dùng : câu hỏi choose
     getChooseString = () => {
@@ -159,7 +143,7 @@ class Question extends Component {
             "choose":chooseString
         };
         this.props.storeResult(newelement);
-        this.increaseQuestionId();
+       
     }
 
     render() {
@@ -171,23 +155,16 @@ class Question extends Component {
             data = ChooseData; 
         }
 
-        // edit by Chung
-        store.subscribe(() => {
-            this.setState({
-                displayButtonChoose:store.getState().displayNextForChoose
-            });
-            
-         });
 
-        $(function () {
-            $('.q-abcd-answer').click(function (event) {
-                var arr = $(".q-abcd-answer");
-                arr.each(function (index, el) {
-                    $(el).removeClass('actived');
-                });
-                $(this).addClass('actived')
-            });
-        });
+        // $(function () {
+        //     $('.q-abcd-answer').click(function (event) {
+        //         var arr = $(".q-abcd-answer");
+        //         arr.each(function (index, el) {
+        //             $(el).removeClass('actived');
+        //         });
+        //         $(this).addClass('actived')
+        //     });
+        // });
        
         return (       
             <div>
@@ -213,10 +190,10 @@ class Question extends Component {
                                             </div>
                                             <p className="q-question mt-2 q">{value.questionContent}</p>
                                             <p>Select one: </p>
-                                            <Answer answerImagePath={value.answerA.answerImagePath} answerContent={value.answerA.answerContent} answerName={value.answerA.answerName} answerId={value.id} />
-                                            <Answer answerImagePath={value.answerB.answerImagePath} answerContent={value.answerB.answerContent} answerName={value.answerB.answerName} answerId={value.id} />
-                                            <Answer answerImagePath={value.answerC.answerImagePath} answerContent={value.answerC.answerContent} answerName={value.answerC.answerName} answerId={value.id} />
-                                            <Answer answerImagePath={value.answerD.answerImagePath} answerContent={value.answerD.answerContent} answerName={value.answerD.answerName} answerId={value.id} />
+                                            <Answer answerImagePath="./img/q-answer-a.png" answerContent={value.answerA.answerContent} answerName="A" answerId={value.id} />
+                                            <Answer answerImagePath="./img/q-answer-b.png" answerContent={value.answerB.answerContent} answerName="B" answerId={value.id} />
+                                            <Answer answerImagePath="./img/q-answer-c.png" answerContent={value.answerC.answerContent} answerName="C" answerId={value.id} />
+                                            <Answer answerImagePath="./img/q-answer-d.png" answerContent={value.answerD.answerContent} answerName="D" answerId={value.id} />
                                         </div>
                                         <div className="q-continue mb-3 mr-2">
                                             {this.displayPreButton()}
@@ -247,22 +224,18 @@ class Question extends Component {
                                                 <img className="img-fluid px-3 px-sm-4 mb-2 q-image" style={{ width: '20rem' }} src={value.questionImagePath} alt = '' />
                                             </div>
                                             <ContentChoose
-                                                numberId={this.state.id}
-                                                choosed={this.props.arrChoosed}
                                                 question={value.questionContent}
+                                                userAnswered={this.props.arrChoosed}
                                             />
                                             
                                             <p>Choose: </p>
                                             <Option
-                                                numberId={this.state.id}
-                                                type={this.props.type}
-                                                option={value.option}
-                                                
+                                                option={value.option} 
                                             />
                                         </div>
                                         <div className="q-continue mb-3 mr-2">
-                                            {this.displayPreButton()}
-                                            {this.displayNextButtonChoose()}
+                                           
+                                            {this.displayNextButton()}
                                         </div>
                                     </div>
                                 </div>
@@ -273,7 +246,6 @@ class Question extends Component {
                         }
 
                     }
-                    return '';
                 }
                 )}
             </div>
