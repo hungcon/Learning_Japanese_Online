@@ -88,7 +88,7 @@ class Login extends React.Component {
                                                     <a className="small" href="forgot-password.html">Forgot Password?</a>
                                                 </div>
                                                 <div className="text-center">
-                                                    <NavLink  className="small" activeClassName="abc" to="/register">Create an Account</NavLink>
+                                                    <NavLink className="small" activeClassName="abc" to="/register">Create an Account</NavLink>
                                                     {/* <a className="small" onClick={this.handleRedirectCreateAccount} href="register.html">Create an Account!</a> */}
                                                 </div>
                                             </div>
