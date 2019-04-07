@@ -5,6 +5,9 @@ import ChooseData from '../TestData/Choose.json';
 import { connect } from 'react-redux';
 import Option from './Option';
 import ContentChoose from './ContentChoose';
+// import $ from 'jquery';
+
+
 class Question extends Component {
     constructor(props) {
         super(props);
@@ -15,20 +18,20 @@ class Question extends Component {
     }
 
     increaseQuestionId = (type) => {
-    
-        this.getAnswerData(type);
-        var userAnswers = this.props.userAnswer;
-        if(this.state.id <userAnswers.length ){
-            this.props.displayNextButtonQs();
+        if(type === "ABCD"){
+            var userAnswers = this.props.userAnswer;
+            if(this.state.id <userAnswers.length ){
+                this.props.displayNextButtonQs();
+            }else{
+                this.props.hideNextButton();
+            }
+            this.getAnswerData();
         }else{
-            this.props.hideNextButton();
+            this.getFillString();
         }
-        
         this.setState({ 
             id: this.state.id + 1,
-            displayButtonChoose:false,
-        }); 
-
+        });        
     }
 
     decreaseQuestionId = () => {
@@ -60,7 +63,7 @@ class Question extends Component {
                     </button>
         }
         if (this.state.id === 10) {
-            return <button className="btn btn-info w-20 btn-lg float-right mt-3" onClick={() => this.submitTest()}>
+            return <button className="btn btn-info w-20 btn-lg float-right mt-3" onClick={() => this.submitTest(type)}>
                 Finish
                     </button>
         }
@@ -68,88 +71,74 @@ class Question extends Component {
 
 
     // Hàm xử lí thêm mới hay cập nhật dữ liệu vào mảng đáp án lưu trong store 
-    getAnswerData = (type) => {
-        if(type ==="ABCD"){
-            // Quay trở  trạng thái click chọn đáp án  mỗi lần next hay pre câu hỏi 
-            this.props.resetAnsweredQs();
-            var userAnswers = this.props.userAnswer;
-            var temp = 0;
+    getAnswerData = () => {
+        // Quay trở  trạng thái click chọn đáp án  mỗi lần next hay pre câu hỏi 
+        this.props.resetAnsweredQs();
+        var userAnswers = this.props.userAnswer;
+        var temp = 0;
 
-            // Kiểm tra vị trí đang đứng thuộc câu hỏi nào để thêm mới hay cập nhật câu trả lời 
-            for(var j=0;j< userAnswers.length;j++){
-                if(userAnswers[j].idQuestion ===(this.state.id)){
-                    temp=1;
-                    break;
-                }
+        // Kiểm tra vị trí đang đứng thuộc câu hỏi nào để thêm mới hay cập nhật câu trả lời 
+        for(var j=0;j< userAnswers.length;j++){
+            if(userAnswers[j].idQuestion ===(this.state.id)){
+                temp=1;
+                break;
             }
-            // console.log(temp);
-            if(temp===0){
-                this.props.hideNextButton();
-                var newAnswer = {};
-                newAnswer.idQuestion = this.state.id;
-                newAnswer.answerData = this.props.answerData;
-                this.props.addData(newAnswer);
-                this.props.updateLocationQs(this.state.id+1);
-            }else{
-                
-                var updateAnswer = {};
-                updateAnswer.idQuestion = this.state.id;
-                var oldUserAnswers = this.props.userAnswer;
-                var oldAnswer = '';
-
-                for(var i=0;i<oldUserAnswers.length;i++){
-                    if(oldUserAnswers[i].idQuestion ===this.state.id){
-                        oldAnswer = oldUserAnswers[i].answerData;
-                    }
-                }
-                
-                // Nếu người back lại và chọn lại đáp án , cập nhật đáp án mới , ngược lại lấy đáp án cũ 
-                if(this.props.answeredQs ===true){
-                    updateAnswer.answerData = this.props.answerData;
-                }else{
-                    updateAnswer.answerData = oldAnswer;
-                }
-                this.props.updateAnswerQs(updateAnswer);
-
-                // Vị sau sau lần back đầu tiền phải ẩn đi nút button 
-                if(this.state.id === userAnswers.length ){
-                    this.props.hideNextButton();
-                }else{
-                    this.props.displayNextButtonQs();
-                }
-            }
+        }
+        // console.log(temp);
+        if(temp===0){
+            this.props.hideNextButton();
+            var newAnswer = {};
+            newAnswer.idQuestion = this.state.id;
+            newAnswer.answerData = this.props.answerData;
+            this.props.addData(newAnswer);
+            this.props.updateLocationQs(this.state.id+1);
         }else{
             
-            this.props.resetResultChoose();
-            var arrAnswerChoose = this.props.answerDataChoose;
-            var newAnswerChoose = {};
-            newAnswerChoose.idQuestion = this.state.id;
-            var answerDataChoose = "";
-            for(var z=0;z< arrAnswerChoose.length;z++){
-                if(z ===(arrAnswerChoose.length-1)){
-                    answerDataChoose +=arrAnswerChoose[z];
-                }else{
-                    answerDataChoose +=arrAnswerChoose[z]+"+";
-                 
+            var updateAnswer = {};
+            updateAnswer.idQuestion = this.state.id;
+            var oldUserAnswers = this.props.userAnswer;
+            var oldAnswer = '';
+
+            for(var i=0;i<oldUserAnswers.length;i++){
+                if(oldUserAnswers[i].idQuestion ===this.state.id){
+                    oldAnswer = oldUserAnswers[i].answerData;
                 }
             }
-            newAnswerChoose.answerData = answerDataChoose;
-            this.props.addData(newAnswerChoose);
+            
+            // Nếu người back lại và chọn lại đáp án , cập nhật đáp án mới , ngược lại lấy đáp án cũ 
+            if(this.props.answeredQs ===true){
+                updateAnswer.answerData = this.props.answerData;
+            }else{
+                updateAnswer.answerData = oldAnswer;
+            }
+            this.props.updateAnswerQs(updateAnswer);
+
+            // Vị sau sau lần back đầu tiền phải ẩn đi nút button 
+            if(this.state.id === userAnswers.length ){
+                this.props.hideNextButton();
+            }else{
+                this.props.displayNextButtonQs();
+            }
+            
+
         }
     }
  
     // Hàm xử lí khi click kết thúc bài test 
-    submitTest = () => {
-        this.props.resetAnsweredQs();
-        this.getAnswerData();
-        console.log(this.props.userAnswer)
-        console.log(this.props.arrChoosed)
+    submitTest = (type) => {
+        if(type ==="ABCD"){
+            this.props.resetAnsweredQs();
+            this.getAnswerData();
+        }else{
+            this.getFillString();
+        }
         console.log("Hoan Thanh bai test ");
     }
 
+
     
     // lấy chuỗi trả lời của người dùng : câu hỏi choose
-    getChooseString = () => {
+    getFillString = () => {
         var contentBoxArr = document.getElementsByClassName("q-3-dot");     
         var size = contentBoxArr.length;
         var chooseString = "";
@@ -175,6 +164,7 @@ class Question extends Component {
         } else {
             data = ChooseData; 
         }
+
         return (       
             <div>
                 {data.map((value, key) => {
@@ -244,7 +234,7 @@ class Question extends Component {
                                         </div>
                                         <div className="q-continue mb-3 mr-2">
                                            
-                                            {this.displayNextButton("Choose")}
+                                            {this.displayNextButton("Fill")}
                                         </div>
                                     </div>
                                 </div>
@@ -270,7 +260,6 @@ const mapStateToProps = (state, ownProps) => {
         answeredQs : state.answeredQs,
         previousLocation : state.currentLocationQs,
         displayNextButton: state.displayNextButton,
-        answerDataChoose: state.answerDataChoose,
         arrChoosed: state.chooseString
     }
 }
@@ -294,9 +283,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         },
         displayNextButtonQs: () => {
             dispatch({ type: 'DISPLAY_NEXT_BUTTON' })
-        }, 
-        resetResultChoose: () => {
-            dispatch({ type: 'RESET_ARRAY_ANSWER_CHOOSE' })
         },
         storeResult: (str) => {
             dispatch({ type: 'STORE_CHOOSE_STRING', chooseStr: str })

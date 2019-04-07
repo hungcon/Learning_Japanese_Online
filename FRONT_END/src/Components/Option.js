@@ -26,47 +26,13 @@ class Option extends Component {
         placeMountText.setAttribute('data-indexSTPlace', indexAnswer);
         //Ẩn text ở button câu trả lời
         blank[indexAnswer].style = "opacity: 0";
-
         var displayNextButton = true;
-        var locationEmpty = 0;
         for (let j = 0; j < place.length; j++) {
             if (place[j].innerText.trim() === '' ) {
-                locationEmpty = j;
                 displayNextButton = false;
             }
             
         }
-    
-        // Lấy giá trị đáp án mà người dùng đã chọn đưa vào 1 mảng 
-        var allAnswerChooses = this.props.answerDataChoose;
-
-        var userAnswer = blank[indexAnswer].innerText;
-
-        var countAnswered =  allAnswerChooses.length;
-        
-        var checkValueClick = 0;
-        for(var i=0;i<allAnswerChooses.length;i++){
-            console.log(allAnswerChooses[i]);
-            if(allAnswerChooses[i] === ""){
-                allAnswerChooses.splice(i, 1);
-                allAnswerChooses.splice(i,0,userAnswer);
-                checkValueClick = 1;
-                break;
-            }
-        }
-
-        if(checkValueClick === 0){
-            if(countAnswered <= place.length){
-                if(countAnswered ===4 ){
-                    allAnswerChooses.splice(countAnswered,0,userAnswer);
-                }else{
-                    allAnswerChooses.splice(locationEmpty,0,userAnswer);
-                }
-            }
-        }
-       
-        this.props.updateAnswerChooses(allAnswerChooses);
-
         if(displayNextButton){
             this.props.displayNextButton();
             this.props.updateAnsweredQs();
@@ -94,15 +60,11 @@ class Option extends Component {
     }
 }
 
-
 const mapStateToProps = (state, ownProps) => {
     return {
-        answeredQs: state.answeredQs,
-        answerDataChoose : state.answerDataChoose
+        answeredQs: state.answeredQs
     }
 }
-
-
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
         displayNextButton: () => {
@@ -111,11 +73,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         updateAnsweredQs: () => {
             dispatch({type:'UPDATE_STATUS_ANSWERED'})
         },
-        updateAnswerChooses : (allAnswerChooses)=>{
-            dispatch({type:'GET_ARRAY_ANSWER_CHOOSE',answerDataChoose :allAnswerChooses})
-        }
     }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Option)
-

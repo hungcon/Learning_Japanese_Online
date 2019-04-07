@@ -5,25 +5,6 @@ class Text extends Component {
         var blank = document.getElementsByClassName('blank');
         //Lấy ra id câu trả lời đã đc set (row 27)
         var indexSTPlace =  event.currentTarget.getAttribute('data-indexSTPlace');
-        // console.log(event.currentTarget);
-        // console.log(event.target.previousElementSibling.previousElementSibling);
-
-        // Thay thế đáp án đã chọn trong mảng bằng "" khi người dùng click cho giá trị nhảy xuống 
-        var currentElement = event.target;
-        var sttClick = 0;
-        while(true){
-            if(currentElement.previousElementSibling !==null){
-                currentElement = currentElement.previousElementSibling;
-                sttClick ++;
-            }else{
-                break;
-            }
-        }
-        var allAnswerChooses = this.props.answerDataChoose;
-        allAnswerChooses.splice(sttClick, 1);
-        allAnswerChooses.splice(sttClick,0,"");
-
-
         if(indexSTPlace === null){
             return false;
         }
@@ -48,8 +29,7 @@ class Text extends Component {
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        prop: state.prop,
-        answerDataChoose : state.answerDataChoose
+        prop: state.prop
     }
 }
 

@@ -9,8 +9,6 @@ const allReducerInitialState = {
     // Mảng hiện thị danh sách đáp án của người dùng 
     userAnswer: [],
     answerData: '',
-    // Lưu tạm thời các giá trị mà người test chọn đáp án 
-    answerDataChoose :[],
     notification: {
         status: false,
         class: '',
@@ -52,13 +50,6 @@ const allReducer = (state = allReducerInitialState, action) => {
                 newUserAnswer.push(state.userAnswer[i]);
             }
             return {...state, userAnswer:newUserAnswer }
-        // Lấy câu trả lời choose của người test đẩy vào mảng    
-        case 'GET_ARRAY_ANSWER_CHOOSE':
-            return {...state,answerDataChoose:action.answerDataChoose}
-        // Xóa bỏ mảng câu trả lời choose trước đó của người test khi chuyển sang câu tiếp theo 
-        case 'RESET_ARRAY_ANSWER_CHOOSE':
-            var resetArray = [];
-            return {...state,answerDataChoose:resetArray}           
         case 'SHOW_MESSAGE':
             return {...state, notification: {...state.notification, status: true, class: action.class, message: action.message} };
         case 'HIDE_MESSAGE':
@@ -71,7 +62,6 @@ const allReducer = (state = allReducerInitialState, action) => {
 }
 
 const store = redux.createStore(allReducer);
-
 store.subscribe(()=>{
     console.log(JSON.stringify(store.getState()));
 });
