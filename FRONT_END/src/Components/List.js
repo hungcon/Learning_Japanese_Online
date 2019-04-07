@@ -1,11 +1,10 @@
 import React from 'react';
 import Navbar from './Navbar';
 import Topbar from './Topbar';
-// import Level from './Level';
 import Footer from './Footer';
-import Test from './Test';
+import Level from './Level';
+// import Test from './Test';
 // import History from './History';
-// import Result from './Result';
 
 class ComponentName extends React.Component {
     constructor(props) {
@@ -21,16 +20,13 @@ class ComponentName extends React.Component {
                     {/* chỗ này cần truyền tên và id người dùng để có thể để hiển thị ở trên cùng */}
                     <div id="content">
                         <Topbar />
-                        {/* <Level/>
-                        <Level/> */}
-                        {/* <Result/> */}
+                        <Level/>
                         {/* <History/> */}
-                        <Test/>
+                        {/* <Test/> */}
                         <Footer/>
                     </div>
                 </div>
             </div>
-            
         );
     }
 }

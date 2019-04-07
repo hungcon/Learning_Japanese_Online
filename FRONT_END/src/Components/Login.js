@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import  { Redirect } from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 
 class Login extends React.Component {
     constructor(props) {
@@ -15,10 +16,10 @@ class Login extends React.Component {
 
     handleChangeEmail = event => {
         this.setState({ email: event.target.value });
-      }
+    }
 
     handleChangePassword = event => {
-    this.setState({ password: event.target.value });
+        this.setState({ password: event.target.value });
     }
 
     handleSubmit = event => {
@@ -47,7 +48,7 @@ class Login extends React.Component {
     }
 
     render() {
-        if(localStorage.getItem('user') !== null){ return <Redirect to='/list'  />;}
+        if(localStorage.getItem('user') !== null){ return <Redirect to='/level'  />;}
         if(this.state.isCreateAccount === true){ return <Redirect to='/register'  />;}
         return (
             <div className="login--content body--login">
@@ -87,7 +88,8 @@ class Login extends React.Component {
                                                     <a className="small" href="forgot-password.html">Forgot Password?</a>
                                                 </div>
                                                 <div className="text-center">
-                                                    <a className="small" onClick={this.handleRedirectCreateAccount} href="register.html">Create an Account!</a>
+                                                    <NavLink  className="small" activeClassName="abc" to="/register">Create an Account</NavLink>
+                                                    {/* <a className="small" onClick={this.handleRedirectCreateAccount} href="register.html">Create an Account!</a> */}
                                                 </div>
                                             </div>
                                         </div>

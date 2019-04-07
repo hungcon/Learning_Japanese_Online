@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import axios from 'axios';
-import  { Redirect } from 'react-router-dom';
+import  { Redirect, NavLink } from 'react-router-dom';
 
 class Register extends Component {
     constructor(props) {
@@ -60,7 +60,7 @@ class Register extends Component {
     }
 
     render() {
-        if(localStorage.getItem('user') !== null){ return <Redirect to='/list'  />;}
+        if(localStorage.getItem('user') !== null){ return <Redirect to='/level'  />;}
         return (
             <div className="bg-gradient-primary body--regist">
                 <div className="container">
@@ -103,7 +103,8 @@ class Register extends Component {
                                 <a className="small" href="forgot-password.html">Forgot Password?</a>
                                 </div>
                                 <div className="text-center">
-                                <a className="small" href="login.html">Already have an account? Login!</a>
+                                <NavLink  className="small" activeClassName="abc" to="/login">Already have an account? Login!</NavLink>
+                                {/* <a className="small" href="login.html">Already have an account? Login!</a> */}
                                 </div>
                             </div>
                             </div>

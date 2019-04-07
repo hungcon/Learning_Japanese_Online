@@ -7,14 +7,14 @@
     },
     {
         "id":2,
-        "questionContent":"2:これからおせます-さようなら-こら-こそよ-おせわり-ありとう",
-        "option":"こ+れか+す+りが+おせ",
+        "questionContent":"2:これからおせます-さようなら-こら-こそよ",
+        "option":"こ+れか+す",
         "questionImagePath":"img/q-image-choose.jpg"
     },
     {
         "id":3,
-        "questionContent":"3:こわになります-さよ-こちら-こそよおろし-おせわ-ありがう",
-        "option":"こ+れか+す+りが+おせ",
+        "questionContent":"3:こわになります-さよ-こちら-こそよおろし-おせわ",
+        "option":"こ+れか+す+りが",
         "questionImagePath":"img/q-image-choose.jpg"
     },
     {
