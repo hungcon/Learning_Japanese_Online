@@ -52,17 +52,17 @@ const allReducer = (state = allReducerInitialState, action) => {
                 newUserAnswer.push(state.userAnswer[i]);
             }
             return {...state, userAnswer:newUserAnswer }
-        case 'GET_ANSWER_CHOOSE':
-            return {...state,answerDataChoose:action.answerDataChoose}     
+        // Lấy câu trả lời choose của người test đẩy vào mảng    
+        case 'GET_ARRAY_ANSWER_CHOOSE':
+            return {...state,answerDataChoose:action.answerDataChoose}
+        // Xóa bỏ mảng câu trả lời choose trước đó của người test khi chuyển sang câu tiếp theo 
+        case 'RESET_ARRAY_ANSWER_CHOOSE':
+            var resetArray = [];
+            return {...state,answerDataChoose:resetArray}           
         case 'SHOW_MESSAGE':
             return {...state, notification: {...state.notification, status: true, class: action.class, message: action.message} };
         case 'HIDE_MESSAGE':
             return {...state, notification: {...state.notification, status: false, class: '', message: ''} };
-        // edit by Chung  3/4/2019
-        case 'DISPLAY_NEXT_BUTTON_CHOOSE':
-            return {...state, displayNextForChoose: true};
-        case 'HIDE_NEXT_BUTTON_CHOOSE':
-            return {...state, displayNextForChoose:false};
         case 'STORE_CHOOSE_STRING':
             return {...state, chooseString:[...state.chooseString, action.chooseStr]};
         default:
@@ -71,8 +71,10 @@ const allReducer = (state = allReducerInitialState, action) => {
 }
 
 const store = redux.createStore(allReducer);
+
 store.subscribe(()=>{
     console.log(JSON.stringify(store.getState()));
 });
+
 
 export default store;
