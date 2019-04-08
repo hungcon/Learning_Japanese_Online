@@ -2,7 +2,28 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import axios from 'axios';
 import  { Redirect, NavLink } from 'react-router-dom';
+import Form from 'react-validation/build/form';
+import Input from 'react-validation/build/input';
+import CheckButton from 'react-validation/build/button';
+import { isEmail, isEmpty } from 'validator';
 
+const required = (value) => {
+    if (isEmpty(value)) {
+        return <small className="form-text text-danger">This field is required</small>;
+    }
+}
+
+const email = (value) => {
+    if (!isEmail(value)) {
+        return <small className="form-text text-danger">Invalid email format</small>;
+    }
+}
+
+const minLength = (value) => {
+    if (value.trim().length < 8) {
+        return <small className="form-text text-danger">Password must be at least 8 characters long</small>;
+    }
+}
 class Register extends Component {
     constructor(props) {
         super(props);
@@ -55,8 +76,14 @@ class Register extends Component {
               localStorage.setItem('user', JSON.stringify(res.data.user));
           }
         }).catch(function (error) {
-          console.log(error);
+            console.log(error);
+            alert(error);
         })
+    }
+
+    onSubmit(e){
+        e.preventDefault();
+        this.form.validateAll();
     }
 
     render() {
@@ -74,37 +101,39 @@ class Register extends Component {
                                 <div className="text-center">
                                 <h1 className="h4 text-gray-900 mb-4">Create an Account!</h1>
                                 </div>
-                                <form className="user">
+                                <Form className="user" onSubmit={e => this.onSubmit(e)} ref={c => { this.form = c }}>
                                 <div className="form-group row">
                                     <div className="col-sm-6 mb-3 mb-sm-0">
-                                    <input type="text" onChange={this.handleChangeFirstName} className="form-control form-control-user" id="exampleFirstName" placeholder="First Name" />
+                                    <Input type="text" validations={[required]} onChange={this.handleChangeFirstName} className="form-control form-control-user" id="exampleFirstName" placeholder="First Name" />
                                     </div>
                                     <div className="col-sm-6">
-                                    <input type="text" onChange={this.handleChangeLastName} className="form-control form-control-user" id="exampleLastName" placeholder="Last Name" />
+                                    <Input type="text" validations={[required]} onChange={this.handleChangeLastName} className="form-control form-control-user" id="exampleLastName" placeholder="Last Name" />
                                     </div>
                                 </div>
                                 <div className="form-group">
-                                    <input type="email" onChange={this.handleChangeEmail} className="form-control form-control-user" id="exampleInputEmail" placeholder="Email Address" />
+                                    <Input type="email" validations={[required, email]} onChange={this.handleChangeEmail} className="form-control form-control-user" id="exampleInputEmail" placeholder="Email Address" />
                                 </div>
                                 <div className="form-group row">
                                     <div className="col-sm-6 mb-3 mb-sm-0">
-                                    <input type="password" onChange={this.handleChangePassword} className="form-control form-control-user" id="exampleInputPassword" placeholder="Password" />
+                                    <Input type="password" validations={[required, minLength]} onChange={this.handleChangePassword} className="form-control form-control-user" id="exampleInputPassword" placeholder="Password" />
                                     </div>
                                     <div className="col-sm-6">
-                                    <input type="password" onChange={this.handleChangeRepeat} className="form-control form-control-user" id="exampleRepeatPassword" placeholder="Repeat Password" />
+                                    <Input type="password" validations={[required, minLength]} onChange={this.handleChangeRepeat} className="form-control form-control-user" id="exampleRepeatPassword" placeholder="Repeat Password" />
                                     </div>
                                 </div>
-                                <a href="#4N" className="btn btn-primary btn-user btn-block" onClick = {this.handleSubmitCreateUser}>
+                                {/* <a href="#4N" className="btn btn-primary btn-user btn-block" onClick = {this.handleSubmitCreateUser}>
                                     Register Account
-                                </a>
-                                </form>
+                                </a> */}
+                                    <CheckButton onClick = {this.handleSubmitCreateUser} ref={c => { this.checkBtn = c }}  className="btn btn-primary btn-user btn-block">
+                                        Register Account
+                                    </CheckButton>
+                                </Form>
                                 <hr />
                                 <div className="text-center">
                                 <a className="small" href="forgot-password.html">Forgot Password?</a>
                                 </div>
                                 <div className="text-center">
                                 <NavLink  className="small" activeClassName="abc" to="/login">Already have an account? Login!</NavLink>
-                                {/* <a className="small" href="login.html">Already have an account? Login!</a> */}
                                 </div>
                             </div>
                             </div>

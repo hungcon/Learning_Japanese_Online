@@ -22,7 +22,7 @@ const required = (value) => {
 
   const minLength = (value) => {
     if (value.trim().length < 8) {
-        return <small className="form-text text-danger">Password must be at least 6 characters long</small>;
+        return <small className="form-text text-danger">Password must be at least 8 characters long</small>;
     }
   }
 
@@ -61,6 +61,7 @@ class Login extends React.Component {
             }
           }).catch(function (error) {
             console.log(error);
+            alert(error);
           })
     }
 
@@ -72,10 +73,6 @@ class Login extends React.Component {
     onSubmit(e){
         e.preventDefault();
         this.form.validateAll();
-
-        if ( this.checkBtn.context._errors.length === 0 ) {
-           alert('success');
-        }
     }
 
     render() {
@@ -120,7 +117,6 @@ class Login extends React.Component {
                                                 </div>
                                                 <div className="text-center">
                                                     <NavLink className="small" activeClassName="abc" to="/register">Create an Account</NavLink>
-                                                    {/* <a className="small" onClick={this.handleRedirectCreateAccount} href="register.html">Create an Account!</a> */}
                                                 </div>
                                             </div>
                                         </div>
