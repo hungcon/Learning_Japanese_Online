@@ -155,6 +155,12 @@ class Question extends Component {
         this.props.storeResult(newelement);
        
     }
+    componentDidUpdate(){
+        if(this.props.testTimeFinish){
+            this.submitTest();
+            this.props.handleSubmitTest()
+        }
+    }
 
     render() {
         var data;
@@ -260,7 +266,8 @@ const mapStateToProps = (state, ownProps) => {
         answeredQs : state.answeredQs,
         previousLocation : state.currentLocationQs,
         displayNextButton: state.displayNextButton,
-        arrChoosed: state.chooseString
+        arrChoosed: state.chooseString,
+        testTimeFinish : state.testTimeFinish
     }
 }
 
@@ -286,6 +293,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         },
         storeResult: (str) => {
             dispatch({ type: 'STORE_CHOOSE_STRING', chooseStr: str })
+        },
+        handleSubmitTest: (str) => {
+            dispatch({ type: 'HANDLE_SUBMIT_TEST' })
         }
     }
 }
