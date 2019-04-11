@@ -12,6 +12,7 @@ import React, { Component } from 'react';
 import Navbar from './Components/Navbar';
 // import Topbar from './Components/Topbar';
 import Question from './Components/Question';
+import Test from './Components/Test';
 import Footer from './Components/Footer';
 
 // import AlertInformation from './Components/AlertInformation';
@@ -46,12 +47,13 @@ class App extends Component {
                     />
                 })
             } */}
-            <Question 
-              type="Fill"
-            />
             {/* <Question 
               type="ABCD"
             /> */}
+            {/* <Question 
+              type="ABCD"
+            /> */}
+            <Test />
             <Footer/>
           </div>
         </div>
