@@ -12,7 +12,7 @@ class Lesson extends Model
      * @var array
      */
     protected $fillable = [
-        'name',
+        'rule_id', 'name',
     ];
 
     public $table = "lesson";
