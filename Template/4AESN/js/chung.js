@@ -7,6 +7,6 @@ $(function() {
 function removeActived(argument) {
 	var arr = $( ".card-body" ).children( ".q-abcd-answer");
 	arr.each(function(index, el) {
-		$(el).removeClass('actived');
+		
 	});
 }
