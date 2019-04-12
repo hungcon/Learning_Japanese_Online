@@ -1,9 +1,8 @@
-    
 import React, { Component } from 'react';
-import RegAndChoose from './Components/RegAndChoose';
-import Level from './Components/Level';
-import List from './Components/List';
-import Lession from './Components/Lession';
+// import RegAndChoose from './Components/RegAndChoose';
+// import Level from './Components/Level';
+// import List from './Components/List';
+// import Lession from './Components/Lession';
 
 // import RegAndChoose from './Components/RegAndChoose';
 // import Level from './Components/Level';
@@ -13,6 +12,7 @@ import Lession from './Components/Lession';
 import Navbar from './Components/Navbar';
 // import Topbar from './Components/Topbar';
 import Question from './Components/Question';
+import Test from './Components/Test';
 import Footer from './Components/Footer';
 
 // import AlertInformation from './Components/AlertInformation';
@@ -20,7 +20,7 @@ import Footer from './Components/Footer';
 // import MyRoutes from './Components/Routes/MyRoutes';
 
 class App extends Component {
- 
+
   render() {
     return (
       // <Router>
@@ -48,11 +48,12 @@ class App extends Component {
                 })
             } */}
             {/* <Question 
-              type="Choose"
+              type="ABCD"
             /> */}
-            <Question 
-              type="choose"
-            />
+            {/* <Question 
+              type="ABCD"
+            /> */}
+            <Test />
             <Footer/>
           </div>
         </div>

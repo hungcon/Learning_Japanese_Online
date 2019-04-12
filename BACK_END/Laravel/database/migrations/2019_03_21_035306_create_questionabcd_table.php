@@ -17,7 +17,7 @@ class CreateQuestionabcdTable extends Migration
             $table->increments('id');
             $table->string('remaji');
             $table->string('image');
-            $table->string('audio');
+            $table->string('question');
             $table->string('answer');
             $table->string('A');
             $table->string('B');

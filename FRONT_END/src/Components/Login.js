@@ -2,6 +2,29 @@ import React from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import  { Redirect } from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
+import Form from 'react-validation/build/form';
+import Input from 'react-validation/build/input';
+import CheckButton from 'react-validation/build/button';
+import { isEmail, isEmpty } from 'validator';
+
+const required = (value) => {
+    if (isEmpty(value)) {
+        return <small className="form-text text-danger">This field is required</small>;
+    }
+  }
+
+  const email = (value) => {
+    if (!isEmail(value)) {
+        return <small className="form-text text-danger">Invalid email format</small>;
+    }
+  }
+
+  const minLength = (value) => {
+    if (value.trim().length < 8) {
+        return <small className="form-text text-danger">Password must be at least 8 characters long</small>;
+    }
+  }
 
 class Login extends React.Component {
     constructor(props) {
@@ -9,15 +32,16 @@ class Login extends React.Component {
         this.state = {
             email: '',
             password: '',
+            isCreateAccount: false,
         };
     }
 
     handleChangeEmail = event => {
         this.setState({ email: event.target.value });
-      }
+    }
 
     handleChangePassword = event => {
-    this.setState({ password: event.target.value });
+        this.setState({ password: event.target.value });
     }
 
     handleSubmit = event => {
@@ -37,11 +61,23 @@ class Login extends React.Component {
             }
           }).catch(function (error) {
             console.log(error);
+            alert(error);
           })
     }
 
+    handleRedirectCreateAccount = event => {
+        event.preventDefault();
+        this.setState({isCreateAccount : true});
+    }
+
+    onSubmit(e){
+        e.preventDefault();
+        this.form.validateAll();
+    }
+
     render() {
-        if(localStorage.getItem('user') !== null) return <Redirect to='/list'  />;
+        if(localStorage.getItem('user') !== null){ return <Redirect to='/level'  />;}
+        if(this.state.isCreateAccount === true){ return <Redirect to='/register'  />;}
         return (
             <div className="login--content body--login">
                 <div className="container">
@@ -58,29 +94,29 @@ class Login extends React.Component {
                                                 <div className="text-center">
                                                     <h1 className="h4 text-gray-900 mb-4">Welcome 6000$!</h1>
                                                 </div>
-                                                <form className="user">
+                                                <Form className="user" onSubmit={e => this.onSubmit(e)} ref={c => { this.form = c }}>
                                                     <div className="form-group">
-                                                        <input type="email" onChange={this.handleChangeEmail} className="form-control form-control-user" name="email" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address..." />
+                                                        <Input type="email" validations={[required, email]} onChange={this.handleChangeEmail} className="form-control form-control-user" name="email" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address..." />
                                                     </div>
                                                     <div className="form-group">
-                                                        <input type="password" onChange={this.handleChangePassword} className="form-control form-control-user" name="password" id="exampleInputPassword" placeholder="Password" />
+                                                        <Input type="password" validations={[required, minLength]} onChange={this.handleChangePassword} className="form-control form-control-user" name="password" id="exampleInputPassword" placeholder="Password" />
                                                     </div>
                                                     <div className="form-group">
                                                         <div className="custom-control custom-checkbox small">
-                                                            <input type="checkbox" className="custom-control-input" id="customCheck" />
+                                                            <Input type="checkbox" className="custom-control-input" id="customCheck" />
                                                             <label className="custom-control-label" htmlFor="customCheck">Remember Me</label>
                                                         </div>
                                                     </div>
-                                                    <a href="index.html" onClick={this.handleSubmit} className="btn btn-primary btn-user btn-block">
+                                                    <CheckButton onClick={this.handleSubmit} ref={c => { this.checkBtn = c }}  className="btn btn-primary btn-user btn-block">
                                                         Login
-                                                    </a>
-                                                </form>
+                                                    </CheckButton>
+                                                </Form>
                                                 <hr />
                                                 <div className="text-center">
                                                     <a className="small" href="forgot-password.html">Forgot Password?</a>
                                                 </div>
                                                 <div className="text-center">
-                                                    <a className="small" href="register.html">Create an Account!</a>
+                                                    <NavLink className="small" activeClassName="abc" to="/register">Create an Account</NavLink>
                                                 </div>
                                             </div>
                                         </div>

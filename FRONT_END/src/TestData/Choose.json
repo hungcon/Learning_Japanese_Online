@@ -1,62 +1,62 @@
 [
     {
         "id":1,
-        "questionContent":"1:これからおせわになります-さようなら-こちら-こそよおろし-おせわになり-ありがとう",
+        "questionContent":"これからおせわになります-さようなら-こちら-こそよおろし-おせわになり-ありがとう",
         "option":"こ+れか+す+りが+おせ",
         "questionImagePath":"img/q-image-choose.jpg"
     },
     {
         "id":2,
-        "questionContent":"2:これからおせます-さようなら-こら-こそよ",
+        "questionContent":"これからおせます-さようなら-こら-こそよ",
         "option":"こ+れか+す",
         "questionImagePath":"img/q-image-choose.jpg"
     },
     {
         "id":3,
-        "questionContent":"3:こわになります-さよ-こちら-こそよおろし-おせわ",
+        "questionContent":"こわになります-さよ-こちら-こそよおろし-おせわ",
         "option":"こ+れか+す+りが",
         "questionImagePath":"img/q-image-choose.jpg"
     },
     {
         "id":4,
-        "questionContent":"4:これからおせす-さようなら-こちら-こし-おせわになり-あ",
+        "questionContent":"これからおせす-さようなら-こちら-こし-おせわになり-あ",
         "option":"こ+れか+す+りが+おせ",
         "questionImagePath":"img/q-image-choose.jpg"
     },
     {
         "id":5,
-        "questionContent":"5:これからおせわになります-さようなら-こちら-こそよおろし-おせわになり-ありがとう",
+        "questionContent":"これからおせわになります-さようなら-こちら-こそよおろし-おせわになり-ありがとう",
         "option":"こ+れか+す+りが+おせ",
         "questionImagePath":"img/q-image-choose.jpg"
     },
     {
         "id":6,
-        "questionContent":"6:これからおせわになります-さようなら-こちら-こそよおろし-おせわになり-ありがとう",
-        "option":"こ+れか+す+りが+おせ",
+        "questionContent":"おまえのしあわ-さようなら-こちら-こそよおろし-おせわになり-ありがとう-てみやこへ-ゆ",
+        "option":"こ+れか+す+りが+おせ+っぱつ+た",
         "questionImagePath":"img/q-image-choose.jpg"
     },
     {
         "id":7,
-        "questionContent":"7:これからおせわになります-さようなら-こちら-こそよおろし-おせわになり-ありがとう",
-        "option":"こ+れか+す+りが+おせ",
+        "questionContent":"こそよおろし-おせわになり-ありがとう",
+        "option":"こ+れか",
         "questionImagePath":"img/q-image-choose.jpg"
     },
     {
         "id":8,
-        "questionContent":"8:これからおせわになります-さようなら-こちら-こそよおろし-おせわになり-ありがとう",
-        "option":"こ+れか+す+りが+おせ",
+        "questionContent":"おばあさま-おばあさまおばあさま-みやこにいったほうがいいよ」-こそよおろし",
+        "option":"こ+れか+す",
         "questionImagePath":"img/q-image-choose.jpg"
     },
     {
         "id":9,
-        "questionContent":"9:これからおせわになります-さようなら-こちら-こそよおろし-おせわになり-ありがとう",
-        "option":"こ+れか+す+りが+おせ",
+        "questionContent":"これからおせわになります-さようなら-こちら-こそよおろし-おせわになり-ありがとう-まをひとり",
+        "option":"こ+れか+す+りが+おせ+まをひとり",
         "questionImagePath":"img/q-image-choose.jpg"
     },
     {
         "id":10,
-        "questionContent":"10:これからおせわになります-さようなら-こちら-こそよおろし-おせわになり-ありがとう",
-        "option":"こ+れか+す+りが+おせ",
+        "questionContent":"こちら-こそよおろし-おせわになり-だれひとりとしてあらわれたことはありませんでした",
+        "option":"こ+れか+す",
         "questionImagePath":"img/q-image-choose.jpg"
     }
 ]

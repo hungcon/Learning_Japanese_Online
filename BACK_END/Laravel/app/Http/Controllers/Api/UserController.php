@@ -20,4 +20,27 @@ class UserController extends Controller
         }
     }
 
+    public function create(Request $request){
+        $firstName = $request->firstname;
+        $lastName = $request->lastname;
+        $email = $request->email;
+        $password = $request->password;
+
+        $checkEmail = \App\User::where('email',$email)->first();
+        if($checkEmail != null){
+            return response()->json(["error" => "Email has been used by someone"], 200);
+        }else{
+            try{
+                $user = new \App\User();
+                $user->name = $firstName." ".$lastName;
+                $user->email = $email;
+                $user->password = bcrypt($password);
+                $user->save();
+                return response()->json(["message" => "Create account successful","user" => $user], 200);
+            }catch (\Exception $e){
+                return response()->json(["error" => "Something was wrong"], 400);
+            }
+        }
+
+    }
 }

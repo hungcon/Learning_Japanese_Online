@@ -2,251 +2,91 @@
     {
         "id": 1,
         "questionImagePath" : "./img/Japanese_hira_A.png",
-        "questionContent": "これからおせわになります-さようなら-こちら-こそよおろし-おせわになり-ありがとう.",
-        "answerA":{
-            "answerImagePath": "./img/q-answer-a.png",
-            "answerContent": "あ",
-            "answerName":"A"
-        },
-        "answerB":{
-            "answerImagePath": "./img/q-answer-b.png",
-            "answerContent": "い",
-            "answerName":"B"
-        },
-        "answerC":{
-            "answerImagePath": "./img/q-answer-c.png",
-            "answerContent": "う",
-            "answerName":"C"
-        },
-        "answerD":{
-            "answerImagePath": "./img/q-answer-d.png",
-            "answerContent": "え",
-            "answerName":"D"
-        }
+        "questionContent": "Cách phát âm của từ là ??? ",
+        "answerA":"wa",
+        "answerB":"ra",
+        "answerC":"za",
+        "answerD":"ma"
     },
     {
         "id": 2,
-        "questionImagePath" : "./img/N4.png",
-        "questionContent": "Câu hỏi số 2",
-        "answerA":{
-            "answerImagePath": "./img/q-answer-a.png",
-            "answerContent": "あ2",
-            "answerName": "A"
-        },
-        "answerB":{
-            "answerImagePath": "./img/q-answer-b.png",
-            "answerContent": "い2",
-            "answerName": "B"
-        },
-        "answerC":{
-            "answerImagePath": "./img/q-answer-c.png",
-            "answerContent": "う2",
-            "answerName": "C"
-        },
-        "answerD":{
-            "answerImagePath": "./img/q-answer-d.png",
-            "answerContent": "え2",
-            "answerName": "D"
-        }
+        "questionImagePath" : "./img/image1.png",
+        "questionContent": "Cách phát âm của từ là ???",
+        "answerA":"mi",
+        "answerB":"pi",
+        "answerC":"bi",
+        "answerD":"ni"
     },
     {
         "id": 3,
-        "questionImagePath" : "./img/N4.png",
-        "questionContent": "Câu hỏi số 3",
-        "answerA":{
-            "answerImagePath": "./img/q-answer-a.png",
-            "answerContent": "3",
-            "answerName": "A"
-        },
-        "answerB":{
-            "answerImagePath": "./img/q-answer-b.png",
-            "answerContent": "3",
-            "answerName": "B"
-        },
-        "answerC":{
-            "answerImagePath": "./img/q-answer-c.png",
-            "answerContent": "3",
-            "answerName": "C"
-        },
-        "answerD":{
-            "answerImagePath": "./img/q-answer-d.png",
-            "answerContent": "3",
-            "answerName": "D"
-        }
+        "questionImagePath" : "./img/image2.png",
+        "questionContent": "Cách phát âm của từ là ???",
+        "answerA":"me",
+        "answerB":"be",
+        "answerC":"he",
+        "answerD":"ne"
     },
     {
         "id": 4,
-        "questionImagePath" : "./img/N4.png",
-        "questionContent": "Câu hỏi số 4",
-        "answerA":{
-            "answerImagePath": "./img/q-answer-a.png",
-            "answerContent": "4",
-            "answerName": "A"
-        },
-        "answerB":{
-            "answerImagePath": "./img/q-answer-b.png",
-            "answerContent": "4",
-            "answerName": "B"
-        },
-        "answerC":{
-            "answerImagePath": "./img/q-answer-c.png",
-            "answerContent": "4",
-            "answerName": "C"
-        },
-        "answerD":{
-            "answerImagePath": "./img/q-answer-d.png",
-            "answerContent": "4",
-            "answerName": "D"
-        }
+        "questionImagePath" : "./img/image3.png",
+        "questionContent": "Cách phát âm của từ là ???",
+        "answerA":"ho",
+        "answerB":"no",
+        "answerC":"du",
+        "answerD":"to"
     },
     {
         "id": 5,
-        "questionImagePath" : "./img/N4.png",
-        "questionContent": "Câu hỏi số 5",
-        "answerA":{
-            "answerImagePath": "./img/q-answer-a.png",
-            "answerContent": "5",
-            "answerName": "A"
-        },
-        "answerB":{
-            "answerImagePath": "./img/q-answer-b.png",
-            "answerContent": "5",
-            "answerName": "B"
-        },
-        "answerC":{
-            "answerImagePath": "./img/q-answer-c.png",
-            "answerContent": "5",
-            "answerName": "C"
-        },
-        "answerD":{
-            "answerImagePath": "./img/q-answer-d.png",
-            "answerContent": "5",
-            "answerName": "D"
-        }
+        "questionImagePath" : "./img/image4.png",
+        "questionContent": "Cách phát âm của từ là ???",
+        "answerA":"chi",
+        "answerB":"ji",
+        "answerC":"shi",
+        "answerD":"j"
     },
     {
         "id": 6,
-        "questionImagePath" : "./img/N4.png",
-        "questionContent": "Câu hỏi số 6",
-        "answerA":{
-            "answerImagePath": "./img/q-answer-a.png",
-            "answerContent": "6",
-            "answerName": "A"
-        },
-        "answerB":{
-            "answerImagePath": "./img/q-answer-b.png",
-            "answerContent": "6",
-            "answerName": "B"
-        },
-        "answerC":{
-            "answerImagePath": "./img/q-answer-c.png",
-            "answerContent": "6",
-            "answerName": "C"
-        },
-        "answerD":{
-            "answerImagePath": "./img/q-answer-d.png",
-            "answerContent": "6",
-            "answerName": "D"
-        }
+        "questionImagePath" : "./img/image5.png",
+        "questionContent": "Cách phát âm của từ là ???",
+        "answerA":"sa",
+        "answerB":"ga",
+        "answerC":"ka",
+        "answerD":"a"
     },
     {
         "id": 7,
-        "questionImagePath" : "./img/N4.png",
-        "questionContent": "Câu hỏi số 7",
-        "answerA":{
-            "answerImagePath": "./img/q-answer-a.png",
-            "answerContent": "7",
-            "answerName": "A"
-        },
-        "answerB":{
-            "answerImagePath": "./img/q-answer-b.png",
-            "answerContent": "7",
-            "answerName": "B"
-        },
-        "answerC":{
-            "answerImagePath": "./img/q-answer-c.png",
-            "answerContent": "7",
-            "answerName": "C"
-        },
-        "answerD":{
-            "answerImagePath": "./img/q-answer-d.png",
-            "answerContent": "7",
-            "answerName": "D"
-        }
+        "questionImagePath" : "./img/image6.png",
+        "questionContent": "Cách phát âm của từ là ???",
+        "answerA":"ri",
+        "answerB":"mi",
+        "answerC":"bi",
+        "answerD":"ni"
     },
     {
         "id": 8,
-        "questionImagePath" : "./img/N4.png",
-        "questionContent": "Câu hỏi số 8",
-        "answerA":{
-            "answerImagePath": "./img/q-answer-a.png",
-            "answerContent": "8",
-            "answerName": "A"
-        },
-        "answerB":{
-            "answerImagePath": "./img/q-answer-b.png",
-            "answerContent": "8",
-            "answerName": "B"
-        },
-        "answerC":{
-            "answerImagePath": "./img/q-answer-c.png",
-            "answerContent": "8",
-            "answerName": "C"
-        },
-        "answerD":{
-            "answerImagePath": "./img/q-answer-d.png",
-            "answerContent": "8",
-            "answerName": "D"
-        }
+        "questionImagePath" : "./img/image7.png",
+        "questionContent": "Cách phát âm của từ là ???",
+        "answerA":"se",
+        "answerB":"ge",
+        "answerC":"ka",
+        "answerD":"e"
     },
     {
         "id": 9,
-        "questionImagePath" : "./img/N4.png",
-        "questionContent": "Câu hỏi số 9",
-        "answerA":{
-            "answerImagePath": "./img/q-answer-a.png",
-            "answerContent": "9",
-            "answerName": "A"
-        },
-        "answerB":{
-            "answerImagePath": "./img/q-answer-b.png",
-            "answerContent": "9",
-            "answerName": "B"
-        },
-        "answerC":{
-            "answerImagePath": "./img/q-answer-c.png",
-            "answerContent": "9", 
-            "answerName": "C"
-        },
-        "answerD":{
-            "answerImagePath": "./img/q-answer-d.png",
-            "answerContent": "9",
-            "answerName": "D"
-        }
+        "questionImagePath" : "./img/image8.png",
+        "questionContent": "Cách phát âm của từ là ???",
+        "answerA":"ro",
+        "answerB":"zo",
+        "answerC":"mo",
+        "answerD":"po"
     },
     {
         "id": 10,
-        "questionImagePath" : "./img/N4.png",
-        "questionContent": "Câu hỏi số 10",
-        "answerA":{
-            "answerImagePath": "./img/q-answer-a.png",
-            "answerContent": "10",
-            "answerName": "A"
-        },
-        "answerB":{
-            "answerImagePath": "./img/q-answer-b.png",
-            "answerContent": "10",
-            "answerName": "B"
-        },
-        "answerC":{
-            "answerImagePath": "./img/q-answer-c.png",
-            "answerContent": "10",
-            "answerName": "C"
-        },
-        "answerD":{
-            "answerImagePath": "./img/q-answer-d.png",
-            "answerContent": "10",
-            "answerName": "D"
-        }
+        "questionImagePath" : "./img/image9.png",
+        "questionContent": "Cách phát âm của từ là ???",
+        "answerA":"wa",
+        "answerB":"ra",
+        "answerC":"za",
+        "answerD":"ma"
     }
 ]

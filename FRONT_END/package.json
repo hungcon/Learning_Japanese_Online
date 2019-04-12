@@ -2,18 +2,21 @@
   "name": "20182_cnwtt",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://127.0.0.1:8000",
   "dependencies": {
     "axios": "^0.18.0",
     "jquery": "^3.3.1",
     "react": "^16.8.4",
     "react-bs-notifier": "^5.0.0",
+    "react-countdown-clock": "^2.5.0",
     "react-dom": "^16.8.4",
     "react-load-script": "0.0.6",
     "react-redux": "^6.0.1",
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8",
-    "redux": "^4.0.1"
+    "react-string-replace": "^0.4.2",
+    "react-validation": "^3.0.7",
+    "redux": "^4.0.1",
+    "validator": "^10.11.0"
   },
   "scripts": {
     "start": "react-scripts start",
