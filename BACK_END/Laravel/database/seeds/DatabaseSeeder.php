@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
     	Model::unguard();
-        $seeders = array ('UserTableSeeder', 'LessonTableSeeder', 'QuestionABCDTableSeeder','ChooseTableSeeder','QuestionTableSeeder','FillTableSeeder');
+        $seeders = array ('UserTableSeeder', 'RuleTableSeeder','LessonTableSeeder', 'QuestionABCDTableSeeder','ChooseTableSeeder','QuestionTableSeeder','FillTableSeeder');
 
         foreach ($seeders as $seeder)
         { 
