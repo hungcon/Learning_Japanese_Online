@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Question from './Question';  
-
-class QuestionABCD extends Component {
+import {connect} from 'react-redux';
+var ReactCountdownClock = require("react-countdown-clock");
+class Test extends Component {
     render() {
-        
         return (
             <div>
                 <div className="container-fluid">
@@ -13,10 +13,24 @@ class QuestionABCD extends Component {
                         <button className="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
                         <i className="fas fa-download fa-sm text-white-50" /> Download</button>
                     </div>
-                    <Question />
+                    <ReactCountdownClock seconds={3}  color="#000"  alpha={0.9}  size={300}  onComplete={() => this.props.submitTest()} />
+                    <Question type='Fill'/>
                 </div>
             </div>
         );
     }
 }
-export default QuestionABCD;
+const mapStateToProps = (state, ownProps) => {
+    return {
+        testTimeFinish: state.testTimeFinish
+    }
+}
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+    return {
+        submitTest: () => {
+            dispatch({type:'HANDLE_SUBMIT_TEST'})
+        }
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Test)

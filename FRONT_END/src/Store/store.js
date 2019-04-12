@@ -4,6 +4,7 @@ const allReducerInitialState = {
     isRegistered: false,
     // Biến để check xem người dùng xem lại  đáp án có chọn lại  hay không  bỏ qua next tiếp 
     answeredQs : false,
+    testTimeFinish : false,
     currentLocationQs : 0,
     displayNextButton: false,
     // Mảng hiện thị danh sách đáp án của người dùng 
@@ -54,15 +55,17 @@ const allReducer = (state = allReducerInitialState, action) => {
             return {...state, notification: {...state.notification, status: false, class: '', message: ''} };
         case 'STORE_CHOOSE_STRING':
             return {...state, chooseString:[...state.chooseString, action.chooseStr]};
+        case 'HANDLE_SUBMIT_TEST':
+            return {...state, testTimeFinish: !state.testTimeFinish};
         default:
             return state;
     }
 }
 
 const store = redux.createStore(allReducer);
-store.subscribe(()=>{
-    console.log(JSON.stringify(store.getState()));
-});
+// store.subscribe(()=>{
+//     console.log(JSON.stringify(store.getState()));
+// });
 
 
 export default store;
