@@ -5,14 +5,13 @@ class Navbar extends React.Component {
         this.state = {};
     }
     render() {
-        console.log("Hoan");
         return (
 
             <ul className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
                 
                 <a className="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                     <div className="sidebar-brand-icon rotate-n-15">
-                        <img src="img/8.png" className="img-fluid" alt="logo" />
+                        <img src="/img/8.png" className="img-fluid" alt="logo" />
                     </div>
                     <div className="sidebar-brand-text mx-3">Learning Japan</div>
                 </a>

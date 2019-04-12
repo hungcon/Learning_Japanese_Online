@@ -5,7 +5,6 @@ import Footer from './Footer';
 class Result extends Component {
     render() {
         return (
-
             <div id="wrapper">
                 <Navbar />
                 <div id="content-wrapper" className="d-flex flex-column">
