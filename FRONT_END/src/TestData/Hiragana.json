@@ -1,0 +1,246 @@
+[
+    {
+        "id": 1,
+        "title": "あ",
+        "character": [
+            {
+                "item": "あ",
+                "images" : "img/hiragana/Japanese_Hiragana_kyokashotai_A.png"
+            },
+            {
+                "item": "い",
+                "images" : "img/hiragana/Japanese_Hiragana_kyokashotai_I.png"
+            },
+            {
+                "item": "う",
+                "images" : "img/hiragana/Japanese_Hiragana_kyokashotai_U.png"
+            },
+            {
+                "item": "え",
+                "images" : "img/hiragana/Japanese_Hiragana_kyokashotai_E.png"
+            },
+            {
+                "item": "お",
+                "images" : "img/hiragana/Japanese_Hiragana_kyokashotai_O.png"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "title": "か",
+        "character": [
+            {
+                "item": "か",
+                "images" : "img/hiragana/Japanese_Hiragana_kyokashotai_KA.png"
+            },
+            {
+                "item": "き",
+                "images" : "img/hiragana/Japanese_Hiragana_kyokashotai_KI.png"
+            },
+            {
+                "item": "く",
+                "images" : "img/hiragana/Japanese_Hiragana_kyokashotai_KU.png"
+            },
+            {
+                "item": "け",
+                "images" : "img/hiragana/Japanese_Hiragana_kyokashotai_KE.png"
+            },
+            {
+                "item": "こ",
+                "images" : "img/hiragana/Japanese_Hiragana_kyokashotai_KO.png"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "title": "さ",
+        "character": [
+            {
+                "item": "さ",
+                "images" : "img/hiragana/Japanese_Hiragana_kyokashotai_SA.png"
+            },
+            {
+                "item": "し",
+                "images" : "img/hiragana/Japanese_Hiragana_kyokashotai_SHI.png"
+            },
+            {
+                "item": "す",
+                "images" : "img/hiragana/Japanese_Hiragana_kyokashotai_SU.png"
+            },
+            {
+                "item": "せ",
+                "images" : "img/hiragana/Japanese_Hiragana_kyokashotai_SE.png"
+            },
+            {
+                "item": "そ",
+                "images" : "img/hiragana/Japanese_Hiragana_kyokashotai_SO.png"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "title": "た",
+        "character": [
+            {
+                "item": "た",
+                "images" : "img/hiragana/Japanese_Hiragana_kyokashotai_TA.png"
+            },
+            {
+                "item": "ち",
+                "images" : "img/hiragana/Japanese_Hiragana_kyokashotai_CHI.png"
+            },
+            {
+                "item": "つ",
+                "images" : "img/hiragana/Japanese_Hiragana_kyokashotai_TSU.png"
+            },
+            {
+                "item": "て",
+                "images" : "img/hiragana/Japanese_Hiragana_kyokashotai_TE.png"
+            },
+            {
+                "item": "と",
+                "images" : "img/hiragana/Japanese_Hiragana_kyokashotai_TO.png"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "title": "な",
+        "character": [
+            {
+                "item": "な",
+                "images" : "img/hiragana/Japanese_Hiragana_kyokashotai_NA.png"
+            },
+            {
+                "item": "に",
+                "images" : "img/hiragana/Japanese_Hiragana_kyokashotai_NI.png"
+            },
+            {
+                "item": "ぬ",
+                "images" : "img/hiragana/Japanese_Hiragana_kyokashotai_NU.png"
+            },
+            {
+                "item": "ね",
+                "images" : "img/hiragana/Japanese_Hiragana_kyokashotai_NE.png"
+            },
+            {
+                "item": "の",
+                "images" : "img/hiragana/Japanese_Hiragana_kyokashotai_NO.png"
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "title": "は",
+        "character": [
+            {
+                "item": "は",
+                "images" : "img/hiragana/Japanese_Hiragana_kyokashotai_HA.png"
+            },
+            {
+                "item": "ひ",
+                "images" : "img/hiragana/Japanese_Hiragana_kyokashotai_HI.png"
+            },
+            {
+                "item": "ふ",
+                "images" : "img/hiragana/Japanese_Hiragana_kyokashotai_FU.png"
+            },
+            {
+                "item": "へ",
+                "images" : "img/hiragana/Japanese_Hiragana_kyokashotai_HE.png"
+            },
+            {
+                "item": "ほ",
+                "images" : "img/hiragana/Japanese_Hiragana_kyokashotai_HO.png"
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "title": "ま",
+        "character": [
+            {
+                "item": "ま",
+                "images" : "img/hiragana/Japanese_Hiragana_kyokashotai_MA.png"
+            },
+            {
+                "item": "み",
+                "images" : "img/hiragana/Japanese_Hiragana_kyokashotai_MI.png"
+            },
+            {
+                "item": "む",
+                "images" : "img/hiragana/Japanese_Hiragana_kyokashotai_MU.png"
+            },
+            {
+                "item": "め",
+                "images" : "img/hiragana/Japanese_Hiragana_kyokashotai_ME.png"
+            },
+            {
+                "item": "も",
+                "images" : "img/hiragana/Japanese_Hiragana_kyokashotai_MO.png"
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "title": "や",
+        "character": [
+            {
+                "item": "や",
+                "images" : "img/hiragana/Japanese_Hiragana_kyokashotai_YA.png"
+            },
+            {
+                "item": "ゆ",
+                "images" : "img/hiragana/Japanese_Hiragana_kyokashotai_YU.png"
+            },
+            {
+                "item": "よ",
+                "images" : "img/hiragana/Japanese_Hiragana_kyokashotai_YO.png"
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "title": "ら",
+        "character": [
+            {
+                "item": "ら",
+                "images" : "img/hiragana/Japanese_Hiragana_kyokashotai_RA.png"
+            },
+            {
+                "item": "り",
+                "images" : "img/hiragana/Japanese_Hiragana_kyokashotai_RI.png"
+            },
+            {
+                "item": "る",
+                "images" : "img/hiragana/Japanese_Hiragana_kyokashotai_RU.png"
+            },
+            {
+                "item": "れ",
+                "images" : "img/hiragana/Japanese_Hiragana_kyokashotai_RE.png"
+            },
+            {
+                "item": "ろ",
+                "images" : "img/hiragana/Japanese_Hiragana_kyokashotai_RO.png"
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "title": "わ",
+        "character": [
+            {
+                "item": "わ",
+                "images" : "img/hiragana/Japanese_Hiragana_kyokashotai_WA.png"
+            },
+            {
+                "item": "を",
+                "images" : "img/hiragana/Japanese_Hiragana_kyokashotai_WO.png"
+            },
+            {
+                "item": "ん",
+                "images" : "img/hiragana/Japanese_Hiragana_kyokashotai_N.png"
+            }
+        ]
+    }
+]

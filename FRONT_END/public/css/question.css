@@ -54,6 +54,40 @@ hr{
 	font-size: 24px!important;
 }
 
+/* ------------ nhận diện có tiền tố r--------------*/
+.r-btn-character{
+	font-weight: bold;
+
+}
+.r-btn-character:hover{
+	color: #4e73df;
+	background-color: #7f7f888f;
+}
+.dropdown-menu{
+	font-size: 24px!important;
+}
+.btn-outline-primary{
+	font-size: 24px!important;
+}
+.btn-group{
+	width: 9.5%;
+}
+.r-img-character{
+	padding: 50px;
+}
+.r-img-character > h4 {
+	color:  black;
+}
+.r-img-character > img{
+	border: 1px solid black;
+}
+.r-img-character > canvas {
+	border: 1px solid black;
+}
+.r-button{
+	display: flex; 
+	justify-content: center;
+}
 /* timmer */
 .timer{
 	display:  block;
