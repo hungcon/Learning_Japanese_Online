@@ -76,7 +76,7 @@ class Login extends React.Component {
     }
 
     render() {
-        if(localStorage.getItem('user') !== null){ return <Redirect to='/level'  />;}
+        if(localStorage.getItem('user') !== null){ return <Redirect to='/list'  />;}
         if(this.state.isCreateAccount === true){ return <Redirect to='/register'  />;}
         return (
             <div className="login--content body--login">
