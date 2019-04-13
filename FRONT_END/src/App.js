@@ -6,7 +6,7 @@ import React, { Component } from 'react';
 
 // import RegAndChoose from './Components/RegAndChoose';
 // import Level from './Components/Level';
-// import List from './Components/List';
+import List from './Components/List';
 // import Lession from './Components/Lession';
 
 import Navbar from './Components/Navbar';
@@ -36,24 +36,8 @@ class App extends Component {
         <div id="content-wrapper" className="d-flex flex-column">
           <div id="content">
             {/* <Topbar/> */}
-            {/* {
-                ListChooseData.map((value,key) =>{
-                    <QuestionChoose
-                      key
-                      number={value.id}
-                      question={value.question}
-                      imagePath = {value.imagePath}
-                      option={value.option}
-                    />
-                })
-            } */}
-            {/* <Question 
-              type="ABCD"
-            /> */}
-            {/* <Question 
-              type="ABCD"
-            /> */}
-            <Test />
+
+            <List />
             <Footer/>
           </div>
         </div>

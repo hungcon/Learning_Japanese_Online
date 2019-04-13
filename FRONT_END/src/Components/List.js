@@ -3,6 +3,7 @@ import Navbar from './Navbar';
 import Topbar from './Topbar';
 import Footer from './Footer';
 import Level from './Level';
+import Lesson from './Lesson';
 class ComponentName extends React.Component {
     constructor(props) {
         super(props);
@@ -11,29 +12,21 @@ class ComponentName extends React.Component {
 
     render() {
         return (
-            <div id="wrapper">
-                <Navbar />
-                <div id="content-wrapper" className="d-flex flex-column">
-                    {/* chỗ này cần truyền tên và id người dùng để có thể để hiển thị ở trên cùng */}
-                    <div id="content">
-                        <Topbar />
-                        <div className="row">
-                            {/* <div className="col-lg-5 d-none d-lg-block bg-register-image" style={{height: '760px'}} /> */}
-                            <div className="col-lg-12">
-                                <div className="p-5">
-                                    <div className="text-center">
-                                        <h1 className="h4 text-gray-900 mb-4">Please choose level</h1>
-                                    </div>
-                                    <form className="user">
-                                        <Level type="begin" classBtn="btn btn-danger btn-icon-split" />
-                                        <Level type="advance" classBtn="btn btn-success btn-icon-split" />
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                        <Footer />
+            <div class="container-fluid">
+            {/* Huy note: chỗ này m đổ tên trường ra cho tao: là cái rule ý */}
+                <div class="d-sm-flex align-items-center justify-content-between mb-4 row">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                        <h1 class="h3 mb-0 text-gray-800">Beginner A1 - 3%</h1>
                     </div>
+                    <div class="col-md-3"></div>
                 </div>
+
+            {/* list các bài học */}
+                <Lesson />
+                <Lesson />
+                <Lesson />
+                <Lesson />
             </div>
         );
     }
