@@ -43,7 +43,7 @@ class App extends Component {
 
             {/* <Topbar/> */}
 
-            <List />
+            <Test />
             <Footer/>
           </div>
         </div>

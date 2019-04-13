@@ -53,3 +53,23 @@ hr{
 .q-button-answer{
 	font-size: 24px!important;
 }
+
+/* timmer */
+.timer{
+	display:  block;
+	padding: 10px;
+	border-radius: 5px;
+}
+.timer-safe{
+	border: 1px solid #0069d9;
+	color: #0069d9;
+}
+.timer-danger{
+	border: 1px solid #dc3545;
+	color: #dc3545;
+}
+.active-danger {
+	border: 1px solid #dc3545;
+	color:white;
+	background-color:  #dc3545;
+}
