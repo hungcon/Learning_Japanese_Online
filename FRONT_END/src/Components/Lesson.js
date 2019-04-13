@@ -18,7 +18,7 @@ class ComponentName extends React.Component {
                                 <div className="col mr-2">
                                     <div className="h5 font-weight-bold text-dark text-uppercase mb-1 lesson--title">
                                         <a href="login.html" className="lesson--details">
-                                            Lesson 1: I am Hoan Pham
+                                            Lesson : {this.props.title}
                                         </a>
                                     </div>
                                     <div className="row no-gutters ">

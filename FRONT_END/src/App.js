@@ -5,8 +5,13 @@ import React, { Component } from 'react';
 // import Lession from './Components/Lession';
 
 // import RegAndChoose from './Components/RegAndChoose';
-// import Level from './Components/Level';
+
+import Level from './Components/Level';
 // import List from './Components/List';
+
+// import Level from './Components/Level';
+import List from './Components/List';
+
 // import Lession from './Components/Lession';
 
 import Navbar from './Components/Navbar';
