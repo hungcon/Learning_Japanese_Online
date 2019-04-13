@@ -13,9 +13,17 @@ class CreateLessonTable extends Migration
      */
     public function up()
     {
-        Schema::create('lesson', function (Blueprint $table) {
+        Schema::create('rule', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->timestamps();
+        });
+
+        Schema::create('lesson', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('rule_id')->unsigned();
+            $table->string('name');
+            $table->foreign('rule_id')->references('id')->on('rule')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -28,5 +36,6 @@ class CreateLessonTable extends Migration
     public function down()
     {
         Schema::dropIfExists('lesson');
+        Schema::dropIfExists('rule');
     }
 }

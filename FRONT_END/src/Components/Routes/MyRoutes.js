@@ -4,7 +4,6 @@ import List from '../List';
 import Home from '../Home';
 import { Route } from "react-router-dom";
 import Register from '../Register';
-import History from '../History';
 import ChooseLevel from '../ChooseLevel';
 
 class MyRoutes extends Component {
@@ -13,7 +12,6 @@ class MyRoutes extends Component {
             <div>
                <Route path="/" exact component={Home} />
                <Route path="/login" exact component={Login} />
-               <Route path="/history" exact component={History} />
                <Route path="/list" exact component={List} />
                <Route path="/register" exact component={Register} />
                <Route path="/level" exact component={ChooseLevel} />

@@ -48,7 +48,7 @@ const allReducer = (state = allReducerInitialState, action) => {
                 }
                 newUserAnswer.push(state.userAnswer[i]);
             }
-            return {...state, userAnswer:newUserAnswer }
+            return {...state, userAnswer:newUserAnswer }  
         case 'SHOW_MESSAGE':
             return {...state, notification: {...state.notification, status: true, class: action.class, message: action.message} };
         case 'HIDE_MESSAGE':

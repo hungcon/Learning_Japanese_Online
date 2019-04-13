@@ -12,8 +12,11 @@ class LessonTableSeeder extends Seeder
     public function run()
     {
         DB::table('Lesson')->insert([
-            ['name'=>'Bài test 1'],
-            ['name'=>'Bài test 2'],
+            ['rule_id'=>1,'name'=>'Bài test 1'],
+            ['rule_id'=>2,'name'=>'Bài test 2'],
+            ['rule_id'=>2,'name'=>'Bài test 3'],
+            ['rule_id'=>1,'name'=>'Bài test 4'],
+            ['rule_id'=>1,'name'=>'Bài test 5'],
         ]);
     }
 }

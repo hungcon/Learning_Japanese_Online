@@ -11,7 +11,6 @@ class UserController extends Controller
     public function login(Request $request){
         $email = $request->email;
         $password = $request->password;
-
         if(Auth::attempt(['email' => $email,'password' => $password])){
             $user = \App\User::where('email',$email)->first();
             return response()->json(["message" => "Login successful", "user" => $user], 200);
@@ -41,6 +40,5 @@ class UserController extends Controller
                 return response()->json(["error" => "Something was wrong"], 400);
             }
         }
-
     }
 }
