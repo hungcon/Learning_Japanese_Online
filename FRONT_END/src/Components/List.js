@@ -9,6 +9,7 @@ class ComponentName extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            user: JSON.parse(localStorage.getItem('user')),
             name: '',
             data: '',
         };
@@ -16,7 +17,7 @@ class ComponentName extends React.Component {
 
     componentWillMount() {
         var levelParam = {level : this.props.match.params.level};
-        axios.put(`http://127.0.0.1:8000/api/lesson`, levelParam )
+        axios.put(`http://127.0.0.1:8000/api/user/`+ this.state.user.id +`/lesson`, levelParam )
         .then(res => {
           if(res.data.error != null){
               this.props.AlertOn(res.data.error,'danger');
@@ -36,7 +37,7 @@ class ComponentName extends React.Component {
     loadLessons = function() {
         var data =this.state.data;
         var lessons = Object.values(data).map((value,key) => (
-            <Lesson key={key} title={value.name} lessonid={value.id} />
+            <Lesson key={key} title={value.name} lesson={value.id} />
         ));
         return lessons;
     }

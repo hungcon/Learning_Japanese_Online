@@ -1,5 +1,5 @@
 import React from 'react';
-
+import {NavLink} from 'react-router-dom';
 
 class ComponentName extends React.Component {
     
@@ -7,6 +7,7 @@ class ComponentName extends React.Component {
         super(props);
         this.state = {};
     }
+
     render() {
         return (
             <div className="row">
@@ -17,9 +18,9 @@ class ComponentName extends React.Component {
                             <div className="row no-gutters text-left">
                                 <div className="col mr-2">
                                     <div className="h5 font-weight-bold text-dark text-uppercase mb-1 lesson--title">
-                                        <a href="login.html" className="lesson--details">
+                                        <NavLink to='/test/1' className="lesson--details">
                                             Lesson : {this.props.title}
-                                        </a>
+                                        </NavLink>
                                     </div>
                                     <div className="row no-gutters ">
                                         <div className="col">
@@ -30,7 +31,7 @@ class ComponentName extends React.Component {
                                     </div>
                                     <div className="row no-gutters align-items-left">
                                         <div className="col-8">
-                                            <div className="mb-0 text-gray-800">Introduce myself</div>
+                                            <div className="mb-0 text-gray-800">The level of understanding</div>
                                         </div>
                                         <div className="col-4">
                                             <div className="progress progress-md mr-2">
