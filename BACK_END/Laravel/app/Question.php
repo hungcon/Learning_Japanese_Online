@@ -15,10 +15,6 @@ class Question extends Model
         'question','answer', 'word', 'image'
     ];
 
-    protected $hidden = [
-        'answer',
-    ];
-
     public $table = "question";
 
     public $timestamps = false;

@@ -5,13 +5,16 @@ import Answer from './Answer';
 import { connect } from 'react-redux';
 import Option from './Option';
 import ContentChoose from './ContentChoose';
+import {Redirect} from 'react-router-dom';
 
 class Question extends Component {
     constructor(props) {
         super(props);
         this.state = {
             id: 1,
-            displayButtonChoose: false
+            displayButtonChoose: false,
+            submitTestABCD: false,
+            submitTestFill: false,
         }
     }
 
@@ -127,12 +130,17 @@ class Question extends Component {
         if (type === "ABCD") {
             this.props.resetAnsweredQs();
             this.getAnswerData();
+            this.setState({
+                submitTestABCD: true
+            });
         } else {
             this.getFillString();
             console.log(this.props.arrChoosed);
+            this.setState({
+                submitTestFill: true
+            });
         }
         console.log("Hoan Thanh bai test ");
-        // return <Redirect to='/list/result' />
     }
 
 
@@ -144,7 +152,7 @@ class Question extends Component {
         var chooseString = "";
         for (let i = 0; i < size - 1; i++) {
             chooseString = chooseString.concat(contentBoxArr[i].innerText);
-            chooseString = chooseString.concat("-");
+            chooseString = chooseString.concat("+");
         }
         chooseString = chooseString.concat(contentBoxArr[size - 1].innerText);
         var id = this.state.id;
@@ -157,24 +165,21 @@ class Question extends Component {
     }
     componentDidUpdate(){
         if(this.props.testTimeFinish){
-            this.submitTest();
+            this.submitTest(this.props.type);
             this.props.handleSubmitTest()
         }
     }
 
     render() {
-        // var data;
+        if(this.state.submitTestABCD === true || this.state.submitTestFill === true ){
+            return  <Redirect to={'/result/' + this.props.lesson_id + '/' + this.props.type }  />;
+        }
+
+        var data =this. props.questions;
         const typeQuestion = this.props.type;
-        // if (typeQuestion === "ABCD") {
-        //     data = TestData;
-        // } else {
-        //     data = ChooseData;
-        // }
-        // console.log(this.props.questions)
-        // console.log(data);
         return (
             <div>
-                {Object.values(this.props.questions).map((value, key) => {
+                {Object.values(data).map((value, key) => {
                     if (value.id === this.state.id) {
                         if (typeQuestion === "ABCD") {
                             return (
@@ -266,7 +271,8 @@ const mapStateToProps = (state, ownProps) => {
         previousLocation: state.currentLocationQs,
         displayNextButton: state.displayNextButton,
         arrChoosed: state.chooseString,
-        testTimeFinish : state.testTimeFinish
+        testTimeFinish : state.testTimeFinish,
+        notification: state.notification
     }
 }
 
@@ -295,6 +301,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         },
         handleSubmitTest: (str) => {
             dispatch({ type: 'HANDLE_SUBMIT_TEST' })
+        },
+        AlertOn: (data,classDispath) => {
+            dispatch({type:'SHOW_MESSAGE', message: data, class: classDispath})
         }
     }
 }

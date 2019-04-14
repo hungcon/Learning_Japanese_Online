@@ -25,6 +25,9 @@ class Lesson extends Model
 
     public function JoinToQuestionABCD(){
         return $this->belongsToMany('\App\QuestionABCD','choose','id_lesson','id_questionabcd');
+    }
 
+    public function JoinToRule(){
+        return $this->belongsTo('App\Rule','rule_id','id');
     }
 }

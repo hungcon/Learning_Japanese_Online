@@ -6,6 +6,7 @@ import { Route } from "react-router-dom";
 import Register from '../Register';
 import ChooseLevel from '../ChooseLevel';
 import Test from '../Test';
+import Result from '../Result';
 
 class MyRoutes extends Component {
     render() {
@@ -17,6 +18,7 @@ class MyRoutes extends Component {
                <Route path="/register" exact component={Register} />
                <Route path="/level" exact component={ChooseLevel} />
                <Route path="/test/:lesson_id" exact component={Test} />
+               <Route path="/result/:lesson_id/:type" exact component={Result} />
             </div>
         );
     }

@@ -15,10 +15,6 @@ class QuestionABCD extends Model
         'remaji', 'image', 'audio', 'answer', 'A', 'B', 'C', 'D',
     ];
 
-    protected $hidden = [
-        'answer',
-    ];
-
     public $table = "questionabcd";
 
     public $timestamps = false;

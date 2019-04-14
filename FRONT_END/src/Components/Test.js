@@ -13,6 +13,8 @@ class Test extends Component {
         this.state = {
             type: '',
             questions: '',
+            lesson_id: '',
+            rule: '',
         };
     }
 
@@ -42,6 +44,8 @@ class Test extends Component {
                 {
                     type: res.data.type,
                     questions: res.data.questions,
+                    lesson_id: res.data.lesson_id,
+                    rule: res.data.rule,
                 }
             );
           }
@@ -51,13 +55,14 @@ class Test extends Component {
     }
 
     render() {
+        console.log(this.state.type)
         return (
             <div>
                 <div className="container-fluid">
                 
                     {/* tiêu đề của bài */}
                     <div className="d-sm-flex align-items-center justify-content-between mb- pt-2">
-                        <h1 className="h3 mb-0 text-gray-800">Hiragana</h1>
+                        <h1 className="h3 mb-0 text-gray-800">{this.state.rule}</h1>
                         <h1 className="h3 mb-0 text-gray-800 float-right contentTime" > 
                             <Countdown className="timer" date={Date.now() + 20000*60} 
                                 onComplete={() => this.props.submitTest()}
@@ -67,7 +72,7 @@ class Test extends Component {
                     </div>
 
                     {/* <ReactCountdownClock seconds={3}  color="#000"  alpha={0.9}  size={300}  onComplete={() => this.props.submitTest()} /> */}
-                    <Question type={this.state.type} questions={this.state.questions} />
+                    <Question type={this.state.type} questions={this.state.questions} lesson_id={this.state.lesson_id} />
                 </div>
             </div>
         );

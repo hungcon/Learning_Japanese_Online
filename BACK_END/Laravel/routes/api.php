@@ -24,3 +24,5 @@ Route::post('user/create', 'Api\UserController@create')->middleware('checkapicre
 Route::put('user/{user_id}/lesson', 'Api\LessonController@getListByLevel');
 
 Route::put('lesson/{lesson_id}', 'Api\LessonController@getTypeOfLessonAndListQuestion');
+
+Route::post('lesson/{lesson_id}/submit', 'Api\LessonController@submitTest')->middleware('checkapisubmittest');
