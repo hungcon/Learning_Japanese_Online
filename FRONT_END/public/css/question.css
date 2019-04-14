@@ -53,34 +53,9 @@ hr{
 .q-button-answer{
 	font-size: 24px!important;
 }
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-/* timmer */
-.timer{
-	display:  block;
-	padding: 10px;
-	border-radius: 5px;
-}
-.timer-safe{
-	border: 1px solid #0069d9;
-	color: #0069d9;
-}
-.timer-danger{
-	border: 1px solid #dc3545;
-	color: #dc3545;
-}
-.active-danger {
-	border: 1px solid #dc3545;
-	color:white;
-	background-color:  #dc3545;
-=======
-=======
->>>>>>> 8efce13be0a0f7ed5d5b91578082d22860a8e477
 /* ------------ nhận diện có tiền tố r--------------*/
 .r-btn-character{
 	font-weight: bold;
-
 }
 .r-btn-character:hover{
 	color: #4e73df;
@@ -110,9 +85,6 @@ hr{
 .r-button{
 	display: flex; 
 	justify-content: center;
-<<<<<<< HEAD
->>>>>>> 0bdc4729b1f7b1d4d9e9387fbe66e1e0140eb7ba
-=======
 }
 /* timmer */
 .timer{
@@ -132,5 +104,5 @@ hr{
 	border: 1px solid #dc3545;
 	color:white;
 	background-color:  #dc3545;
->>>>>>> 8efce13be0a0f7ed5d5b91578082d22860a8e477
+
 }

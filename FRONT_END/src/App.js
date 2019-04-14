@@ -45,7 +45,7 @@ class App extends Component {
             {/* <Topbar/> */}
 
 
-            <Test />
+            <Recognize />
             <Footer/>
           </div>
         </div>
