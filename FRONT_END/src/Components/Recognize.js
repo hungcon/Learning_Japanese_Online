@@ -49,7 +49,8 @@ class Recognize extends Component {
     }
 
     recognize = () => {
-      var text = 'shi';
+      var imgCharacter = document.getElementById('image-charater');
+      var text = imgCharacter.getAttribute('data-name');
       const canvas = document.getElementById('canvasInAPerfectWorld');
       var recog = this;
       function success() {
@@ -95,7 +96,7 @@ class Recognize extends Component {
                         <h4 className="text-center">
                           Sample
                         </h4>
-                        <img src="img/hiragana/Japanese_Hiragana_kyokashotai_A.png" className="img-fluid" alt="" id="image-charater"/>
+                        <img src="img/hiragana/Japanese_Hiragana_kyokashotai_A.png" data-name="a" className="img-fluid" alt="" id="image-charater"/>
                       </div>
                     </div>
                     <div className="col-6">
