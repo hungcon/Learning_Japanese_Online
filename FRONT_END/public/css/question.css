@@ -53,11 +53,9 @@ hr{
 .q-button-answer{
 	font-size: 24px!important;
 }
-
 /* ------------ nhận diện có tiền tố r--------------*/
 .r-btn-character{
 	font-weight: bold;
-
 }
 .r-btn-character:hover{
 	color: #4e73df;
@@ -106,4 +104,5 @@ hr{
 	border: 1px solid #dc3545;
 	color:white;
 	background-color:  #dc3545;
+
 }

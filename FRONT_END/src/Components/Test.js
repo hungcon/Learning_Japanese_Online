@@ -73,6 +73,7 @@ class Test extends Component {
 
                     {/* <ReactCountdownClock seconds={3}  color="#000"  alpha={0.9}  size={300}  onComplete={() => this.props.submitTest()} /> */}
                     <Question type={this.state.type} questions={this.state.questions} lesson_id={this.state.lesson_id} />
+
                 </div>
             </div>
         );
