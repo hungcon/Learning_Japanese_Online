@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import OutputHistory from './OutputHistory';
-import PagingHistory from './PagingHistory';
+// import PagingHistory from './PagingHistory';
 import Navbar from './Navbar';
 import Topbar from './Topbar';
 import Footer from './Footer';
@@ -34,8 +34,7 @@ class History extends Component {
                                             <div className="table-responsive">
                                                 <div id="dataTable_wrapper" className="dataTables_wrapper dt-bootstrap4">
                                                     <OutputHistory />
-                                                    <OutputHistory />
-                                                    <PagingHistory />
+                                                    {/* <PagingHistory /> */}
                                                 </div>
                                             </div>
                                         </div>

@@ -1,4 +1,6 @@
 import React from 'react';
+import {NavLink} from 'react-router-dom';
+import { connect } from 'react-redux';
 class Navbar extends React.Component {
     constructor(props) {
         super(props);
@@ -15,7 +17,6 @@ class Navbar extends React.Component {
                     <div className="sidebar-brand-text mx-3">Learning Japan</div>
                 </a>
                 <hr className="sidebar-divider my-0" />
-
                 <li className="nav-item active">
 
                     <hr className="sidebar-divider" />
@@ -94,12 +95,18 @@ class Navbar extends React.Component {
                     </a>
                 </li>
 
+                {/* <li className="nav-item">
+                    <NavLink  activeClassName="nav-link" to="/list/history">
+                        <i className="fas fa-fw fa-chart-area" />
+                        <span>History</span>
+                    </NavLink>
+                </li> */}
 
                 <hr className="sidebar-divider d-none d-md-block" />
-
                 <div className="text-center d-none d-md-inline">
                     <button className="rounded-circle border-0" id="sidebarToggle" />
                 </div>
+
             </ul>
 
 
@@ -108,5 +115,18 @@ class Navbar extends React.Component {
 }
 
 Navbar.propTypes = {};
+const mapStateToProps = (state, ownProps) => {
+    return {
+        resultHistory: state.resultHistory,
+    }
+}
 
-export default Navbar;
+const mapDispatchToProps = (dispatch, ownProps) => {
+    return {
+        getResultHistory: (historys) => {
+            dispatch({ type: 'GET_RESULT_HISTORY' , resultHistory : historys})
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Navbar);

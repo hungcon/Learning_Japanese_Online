@@ -127,6 +127,7 @@ class Question extends Component {
         if (type === "ABCD") {
             this.props.resetAnsweredQs();
             this.getAnswerData();
+            console.log(this.props.userAnswer);
         } else {
             this.getFillString();
         }

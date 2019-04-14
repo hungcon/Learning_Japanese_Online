@@ -56,16 +56,16 @@ const allReducer = (state = allReducerInitialState, action) => {
         case 'STORE_CHOOSE_STRING':
             return {...state, chooseString:[...state.chooseString, action.chooseStr]};
         case 'HANDLE_SUBMIT_TEST':
-            return {...state, testTimeFinish: !state.testTimeFinish};
+            return {...state, testTimeFinish: !state.testTimeFinish};      
         default:
             return state;
     }
 }
 
 const store = redux.createStore(allReducer);
-// store.subscribe(()=>{
-//     console.log(JSON.stringify(store.getState()));
-// });
+store.subscribe(()=>{
+    console.log(JSON.stringify(store.getState()));
+});
 
 
 export default store;

@@ -24,7 +24,6 @@ class UserController extends Controller
         $lastName = $request->lastname;
         $email = $request->email;
         $password = $request->password;
-
         $checkEmail = \App\User::where('email',$email)->first();
         if($checkEmail != null){
             return response()->json(["error" => "Email has been used by someone"], 200);

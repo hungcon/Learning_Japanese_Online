@@ -16,7 +16,6 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-
 Route::post('login', 'Api\UserController@login')->middleware('checkapilogin');
-
 Route::post('user/create', 'Api\UserController@create')->middleware('checkapicreateaccount');
+Route::post('history', 'Api\HistoryController@getHistorysTest');

@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "questionImagePath" : "./img/Japanese_hira_A.png",
+        "questionImagePath" : "./img/hiragana/Japanese_Hiragana_kyokashotai_A.png",
         "questionContent": "Cách phát âm của từ là ??? ",
         "answerA":"wa",
         "answerB":"ra",
@@ -10,7 +10,7 @@
     },
     {
         "id": 2,
-        "questionImagePath" : "./img/image1.png",
+        "questionImagePath" : "./img/hiragana/Japanese_Hiragana_kyokashotai_HA.png",
         "questionContent": "Cách phát âm của từ là ???",
         "answerA":"mi",
         "answerB":"pi",
@@ -19,7 +19,7 @@
     },
     {
         "id": 3,
-        "questionImagePath" : "./img/image2.png",
+        "questionImagePath" : "./img/hiragana/Japanese_Hiragana_kyokashotai_RO.png",
         "questionContent": "Cách phát âm của từ là ???",
         "answerA":"me",
         "answerB":"be",
@@ -28,7 +28,7 @@
     },
     {
         "id": 4,
-        "questionImagePath" : "./img/image3.png",
+        "questionImagePath" : "./img/hiragana/Japanese_Hiragana_kyokashotai_RO.png",
         "questionContent": "Cách phát âm của từ là ???",
         "answerA":"ho",
         "answerB":"no",

@@ -10,14 +10,14 @@ import React, { Component } from 'react';
 // import Lession from './Components/Lession';
 
 import Navbar from './Components/Navbar';
-// import Topbar from './Components/Topbar';
+import Topbar from './Components/Topbar';
 import Question from './Components/Question';
 import Test from './Components/Test';
 import Footer from './Components/Footer';
 
-// import AlertInformation from './Components/AlertInformation';
-// import { BrowserRouter as Router } from "react-router-dom";
-// import MyRoutes from './Components/Routes/MyRoutes';
+import AlertInformation from './Components/AlertInformation';
+import { BrowserRouter as Router } from "react-router-dom";
+import MyRoutes from './Components/Routes/MyRoutes';
 
 class App extends Component {
 
@@ -35,7 +35,7 @@ class App extends Component {
         <Navbar></Navbar>
         <div id="content-wrapper" className="d-flex flex-column">
           <div id="content">
-            {/* <Topbar/> */}
+            <Topbar/>
             {/* {
                 ListChooseData.map((value,key) =>{
                     <QuestionChoose
@@ -50,15 +50,14 @@ class App extends Component {
             {/* <Question 
               type="ABCD"
             /> */}
-            {/* <Question 
+            <Question 
               type="ABCD"
-            /> */}
-            <Test />
+            />
+            {/* <Test /> */}
             <Footer/>
           </div>
         </div>
       </div>
-
     );
   }
 }
