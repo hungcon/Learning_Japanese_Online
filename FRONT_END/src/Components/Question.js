@@ -156,7 +156,7 @@ class Question extends Component {
     }
     componentDidUpdate(){
         if(this.props.testTimeFinish){
-            this.submitTest();
+            this.submitTest(this.props.type);
             this.props.handleSubmitTest()
         }
     }

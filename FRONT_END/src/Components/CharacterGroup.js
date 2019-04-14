@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
-import Hiragana from '../TestData/Hiragana.json';
 class CharacterGroup extends Component {
-    abc = () => {
+    changeImg = (event) => {
+        //Thay đổi ảnh chữ
         var img = document.getElementById('image-charater');
-        console.log(img);
+        var src = event.currentTarget.getAttribute('data-src');
+        var name = event.currentTarget.getAttribute('data-name');
+        img.src = src;
+        //Gán tên chữ cho ảnh để nhận diện
+        var imgCharacter = document.getElementById('image-charater');
+        imgCharacter.setAttribute('data-name', name);
     }
     render() {
-        console.log(Object.values(this.props.character))
+        
         return (
         
             <div className="btn-group">
@@ -18,7 +23,7 @@ class CharacterGroup extends Component {
                 <div className="dropdown-menu">
                {
                    Object.values(this.props.character).map((value, key) => {
-                       return <a className="dropdown-item r-btn-character" href="#" onClick = { () => this.abc()}> {value.item1}</a>
+                       return <li className="dropdown-item r-btn-character" data-src={value.images} data-name={value.name}  onClick = { (event) => this.changeImg(event)} key={key}> {value.item} </li>
                    })
                }
                       

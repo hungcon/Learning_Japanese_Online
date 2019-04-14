@@ -36,7 +36,7 @@ class Test extends Component {
                     </div>
 
                     {/* <ReactCountdownClock seconds={3}  color="#000"  alpha={0.9}  size={300}  onComplete={() => this.props.submitTest()} /> */}
-                    <Question type='Fill'/>
+                    <Question type='ABCD'/>
                 </div>
             </div>
         );
