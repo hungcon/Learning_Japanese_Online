@@ -19,6 +19,7 @@ import List from './Components/List';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
 import Recognize from './Components/Recognize';
+import Test from './Components/Test';
 
 // import AlertInformation from './Components/AlertInformation';
 // import { BrowserRouter as Router } from "react-router-dom";
