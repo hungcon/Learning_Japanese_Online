@@ -1,24 +1,7 @@
 import React, { Component } from 'react';
-// import RegAndChoose from './Components/RegAndChoose';
-// import Level from './Components/Level';
-// import List from './Components/List';
-// import Lession from './Components/Lession';
-
-// import RegAndChoose from './Components/RegAndChoose';
-
-import Level from './Components/Level';
-// import List from './Components/List';
-
-// import Level from './Components/Level';
-import List from './Components/List';
-
-// import Lession from './Components/Lession';
-
 import Navbar from './Components/Navbar';
-// import Topbar from './Components/Topbar';
-import Question from './Components/Question';
-import Test from './Components/Test';
 import Footer from './Components/Footer';
+import Recognize from './Components/Recognize';
 
 import AlertInformation from './Components/AlertInformation';
 import { BrowserRouter as Router } from "react-router-dom";

@@ -11,7 +11,7 @@ class ChooseTableSeeder extends Seeder
      */
     public function run()
     {
-        $questionabcds= \App\QuestionABC::orderBy('id','asc')->paginate(10);
+        $questionabcds= \App\QuestionABCD::orderBy('id','asc')->paginate(10);
         foreach ($questionabcds as $questionabcd) {
             Choose::create([
                 'id_lesson' => 1,

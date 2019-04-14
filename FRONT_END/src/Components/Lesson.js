@@ -18,7 +18,7 @@ class ComponentName extends React.Component {
                             <div className="row no-gutters text-left">
                                 <div className="col mr-2">
                                     <div className="h5 font-weight-bold text-dark text-uppercase mb-1 lesson--title">
-                                        <NavLink to='/test/1' className="lesson--details">
+                                        <NavLink to={'/test/' + this.props.lesson} className="lesson--details">
                                             Lesson : {this.props.title}
                                         </NavLink>
                                     </div>

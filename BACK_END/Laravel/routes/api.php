@@ -22,3 +22,5 @@ Route::post('login', 'Api\UserController@login')->middleware('checkapilogin');
 Route::post('user/create', 'Api\UserController@create')->middleware('checkapicreateaccount');
 
 Route::put('user/{user_id}/lesson', 'Api\LessonController@getListByLevel');
+
+Route::put('lesson/{lesson_id}', 'Api\LessonController@getTypeOfLessonAndListQuestion');

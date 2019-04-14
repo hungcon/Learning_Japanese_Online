@@ -92,6 +92,46 @@ class LessonController extends Controller
             default:
                 return response()->json(["error" => "Something was wrong"],200);
         }
-
+    }
+    public function getTypeOfLessonAndListQuestion(Request $request){
+        $lesson_id = $request->lesson_id;
+        try{
+            $questionsFill = \App\Lesson::find($lesson_id)->JoinToQuestion->toArray();
+            if(isset($questionsFill) && !empty($questionsFill)){
+                $values = [];
+                foreach ($questionsFill as $question){
+                    $data = [
+                        'id' => $question['id'],
+                        'questionContent' => $question['question'],
+                        'option' => $question['word'],
+                        'questionImagePath' => $question['image']
+                    ];
+                    $values[] = $data;
+                }
+                return response()->json(["type" => "Fill" ,"questions" => $values],200);
+            }else{
+                $questionsABCD = \App\Lesson::find($lesson_id)->JoinToQuestionABCD->toArray();
+                if(isset($questionsABCD) && !empty($questionsABCD)){
+                    $values = [];
+                    foreach ($questionsABCD as $question){
+                        $data = [
+                            'id' => $question['id'],
+                            'questionImagePath' => $question['image'],
+                            'questionContent' => $question['question'],
+                            'answerA' => $question['A'],
+                            'answerB' => $question['B'],
+                            'answerC' => $question['C'],
+                            'answerD' => $question['D'],
+                        ];
+                        $values[] = $data;
+                    }
+                    return response()->json(["type" => "ABCD" ,"questions" => $values],200);
+                }else{
+                    return response()->json(["error" => 'This lesson dont have questions'],200);
+                }
+            }
+        }catch (\Exception $exception){
+            return response()->json(["error" => $exception->getMessage()],200);
+        }
     }
 }

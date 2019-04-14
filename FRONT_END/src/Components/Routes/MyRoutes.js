@@ -16,7 +16,7 @@ class MyRoutes extends Component {
                <Route path="/list/:level" exact component={List} />
                <Route path="/register" exact component={Register} />
                <Route path="/level" exact component={ChooseLevel} />
-               <Route path="/test/:lesson" exact component={Test} />
+               <Route path="/test/:lesson_id" exact component={Test} />
             </div>
         );
     }

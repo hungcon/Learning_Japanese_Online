@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Answer from './Answer';
-import TestData from '../TestData/Question.json';
-import ChooseData from '../TestData/Choose.json';
+// import TestData from '../TestData/Question.json';
+// import ChooseData from '../TestData/Choose.json';
 import { connect } from 'react-redux';
 import Option from './Option';
 import ContentChoose from './ContentChoose';
@@ -129,6 +129,7 @@ class Question extends Component {
             this.getAnswerData();
         } else {
             this.getFillString();
+            console.log(this.props.arrChoosed);
         }
         console.log("Hoan Thanh bai test ");
         // return <Redirect to='/list/result' />
@@ -162,17 +163,18 @@ class Question extends Component {
     }
 
     render() {
-        var data;
+        // var data;
         const typeQuestion = this.props.type;
-        if (typeQuestion === "ABCD") {
-            data = TestData;
-        } else {
-            data = ChooseData;
-        }
-
+        // if (typeQuestion === "ABCD") {
+        //     data = TestData;
+        // } else {
+        //     data = ChooseData;
+        // }
+        // console.log(this.props.questions)
+        // console.log(data);
         return (
             <div>
-                {data.map((value, key) => {
+                {Object.values(this.props.questions).map((value, key) => {
                     if (value.id === this.state.id) {
                         if (typeQuestion === "ABCD") {
                             return (
