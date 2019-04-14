@@ -9,7 +9,13 @@ class CharacterGroup extends Component {
         //Gán tên chữ cho ảnh để nhận diện
         var imgCharacter = document.getElementById('image-charater');
         imgCharacter.setAttribute('data-name', name);
+        this.clearCanvas();
     }
+    clearCanvas = () => {
+        const canvas = document.getElementById('canvasInAPerfectWorld');
+        const context = canvas.getContext('2d');
+        context.clearRect(0, 0, context.canvas.width, context.canvas.height); // Clears the canvas
+      }
     render() {
         
         return (
