@@ -11,6 +11,7 @@ class ChooseTableSeeder extends Seeder
      */
     public function run()
     {
+
         // $questionabcds = array();
         // for($i=10;$i<=40;($i+1)*10){
         //     $questionabcds[] = \App\QuestionABC::whereBetween('id', [$i-9, $i])->get();

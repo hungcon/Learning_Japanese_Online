@@ -34,15 +34,15 @@ class Navbar extends React.Component {
                         <div className="bg-white py-2 collapse-inner rounded">
                             <h6 className="collapse-header">Basic</h6>
                             <a className="collapse-item clearfix" href="buttons.html">
-                                <img src="img/nav-hiraganar.png" className="img-fluid nav-icon float-left mr-2" alt="hira" />
+                                <img src="/img/nav-hiraganar.png" className="img-fluid nav-icon float-left mr-2" alt="hira" />
                                 <span className="float-left d-inline-block">Hiragana</span>
                             </a>
                             <a className="collapse-item clearfix" href="cards.html">
-                                <img src="img/nav-kata.png" className="img-fluid nav-icon float-left mr-2" alt="hira" />
+                                <img src="/img/nav-kata.png" className="img-fluid nav-icon float-left mr-2" alt="hira" />
                                 <span className="float-left d-inline-block">Katakana</span>
                             </a>
                             <a className="collapse-item clearfix" href="cards.html">
-                                <img src="img/nav-kanji.jpg" className="img-fluid nav-icon float-left mr-2" alt="hira" />
+                                <img src="/img/nav-kanji.jpg" className="img-fluid nav-icon float-left mr-2" alt="hira" />
                                 <span className="float-left d-inline-block">Kanji</span>
                             </a>
                         </div>
@@ -58,11 +58,11 @@ class Navbar extends React.Component {
                         <div className="bg-white py-2 collapse-inner rounded">
                             <h6 className="collapse-header">JLPT</h6>
                             <a className="collapse-item clearfix" href="cards.html">
-                                <img src="img/nav-N5.png" className="img-fluid nav-icon float-left mr-2" alt="hira" />
+                                <img src="/img/nav-N5.png" className="img-fluid nav-icon float-left mr-2" alt="hira" />
                                 <span className="float-left d-inline-block">JLPT N5</span>
                             </a>
                             <a className="collapse-item clearfix" href="cards.html">
-                                <img src="img/N4.png" className="img-fluid nav-icon float-left mr-2" alt="hira" />
+                                <img src="/img/N4.png" className="img-fluid nav-icon float-left mr-2" alt="hira" />
                                 <span className="float-left d-inline-block">JLPT N4</span>
                             </a>
                         </div>
