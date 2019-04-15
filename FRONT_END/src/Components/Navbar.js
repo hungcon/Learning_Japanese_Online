@@ -95,21 +95,18 @@ class Navbar extends React.Component {
                     </a>
                 </li>
 
-                {/* <li className="nav-item">
-                    <NavLink  activeClassName="nav-link" to="/list/history">
+                <li className="nav-item">
+                    <NavLink  activeClassName="nav-link" to="/history" className="nav-link">
                         <i className="fas fa-fw fa-chart-area" />
                         <span>History</span>
                     </NavLink>
-                </li> */}
+                </li>
 
                 <hr className="sidebar-divider d-none d-md-block" />
                 <div className="text-center d-none d-md-inline">
                     <button className="rounded-circle border-0" id="sidebarToggle" />
                 </div>
-
             </ul>
-
-
         );
     }
 }
@@ -117,14 +114,14 @@ class Navbar extends React.Component {
 Navbar.propTypes = {};
 const mapStateToProps = (state, ownProps) => {
     return {
-        resultHistory: state.resultHistory,
+        namePage: state.namePage,
     }
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-        getResultHistory: (historys) => {
-            dispatch({ type: 'GET_RESULT_HISTORY' , resultHistory : historys})
+        updateNamePage: (namePage) => {
+            dispatch({ type: 'UPDATE_LOCATION_PAGE' , namePage : namePage})
         }
     }
 }

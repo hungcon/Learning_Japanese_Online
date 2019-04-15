@@ -18,7 +18,6 @@ import List from './Components/List';
 import Navbar from './Components/Navbar';
 import Topbar from './Components/Topbar';
 import Question from './Components/Question';
-import Test from './Components/Test';
 import Footer from './Components/Footer';
 import Recognize from './Components/Recognize';
 import Test from './Components/Test';

@@ -26,7 +26,7 @@ class ChooseTableSeeder extends Seeder
         //     }
         // }
 
-        $questionabcd1s = \App\QuestionABC::whereBetween('id', [1, 10])->get();
+        $questionabcd1s = \App\QuestionABCD::whereBetween('id', [1, 10])->get();
         foreach ($questionabcd1s as $questionabcd) {
             Choose::create([
                 'id_lesson' => 1,
@@ -34,7 +34,7 @@ class ChooseTableSeeder extends Seeder
             ]);
         }
 
-        $questionabcd2s = \App\QuestionABC::whereBetween('id', [11, 20])->get();
+        $questionabcd2s = \App\QuestionABCD::whereBetween('id', [11, 20])->get();
         foreach ($questionabcd2s as $questionabcd) {
             Choose::create([
                 'id_lesson' => 2,
@@ -42,7 +42,7 @@ class ChooseTableSeeder extends Seeder
             ]);
         }
 
-        $questionabcd3s = \App\QuestionABC::whereBetween('id', [21, 30])->get();
+        $questionabcd3s = \App\QuestionABCD::whereBetween('id', [21, 30])->get();
         foreach ($questionabcd3s as $questionabcd) {
             Choose::create([
                 'id_lesson' => 3,
@@ -50,7 +50,7 @@ class ChooseTableSeeder extends Seeder
             ]);
         }
 
-        $questionabcd4s = \App\QuestionABC::whereBetween('id', [31, 40])->get();
+        $questionabcd4s = \App\QuestionABCD::whereBetween('id', [31, 40])->get();
         foreach ($questionabcd4s as $questionabcd) {
             Choose::create([
                 'id_lesson' => 4,

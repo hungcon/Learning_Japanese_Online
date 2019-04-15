@@ -15,7 +15,7 @@ class MyRoutes extends Component {
             <div>
                <Route path="/" exact component={Home} />
                <Route path="/login" exact component={Login} />
-               <Route path="/list/history" exact component={History} />
+               <Route path="/history" exact component={History} />
                <Route path="/list/:level" exact component={List} />
                <Route path="/register" exact component={Register} />
                <Route path="/level" exact component={ChooseLevel} />

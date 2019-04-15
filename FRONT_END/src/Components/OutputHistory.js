@@ -21,6 +21,7 @@ class OutputHistory extends Component {
         .then(res => {
             if(res.data.error != null){
             }else{
+                console.log(JSON.parse(JSON.stringify(res.data.history)));
                 this.setState({
                     resultHistory :JSON.parse(JSON.stringify(res.data.history))
                 });
@@ -89,6 +90,15 @@ class OutputHistory extends Component {
         }
     }
 
+    displayNextPaging =()=>{
+        var countHistorys = this.state.resultHistory.length;
+        if(countHistorys <=2){
+            return  <li className="paginate_button page-item next disabled" id="dataTable_next"><a href="#4AE" aria-controls="dataTable" data-dt-idx={7} tabIndex={0} className="page-link"  onClick={(e) => this.handleNext(e)}>Next</a></li>
+        }else{
+            return  <li className="paginate_button page-item next" id="dataTable_next"><a href="#4AE" aria-controls="dataTable" data-dt-idx={7} tabIndex={0} className="page-link"  onClick={(e) => this.handleNext(e)}>Next</a></li>
+        }
+    }
+
     // Hàm xử lí khi nhấn vào các vị trí các trang 
     handlePageChange(e,pageNumber) {
         e.preventDefault();
@@ -103,7 +113,7 @@ class OutputHistory extends Component {
         var historys = this.state.resultHistory;
         var countHistorys = historys.length;
         return historys.map((value, key) => {
-            if(key<=(countHistorys/2)){
+            if(key<(countHistorys/2)){
                 if(key===0){
                     return (
                         <li className="paginate_button page-item page active"><a href="#4AE" aria-controls="dataTable" data-dt-idx={key+1} tabIndex={key} className="page-link" onClick={(e)=>{this.handlePageChange(e,key+1)}}>{key+1}</a></li>
@@ -126,8 +136,9 @@ class OutputHistory extends Component {
             if ((key >= locationStart)&&(key<= (locationStart + 1))){
                 return (
                     <tr role="row" className="odd">
-                        <td className="sorting_1">{value.id_lesson}</td>
-                        <td>{value.name}</td>
+                        <td className="sorting_1">{key+1}</td>
+                        <td>{value.nameRule}</td>
+                        <td>{value.nameLesson}</td>
                         <td>{value.date}</td>
                         <td>{value.mark}</td>
                     </tr>
@@ -145,9 +156,11 @@ class OutputHistory extends Component {
                         <table className="table table-bordered dataTable" id="dataTable" width="100%" cellSpacing={0} role="grid" aria-describedby="dataTable_info" style={{ width: '100%' }}>
                             <thead>
                                 <tr role="row">
-                                    <th className="sorting_asc" tabIndex={0} aria-controls="dataTable" rowSpan={1} colSpan={1} aria-sort="ascending" aria-label="Name: activate to sort column descending" style={{ width: '10%' }}>Lesson</th>
+                                    <th className="sorting_asc" tabIndex={0} aria-controls="dataTable" rowSpan={1} colSpan={1} aria-sort="ascending" aria-label="Name: activate to sort column descending" style={{ width: '10%' }}>STT</th>
+                                    <th className="sorting" tabIndex={0} aria-controls="dataTable" rowSpan={1} colSpan={1} aria-label="Position: activate to sort column ascending" style={{ width: '20%' }}>Level
+                                    </th>
                                     <th className="sorting" tabIndex={0} aria-controls="dataTable" rowSpan={1} colSpan={1} aria-label="Position: activate to sort column ascending" style={{ width: '60%' }}>Name of lesson
-                                                        </th>
+                                    </th>                  
                                     <th className="sorting" tabIndex={0} aria-controls="dataTable" rowSpan={1} colSpan={1} aria-label="Office: activate to sort column ascending" style={{ width: '15%' }}>Date finish</th>
                                     <th className="sorting" tabIndex={0} aria-controls="dataTable" rowSpan={1} colSpan={1} aria-label="Age: activate to sort column ascending" style={{ width: '15%' }}>Point</th>
                                 </tr>
@@ -171,8 +184,10 @@ class OutputHistory extends Component {
                             <ul className="pagination">
                                 <li className="paginate_button page-item previous disabled" id="dataTable_previous"><a href="#4AE" aria-controls="dataTable" data-dt-idx={0} tabIndex={0} className="page-link" onClick={(e) => this.handlePrevious(e)}>Previous</a>
                                 </li>
+                                {/** Hiện thị số lượng page */}
                                 {this.displayPaging()}
-                                <li className="paginate_button page-item next" id="dataTable_next"><a href="#4AE" aria-controls="dataTable" data-dt-idx={7} tabIndex={0} className="page-link"  onClick={(e) => this.handleNext(e)}>Next</a></li>
+                                {/** Hiện thị nút next */}
+                                {this.displayNextPaging()}
                             </ul>
                         </div>
                     </div>

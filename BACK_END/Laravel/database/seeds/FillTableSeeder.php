@@ -2,7 +2,6 @@
 
 use Illuminate\Database\Seeder;
 use App\Fill;
-
 class FillTableSeeder extends Seeder
 {
     /**
