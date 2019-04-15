@@ -135,7 +135,6 @@ class Question extends Component {
             });
         } else {
             this.getFillString();
-            console.log(this.props.arrChoosed);
             this.setState({
                 submitTestFill: true
             });

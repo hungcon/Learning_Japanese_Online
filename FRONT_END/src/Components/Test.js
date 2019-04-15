@@ -16,6 +16,7 @@ class Test extends Component {
             lesson_id: '',
             rule: '',
         };
+        this.props.ResetQuestionsAnswer();
     }
 
     onTikTok = (calcTimeDelta) =>{
@@ -55,7 +56,6 @@ class Test extends Component {
     }
 
     render() {
-        console.log(this.state.type)
         return (
             <div>
                 <div className="container-fluid">
@@ -99,6 +99,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 
         AlertOn: (data,classDispath) => {
             dispatch({type:'SHOW_MESSAGE', message: data, class: classDispath})
+        },
+        ResetQuestionsAnswer: () => {
+            dispatch({type:'RESET_ANSWER_QUESTION'})
         }
     }
 }
