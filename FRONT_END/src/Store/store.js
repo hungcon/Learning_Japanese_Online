@@ -56,7 +56,9 @@ const allReducer = (state = allReducerInitialState, action) => {
         case 'STORE_CHOOSE_STRING':
             return {...state, chooseString:[...state.chooseString, action.chooseStr]};
         case 'HANDLE_SUBMIT_TEST':
-            return {...state, testTimeFinish: !state.testTimeFinish};      
+            return {...state, testTimeFinish: !state.testTimeFinish};
+        case 'RESET_ANSWER_QUESTION':
+            return {...state, userAnswer: [], chooseString: [], answerData: ''};
         default:
             return state;
     }
