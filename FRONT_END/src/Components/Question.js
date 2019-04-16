@@ -174,12 +174,13 @@ class Question extends Component {
             return  <Redirect to={'/result/' + this.props.lesson_id + '/' + this.props.type }  />;
         }
 
-        var data =this. props.questions;
+        var data =this.props.questions;
         const typeQuestion = this.props.type;
+        console.log(this.state.id);
         return (
             <div>
                 {Object.values(data).map((value, key) => {
-                    if (value.id === this.state.id) {
+                    if (((value.id % 10) ? (value.id % 10) : 10)=== this.state.id) {
                         if (typeQuestion === "ABCD") {
                             return (
                                 <div className="row" key={key}>
@@ -188,7 +189,7 @@ class Question extends Component {
                                         <div className="card shadow">
                                             <div className="card-header">
                                                 <h6 className="m-0 font-weight-bold text-primary q-number">
-                                                    Question  {value.id}    ({value.id}/10)
+                                                    Question  {value.id % 10}    ({value.id % 10}/10)
                                             </h6>
                                                 <div className="result-btn q-result btn btn-success btn-circle btn-md q">
                                                     <i className="fas fa-check">
@@ -223,7 +224,7 @@ class Question extends Component {
                                         <div className="card shadow">
                                             <div className="card-header">
                                                 <h6 className="m-0 font-weight-bold text-primary q-number">
-                                                    Question {value.id}  ({value.id}/10)
+                                                    Question {value.id % 10}  ({value.id % 10}/10)
                                                             </h6>
                                                 <div className="result-btn q-result btn btn-success btn-circle btn-md q">
                                                     <i className="fas fa-check">

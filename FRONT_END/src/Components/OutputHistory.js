@@ -17,7 +17,7 @@ class OutputHistory extends Component {
         var idUser = {
             id : JSON.parse(user).id
         }
-        axios.post(`http://127.0.0.1:8000/api/history`, idUser )
+        axios.put(`http://127.0.0.1:8000/api/history`, idUser )
         .then(res => {
             if(res.data.error != null){
             }else{

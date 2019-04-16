@@ -27,4 +27,4 @@ Route::put('lesson/{lesson_id}', 'Api\LessonController@getTypeOfLessonAndListQue
 
 Route::post('lesson/{lesson_id}/submit', 'Api\LessonController@submitTest')->middleware('checkapisubmittest');
 
-Route::post('history', 'Api\HistoryController@getHistorysTest');
+Route::put('history', 'Api\HistoryController@getHistorysTest');

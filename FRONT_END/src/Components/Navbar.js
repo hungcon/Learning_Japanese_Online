@@ -33,10 +33,11 @@ class Navbar extends React.Component {
                     <div id="collapseTwo" className="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                         <div className="bg-white py-2 collapse-inner rounded">
                             <h6 className="collapse-header">Basic</h6>
-                            <a className="collapse-item clearfix" href="buttons.html">
+           
+                            <NavLink to={"/list/"+ "Hiragana"} className="collapse-item clearfix" >
                                 <img src="/img/nav-hiraganar.png" className="img-fluid nav-icon float-left mr-2" alt="hira" />
                                 <span className="float-left d-inline-block">Hiragana</span>
-                            </a>
+                            </NavLink>
                             <a className="collapse-item clearfix" href="cards.html">
                                 <img src="/img/nav-kata.png" className="img-fluid nav-icon float-left mr-2" alt="hira" />
                                 <span className="float-left d-inline-block">Katakana</span>
