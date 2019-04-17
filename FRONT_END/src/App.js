@@ -24,7 +24,7 @@ import Test from './Components/Test';
 // import AlertInformation from './Components/AlertInformation';
 // import { BrowserRouter as Router } from "react-router-dom";
 // import MyRoutes from './Components/Routes/MyRoutes';
-import Test from './Components/Test';
+
 
 class App extends Component {
 
