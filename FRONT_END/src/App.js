@@ -21,9 +21,11 @@ import Question from './Components/Question';
 import Footer from './Components/Footer';
 import Recognize from './Components/Recognize';
 import Test from './Components/Test';
+
 import AlertInformation from './Components/AlertInformation';
 import { BrowserRouter as Router } from "react-router-dom";
 import MyRoutes from './Components/Routes/MyRoutes';
+
 class App extends Component {
 
   render() {
