@@ -18,4 +18,8 @@ class Rule extends Model
     public $table = "rule";
 
     public $timestamps = false;
+
+    public function JoinToLesson(){
+        return $this->hasMany('App\Lesson','rule_id','id');
+    }
 }

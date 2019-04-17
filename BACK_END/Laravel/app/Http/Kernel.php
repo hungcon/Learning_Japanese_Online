@@ -64,6 +64,7 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'checkapilogin' => \App\Http\Middleware\CheckApiLogin::class,
         'checkapicreateaccount' => \App\Http\Middleware\CheckApiCreateAccount::class,
+        'checkapisubmittest' => \App\Http\Middleware\CheckApiSubmit::class,
     ];
 
     /**

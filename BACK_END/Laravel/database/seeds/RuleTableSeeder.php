@@ -15,6 +15,8 @@ class RuleTableSeeder extends Seeder
             ['name'=>'Hiragana'],
             ['name'=>'Katakana'],
             ['name'=>'Kanji'],
+            ['name'=>'N5'],
+            ['name'=>'N4'],
         ]);
     }
 }

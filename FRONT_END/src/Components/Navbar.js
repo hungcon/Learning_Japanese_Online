@@ -1,4 +1,6 @@
 import React from 'react';
+import {NavLink} from 'react-router-dom';
+import { connect } from 'react-redux';
 class Navbar extends React.Component {
     constructor(props) {
         super(props);
@@ -15,7 +17,6 @@ class Navbar extends React.Component {
                     <div className="sidebar-brand-text mx-3">Learning Japan</div>
                 </a>
                 <hr className="sidebar-divider my-0" />
-
                 <li className="nav-item active">
 
                     <hr className="sidebar-divider" />
@@ -32,16 +33,17 @@ class Navbar extends React.Component {
                     <div id="collapseTwo" className="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                         <div className="bg-white py-2 collapse-inner rounded">
                             <h6 className="collapse-header">Basic</h6>
-                            <a className="collapse-item clearfix" href="buttons.html">
-                                <img src="img/nav-hiraganar.png" className="img-fluid nav-icon float-left mr-2" alt="hira" />
+           
+                            <NavLink to={"/list/"+ "Hiragana"} className="collapse-item clearfix" >
+                                <img src="/img/nav-hiraganar.png" className="img-fluid nav-icon float-left mr-2" alt="hira" />
                                 <span className="float-left d-inline-block">Hiragana</span>
-                            </a>
+                            </NavLink>
                             <a className="collapse-item clearfix" href="cards.html">
-                                <img src="img/nav-kata.png" className="img-fluid nav-icon float-left mr-2" alt="hira" />
+                                <img src="/img/nav-kata.png" className="img-fluid nav-icon float-left mr-2" alt="hira" />
                                 <span className="float-left d-inline-block">Katakana</span>
                             </a>
                             <a className="collapse-item clearfix" href="cards.html">
-                                <img src="img/nav-kanji.jpg" className="img-fluid nav-icon float-left mr-2" alt="hira" />
+                                <img src="/img/nav-kanji.jpg" className="img-fluid nav-icon float-left mr-2" alt="hira" />
                                 <span className="float-left d-inline-block">Kanji</span>
                             </a>
                         </div>
@@ -57,11 +59,11 @@ class Navbar extends React.Component {
                         <div className="bg-white py-2 collapse-inner rounded">
                             <h6 className="collapse-header">JLPT</h6>
                             <a className="collapse-item clearfix" href="cards.html">
-                                <img src="img/nav-N5.png" className="img-fluid nav-icon float-left mr-2" alt="hira" />
+                                <img src="/img/nav-N5.png" className="img-fluid nav-icon float-left mr-2" alt="hira" />
                                 <span className="float-left d-inline-block">JLPT N5</span>
                             </a>
                             <a className="collapse-item clearfix" href="cards.html">
-                                <img src="img/N4.png" className="img-fluid nav-icon float-left mr-2" alt="hira" />
+                                <img src="/img/N4.png" className="img-fluid nav-icon float-left mr-2" alt="hira" />
                                 <span className="float-left d-inline-block">JLPT N4</span>
                             </a>
                         </div>
@@ -94,19 +96,35 @@ class Navbar extends React.Component {
                     </a>
                 </li>
 
+                <li className="nav-item">
+                    <NavLink  activeClassName="nav-link" to="/history" className="nav-link">
+                        <i className="fas fa-fw fa-chart-area" />
+                        <span>History</span>
+                    </NavLink>
+                </li>
 
                 <hr className="sidebar-divider d-none d-md-block" />
-
                 <div className="text-center d-none d-md-inline">
                     <button className="rounded-circle border-0" id="sidebarToggle" />
                 </div>
             </ul>
-
-
         );
     }
 }
 
 Navbar.propTypes = {};
+const mapStateToProps = (state, ownProps) => {
+    return {
+        namePage: state.namePage,
+    }
+}
 
-export default Navbar;
+const mapDispatchToProps = (dispatch, ownProps) => {
+    return {
+        updateNamePage: (namePage) => {
+            dispatch({ type: 'UPDATE_LOCATION_PAGE' , namePage : namePage})
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Navbar);

@@ -32,7 +32,6 @@ class Login extends React.Component {
         this.state = {
             email: '',
             password: '',
-            isCreateAccount: false,
         };
     }
 
@@ -76,8 +75,7 @@ class Login extends React.Component {
     }
 
     render() {
-        if(localStorage.getItem('user') !== null){ return <Redirect to='/list'  />;}
-        if(this.state.isCreateAccount === true){ return <Redirect to='/register'  />;}
+        if(localStorage.getItem('user') !== null){ return <Redirect to='/level'  />;}
         return (
             <div className="login--content body--login">
                 <div className="container">

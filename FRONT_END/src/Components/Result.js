@@ -2,7 +2,41 @@ import React, { Component } from 'react';
 import Navbar from './Navbar';
 import Topbar from './Topbar';
 import Footer from './Footer';
+import {connect} from 'react-redux'
+import axios from 'axios';
+import {NavLink} from 'react-router-dom';
+
 class Result extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            mark: '',
+            rule: '',
+        };
+    }
+
+    componentWillMount(){
+        var params = {
+            user_id: JSON.parse(localStorage.getItem('user')).id,
+            type: this.props.match.params.type,
+            data: this.props.userAnswer,
+        }
+        axios.post(`http://127.0.0.1:8000/api/lesson/`+ this.props.match.params.lesson_id +`/submit`, params)
+        .then(res => {
+            if(res.data.error != null){
+                this.props.AlertOn(res.data.error,'danger');
+            }else{
+                this.setState({
+                    mark: res.data.mark,
+                    rule: res.data.rule,
+                });
+            }
+        }).catch(function (error) {
+            alert(error + '. Something was wrong');
+        })  
+    }
+
     render() {
         return (
             <div id="wrapper">
@@ -14,7 +48,7 @@ class Result extends Component {
                         <div className="container-fluid">
                             {/* tiêu đề của bài */}
                             <div className="d-sm-flex align-items-center justify-content-between mb-4">
-                                <h1 className="h3 mb-0 text-gray-800">Hiragana</h1>
+                                <h1 className="h3 mb-0 text-gray-800">{this.state.rule}</h1>
                                 <a href="#4N" className="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i className="fas fa-download fa-sm text-white-50" /> download</a>
                             </div>
                             {/* Page Heading */}
@@ -36,16 +70,16 @@ class Result extends Component {
                                             <div className="text-center">
                                                 <img className="img-fluid px-3 px-sm-4 mb-2 q-image" style={{ width: '30em' }} src="https://static.careers360.mobi/media/article_images/2019/1/31/MAT-Result.jpg" alt="" />
                                             </div>
-                                            <p className="q-question mt-3">Your result is: 9/10</p>
+                                            <p className="q-question mt-3">Your result is: {this.state.mark}/10</p>
                                             <p>Do you want to test again?</p>
                                             {/* Note: cái này sẽ hiện ra sau khi người dùng trả lời */}
                                             <div className="q-continue mb-3 mr-2">
-                                                <a href="#4N" className="btn btn-danger  btn-lg float-left">
+                                                <NavLink to={'/test/' + this.props.match.params.lesson_id}  className="btn btn-danger  btn-lg float-left">
                                                     &lt; Try
-                                                </a>
-                                                <a href="#4N" className="btn btn-info  btn-lg float-right">
+                                                </NavLink>
+                                                <NavLink to={'/list/' + this.state.rule} className="btn btn-info  btn-lg float-right">
                                                     Continue &gt;
-                                                </a>
+                                                </NavLink>
                                             </div>
                                         </div>
                                     </div>
@@ -63,4 +97,19 @@ class Result extends Component {
         );
     }
 }
-export default Result;
+const mapStateToProps = (state, ownProps) => {
+    return {
+        userAnswer: state.userAnswer,
+        notification: state.notification,
+    }
+}
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+    return {
+        AlertOn: (data,classDispath) => {
+            dispatch({type:'SHOW_MESSAGE', message: data, class: classDispath})
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Result);

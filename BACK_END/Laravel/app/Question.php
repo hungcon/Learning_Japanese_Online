@@ -12,7 +12,7 @@ class Question extends Model
      * @var array
      */
     protected $fillable = [
-        'question','word', 'image'
+        'question','answer', 'word', 'image'
     ];
 
     public $table = "question";
