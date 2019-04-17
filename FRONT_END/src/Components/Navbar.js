@@ -83,10 +83,10 @@ class Navbar extends React.Component {
                     </a>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link" href="charts.html">
+                    <NavLink activeClassName="nav-link" to={"/video"} className="nav-link">
                         <i className="fab fa-youtube" />
                         <span>Video</span>
-                    </a>
+                    </NavLink>
                 </li>
 
                 <li className="nav-item">
@@ -97,7 +97,7 @@ class Navbar extends React.Component {
                 </li>
 
                 <li className="nav-item">
-                    <NavLink  activeClassName="nav-link" to="/history" className="nav-link">
+                    <NavLink  activeClassName="nav-link" to={"/history"} className="nav-link">
                         <i className="fas fa-fw fa-chart-area" />
                         <span>History</span>
                     </NavLink>
