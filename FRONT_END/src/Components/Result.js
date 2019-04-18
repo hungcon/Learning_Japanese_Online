@@ -17,11 +17,21 @@ class Result extends Component {
     }
 
     componentWillMount(){
-        var params = {
-            user_id: JSON.parse(localStorage.getItem('user')).id,
-            type: this.props.match.params.type,
-            data: this.props.userAnswer,
+        var params;
+        if(this.props.match.params.type === "ABCD"){
+            params = {
+                user_id: JSON.parse(localStorage.getItem('user')).id,
+                type: this.props.match.params.type,
+                data: this.props.userAnswer,
+            }
+        }else{
+            params = {
+                user_id: JSON.parse(localStorage.getItem('user')).id,
+                type: this.props.match.params.type,
+                data: this.props.arrChoosed,
+            }
         }
+
         axios.post(`http://127.0.0.1:8000/api/lesson/`+ this.props.match.params.lesson_id +`/submit`, params)
         .then(res => {
             if(res.data.error != null){
@@ -100,6 +110,7 @@ class Result extends Component {
 const mapStateToProps = (state, ownProps) => {
     return {
         userAnswer: state.userAnswer,
+        arrChoosed: state.chooseString,
         notification: state.notification,
     }
 }

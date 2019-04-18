@@ -159,9 +159,9 @@ class OutputHistory extends Component {
                                     <th className="sorting_asc" tabIndex={0} aria-controls="dataTable" rowSpan={1} colSpan={1} aria-sort="ascending" aria-label="Name: activate to sort column descending" style={{ width: '10%' }}>STT</th>
                                     <th className="sorting" tabIndex={0} aria-controls="dataTable" rowSpan={1} colSpan={1} aria-label="Position: activate to sort column ascending" style={{ width: '20%' }}>Level
                                     </th>
-                                    <th className="sorting" tabIndex={0} aria-controls="dataTable" rowSpan={1} colSpan={1} aria-label="Position: activate to sort column ascending" style={{ width: '60%' }}>Name of lesson
+                                    <th className="sorting" tabIndex={0} aria-controls="dataTable" rowSpan={1} colSpan={1} aria-label="Position: activate to sort column ascending" style={{ width: '30%' }}>Name of lesson
                                     </th>                  
-                                    <th className="sorting" tabIndex={0} aria-controls="dataTable" rowSpan={1} colSpan={1} aria-label="Office: activate to sort column ascending" style={{ width: '15%' }}>Date finish</th>
+                                    <th className="sorting" tabIndex={0} aria-controls="dataTable" rowSpan={1} colSpan={1} aria-label="Office: activate to sort column ascending" style={{ width: '45%' }}>Date finish</th>
                                     <th className="sorting" tabIndex={0} aria-controls="dataTable" rowSpan={1} colSpan={1} aria-label="Age: activate to sort column ascending" style={{ width: '15%' }}>Point</th>
                                 </tr>
                             </thead>
@@ -177,7 +177,7 @@ class OutputHistory extends Component {
                 <div className="row">
                     <div className="col-sm-12 col-md-5">
                         <div className="dataTables_info" id="dataTable_info" role="status" aria-live="polite">Showing 1 to
-                     10 of 57 entries</div>
+                     10 </div>
                     </div>
                     <div className="col-sm-12 col-md-7">
                         <div className="dataTables_paginate paging_simple_numbers" id="dataTable_paginate">

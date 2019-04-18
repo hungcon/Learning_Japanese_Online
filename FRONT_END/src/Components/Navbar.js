@@ -10,7 +10,7 @@ class Navbar extends React.Component {
         return (
             <ul className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
                 
-                <a className="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <a className="sidebar-brand d-flex align-items-center justify-content-center" href="123" >
                     <div className="sidebar-brand-icon rotate-n-15">
                         <img src="/img/8.png" className="img-fluid" alt="logo" />
                     </div>
@@ -26,7 +26,7 @@ class Navbar extends React.Component {
                     </div>
 
                 </li><li className="nav-item">
-                    <a className="nav-link collapsed" href="google.com" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                    <a className="nav-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"  href="123">
                         <i className="fas fa-fw fa-cog" />
                         <span>Alphabet</span>
                     </a>
@@ -34,15 +34,15 @@ class Navbar extends React.Component {
                         <div className="bg-white py-2 collapse-inner rounded">
                             <h6 className="collapse-header">Basic</h6>
            
-                            <NavLink exact to={"/list/" + "Hiragana"} className="collapse-item clearfix">
+                            <NavLink to={"/list/Hiragana"} className="collapse-item clearfix">
                                 <img src="/img/nav-hiraganar.png" className="img-fluid nav-icon float-left mr-2" alt="hira" />
                                 <span className="float-left d-inline-block">Hiragana</span>
                             </NavLink>
-                            <a className="collapse-item clearfix" >
+                            <a className="collapse-item clearfix"  href="123">
                                 <img src="/img/nav-kata.png" className="img-fluid nav-icon float-left mr-2" alt="hira" />
                                 <span className="float-left d-inline-block">Katakana</span>
                             </a>
-                            <a className="collapse-item clearfix" >
+                            <a className="collapse-item clearfix" href="123">
                                 <img src="/img/nav-kanji.jpg" className="img-fluid nav-icon float-left mr-2" alt="hira" />
                                 <span className="float-left d-inline-block">Kanji</span>
                             </a>
@@ -51,18 +51,18 @@ class Navbar extends React.Component {
                 </li>
 
                 <li className="nav-item">
-                    <a className="nav-link collapsed" href="google.com" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+                    <a className="nav-link collapsed" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities"  href="123">
                         <i className="fas fa-fw fa-wrench" />
                         <span>Grammar</span>
                     </a>
                     <div id="collapseUtilities" className="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                         <div className="bg-white py-2 collapse-inner rounded">
                             <h6 className="collapse-header">JLPT</h6>
-                            <a className="collapse-item clearfix" href="cards.html">
+                            <a className="collapse-item clearfix"  href="123">
                                 <img src="/img/nav-N5.png" className="img-fluid nav-icon float-left mr-2" alt="hira" />
                                 <span className="float-left d-inline-block">JLPT N5</span>
                             </a>
-                            <a className="collapse-item clearfix" href="cards.html">
+                            <a className="collapse-item clearfix"  href="123">
                                 <img src="/img/N4.png" className="img-fluid nav-icon float-left mr-2" alt="hira" />
                                 <span className="float-left d-inline-block">JLPT N4</span>
                             </a>
@@ -90,7 +90,7 @@ class Navbar extends React.Component {
                 </li>
 
                 <li className="nav-item">
-                    <a className="nav-link" href="charts.html">
+                    <a className="nav-link" href="123">
                         <i className="fas fa-fw fa-chart-area" />
                         <span>Result</span>
                     </a>

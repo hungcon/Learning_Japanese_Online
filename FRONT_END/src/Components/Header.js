@@ -8,7 +8,7 @@ class Header extends Component {
         event.preventDefault();
         localStorage.clear();
         this.setState({isLogout: true});
-        this.props.AlertOn("Logout successful","success");
+        this.props.AlertOn("Logged out successfully","success");
     }
 
     render() {

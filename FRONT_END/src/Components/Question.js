@@ -29,6 +29,7 @@ class Question extends Component {
             this.getAnswerData();
         } else {
             this.getFillString();
+            this.props.hideNextButton();
         }
         this.setState({
             id: this.state.id + 1,
@@ -188,7 +189,7 @@ class Question extends Component {
                                         <div className="card shadow">
                                             <div className="card-header">
                                                 <h6 className="m-0 font-weight-bold text-primary q-number">
-                                                    Question  {value.id % 10}    ({value.id % 10}/10)
+                                                    Question  {(value.id % 10) ? (value.id % 10) : 10}    ({(value.id % 10) ? (value.id % 10) : 10}/10)
                                             </h6>
                                                 <div className="result-btn q-result btn btn-success btn-circle btn-md q">
                                                     <i className="fas fa-check">
@@ -223,7 +224,7 @@ class Question extends Component {
                                         <div className="card shadow">
                                             <div className="card-header">
                                                 <h6 className="m-0 font-weight-bold text-primary q-number">
-                                                    Question {value.id % 10}  ({value.id % 10}/10)
+                                                    Question  {(value.id % 10) ? (value.id % 10) : 10}    ({(value.id % 10) ? (value.id % 10) : 10}/10)
                                                             </h6>
                                                 <div className="result-btn q-result btn btn-success btn-circle btn-md q">
                                                     <i className="fas fa-check">
@@ -254,6 +255,7 @@ class Question extends Component {
                         }
 
                     }
+                    return "";
                 }
                 )}
             </div>

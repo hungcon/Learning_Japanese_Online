@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import Question from './Question';  
 import {connect} from 'react-redux';
-import Countdown, { zeroPad, calcTimeDelta, formatTimeDelta } from 'react-countdown-now';
+// import Countdown, { zeroPad, calcTimeDelta, formatTimeDelta } from 'react-countdown-now';
+import Countdown from 'react-countdown-now';
 import $ from 'jquery';
 import axios from 'axios';
 
-var ReactCountdownClock = require("react-countdown-clock");
+// var ReactCountdownClock = require("react-countdown-clock");
 class Test extends Component {
 
     constructor(props) {
