@@ -176,7 +176,6 @@ class Question extends Component {
 
         var data =this.props.questions;
         const typeQuestion = this.props.type;
-        console.log(this.state.id);
         return (
             <div>
                 {Object.values(data).map((value, key) => {

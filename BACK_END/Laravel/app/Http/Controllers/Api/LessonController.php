@@ -15,15 +15,29 @@ class LessonController extends Controller
             $user->level = 1;
             $user->save();
         }
-        
+
         switch ($level) {
             case 'beginer':
                 try{
                     $lessons = array();
                     $rule = \App\Rule::where('name', '=' ,'Hiragana')->first();
-                    $lesson = \App\Rule::find($rule->id)->JoinToLesson->toArray();
-                    if(isset($lesson) && !empty($lesson)){
-                        $lessons[] = ['name'=> $rule->name ,'data' => $lesson];
+                    $lists = \App\Rule::find($rule->id)->JoinToLesson->toArray();
+                    if(isset($lists) && !empty($lists)){
+                        $data = [];
+                        $count = 0;
+                        foreach ($lists as $value){
+                            $result = \App\Result::where('id_lesson',$value['id'])->where('id_user',$user_id)->first();
+                            if(isset($result->mark) && !empty($result->mark)){
+                                $value["mark"] = $result->mark;
+                                $count++;
+                                $data[] = $value;
+                            }else{
+                                $value["mark"] = 0;
+                                $data[] = $value;
+                            }
+                        }
+                        $process= $count/count($lists);
+                        $lessons[] = ['rule'=> $rule->name ,'data' => $data, 'process' => $process];
                     }
                     return response()->json(["lessons" => $lessons[0]],200);
                 }catch (\Exception $exception){
@@ -33,10 +47,24 @@ class LessonController extends Controller
                 try{
                     $lessons = array();
                     $rule = \App\Rule::where('name', '=' ,'N5')->first();
-                        $lesson = \App\Rule::find($rule->id)->JoinToLesson->toArray();
-                        if(isset($lesson) && !empty($lesson)){
-                            $lessons[] = ['name'=> $rule->name ,'data' => $lesson];
+                    $lists = \App\Rule::find($rule->id)->JoinToLesson->toArray();
+                    if(isset($lists) && !empty($lists)){
+                        $data = [];
+                        $count = 0;
+                        foreach ($lists as $value){
+                            $result = \App\Result::where('id_lesson',$value['id'])->where('id_user',$user_id)->first();
+                            if(isset($result->mark) && !empty($result->mark)){
+                                $value["mark"] = $result->mark;
+                                $count++;
+                                $data[] = $value;
+                            }else{
+                                $value["mark"] = 0;
+                                $data[] = $value;
+                            }
                         }
+                        $process= $count/count($lists);
+                        $lessons[] = ['rule'=> $rule->name ,'data' => $data, 'process' => $process];
+                    }
                     return response()->json(["lessons" => $lessons[0]],200);
                 }catch (\Exception $exception){
                     return response()->json(["error" => $exception->getMessage()],200);
@@ -45,9 +73,23 @@ class LessonController extends Controller
                 try{
                     $lessons = array();
                     $rule = \App\Rule::where('name', '=' ,'N4')->first();
-                    $lesson = \App\Rule::find($rule->id)->JoinToLesson->toArray();
-                    if(isset($lesson) && !empty($lesson)){
-                        $lessons[] = ['name'=> $rule->name ,'data' => $lesson];
+                    $lists = \App\Rule::find($rule->id)->JoinToLesson->toArray();
+                    if(isset($lists) && !empty($lists)){
+                        $data = [];
+                        $count = 0;
+                        foreach ($lists as $value){
+                            $result = \App\Result::where('id_lesson',$value['id'])->where('id_user',$user_id)->first();
+                            if(isset($result->mark) && !empty($result->mark)){
+                                $value["mark"] = $result->mark;
+                                $count++;
+                                $data[] = $value;
+                            }else{
+                                $value["mark"] = 0;
+                                $data[] = $value;
+                            }
+                        }
+                        $process= $count/count($lists);
+                        $lessons[] = ['rule'=> $rule->name ,'data' => $data, 'process' => $process];
                     }
                     return response()->json(["lessons" => $lessons[0]],200);
                 }catch (\Exception $exception){
@@ -57,9 +99,23 @@ class LessonController extends Controller
                 try{
                     $lessons = array();
                     $rule = \App\Rule::where('name', '=' ,'Hiragana')->first();
-                    $lesson = \App\Rule::find($rule->id)->JoinToLesson->toArray();
-                    if(isset($lesson) && !empty($lesson)){
-                        $lessons[] = ['name'=> $rule->name ,'data' => $lesson];
+                    $lists = \App\Rule::find($rule->id)->JoinToLesson->toArray();
+                    if(isset($lists) && !empty($lists)){
+                        $data = [];
+                        $count = 0;
+                        foreach ($lists as $value){
+                            $result = \App\Result::where('id_lesson',$value['id'])->where('id_user',$user_id)->first();
+                            if(isset($result->mark) && !empty($result->mark)){
+                                $value["mark"] = $result->mark;
+                                $count++;
+                                $data[] = $value;
+                            }else{
+                                $value["mark"] = 0;
+                                $data[] = $value;
+                            }
+                        }
+                        $process= $count/count($lists);
+                        $lessons[] = ['rule'=> $rule->name ,'data' => $data, 'process' => $process];
                     }
                     return response()->json(["lessons" => $lessons[0]],200);
                 }catch (\Exception $exception){
@@ -69,9 +125,23 @@ class LessonController extends Controller
                 try{
                     $lessons = array();
                     $rule = \App\Rule::where('name', '=' ,'Katakana')->first();
-                    $lesson = \App\Rule::find($rule->id)->JoinToLesson->toArray();
-                    if(isset($lesson) && !empty($lesson)){
-                        $lessons[] = ['name'=> $rule->name ,'data' => $lesson];
+                    $lists = \App\Rule::find($rule->id)->JoinToLesson->toArray();
+                    if(isset($lists) && !empty($lists)){
+                        $data = [];
+                        $count = 0;
+                        foreach ($lists as $value){
+                            $result = \App\Result::where('id_lesson',$value['id'])->where('id_user',$user_id)->first();
+                            if(isset($result->mark) && !empty($result->mark)){
+                                $value["mark"] = $result->mark;
+                                $count++;
+                                $data[] = $value;
+                            }else{
+                                $value["mark"] = 0;
+                                $data[] = $value;
+                            }
+                        }
+                        $process= $count/count($lists);
+                        $lessons[] = ['rule'=> $rule->name ,'data' => $data, 'process' => $process];
                     }
                     return response()->json(["lessons" => $lessons[0]],200);
                 }catch (\Exception $exception){
@@ -81,9 +151,23 @@ class LessonController extends Controller
                 try{
                     $lessons = array();
                     $rule = \App\Rule::where('name', '=' ,'Kanji')->first();
-                    $lesson = \App\Rule::find($rule->id)->JoinToLesson->toArray();
-                    if(isset($lesson) && !empty($lesson)){
-                        $lessons[] = ['name'=> $rule->name ,'data' => $lesson];
+                    $lists = \App\Rule::find($rule->id)->JoinToLesson->toArray();
+                    if(isset($lists) && !empty($lists)){
+                        $data = [];
+                        $count = 0;
+                        foreach ($lists as $value){
+                            $result = \App\Result::where('id_lesson',$value['id'])->where('id_user',$user_id)->first();
+                            if(isset($result->mark) && !empty($result->mark)){
+                                $value["mark"] = $result->mark;
+                                $count++;
+                                $data[] = $value;
+                            }else{
+                                $value["mark"] = 0;
+                                $data[] = $value;
+                            }
+                        }
+                        $process= $count/count($lists);
+                        $lessons[] = ['rule'=> $rule->name ,'data' => $data, 'process' => $process];
                     }
                     return response()->json(["lessons" => $lessons[0]],200);
                 }catch (\Exception $exception){

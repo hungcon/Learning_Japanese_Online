@@ -34,15 +34,15 @@ class Navbar extends React.Component {
                         <div className="bg-white py-2 collapse-inner rounded">
                             <h6 className="collapse-header">Basic</h6>
            
-                            <NavLink to={"/list/"+ "Hiragana"} className="collapse-item clearfix" >
+                            <NavLink exact to={"/list/" + "Hiragana"} className="collapse-item clearfix">
                                 <img src="/img/nav-hiraganar.png" className="img-fluid nav-icon float-left mr-2" alt="hira" />
                                 <span className="float-left d-inline-block">Hiragana</span>
                             </NavLink>
-                            <a className="collapse-item clearfix" href="cards.html">
+                            <a className="collapse-item clearfix" >
                                 <img src="/img/nav-kata.png" className="img-fluid nav-icon float-left mr-2" alt="hira" />
                                 <span className="float-left d-inline-block">Katakana</span>
                             </a>
-                            <a className="collapse-item clearfix" href="cards.html">
+                            <a className="collapse-item clearfix" >
                                 <img src="/img/nav-kanji.jpg" className="img-fluid nav-icon float-left mr-2" alt="hira" />
                                 <span className="float-left d-inline-block">Kanji</span>
                             </a>

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Login from '../Login';
 import List from '../List';
 import Home from '../Home';
-import { Route } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 import Register from '../Register';
 import ChooseLevel from '../ChooseLevel';
 import History from '../History';

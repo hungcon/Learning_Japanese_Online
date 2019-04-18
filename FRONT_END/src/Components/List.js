@@ -10,8 +10,9 @@ class ComponentName extends React.Component {
         super(props);
         this.state = {
             user: JSON.parse(localStorage.getItem('user')),
-            name: '',
-            data: '',
+            rule:'',
+            data:'',
+            process: '',
         };
     }
 
@@ -25,7 +26,8 @@ class ComponentName extends React.Component {
             this.setState(
                 {
                     data: res.data.lessons.data,
-                    name: res.data.lessons.name,
+                    rule: res.data.lessons.rule,
+                    process: res.data.lessons.process,
                 }
             );
           }
@@ -37,7 +39,7 @@ class ComponentName extends React.Component {
     loadLessons = function() {
         var data =this.state.data;
         var lessons = Object.values(data).map((value,key) => (
-            <Lesson key={key} title={value.name} lesson={value.id} />
+            <Lesson key={key} title={value.name} lesson={value.id} mark={value.mark} />
         ));
         return lessons;
     }
@@ -57,7 +59,7 @@ class ComponentName extends React.Component {
 
                                 </div>
                                 <div className="col-md-6">
-                                    <h1 className="h3 mb-0 text-gray-800">{this.state.name} - 3%</h1>
+                                    <h1 className="h3 mb-0 text-gray-800">{this.state.rule} - {this.state.process*100}%</h1>
                                 </div>
                                 <div className="col-md-3"></div>
                             </div>
