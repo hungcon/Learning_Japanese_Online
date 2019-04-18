@@ -17,6 +17,7 @@ class ComponentName extends React.Component {
     }
 
     componentWillMount() {
+        console.log( this.props.match.params.level);
         var levelParam = {level : this.props.match.params.level};
         axios.put(`http://127.0.0.1:8000/api/user/`+ this.state.user.id +`/lesson`, levelParam )
         .then(res => {
