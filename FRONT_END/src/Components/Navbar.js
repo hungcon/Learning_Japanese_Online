@@ -90,10 +90,10 @@ class Navbar extends React.Component {
                 </li>
 
                 <li className="nav-item">
-                    <a className="nav-link" href="charts.html">
+                    <NavLink activeClassName="nav-link" to={"/result"} className="nav-link">
                         <i className="fas fa-fw fa-chart-area" />
                         <span>Result</span>
-                    </a>
+                    </NavLink>
                 </li>
 
                 <li className="nav-item">

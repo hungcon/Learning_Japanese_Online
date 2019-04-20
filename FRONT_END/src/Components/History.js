@@ -20,7 +20,6 @@ class History extends Component {
                                 {/* tiêu đề của bài */}
                                 <div className="d-sm-flex align-items-center justify-content-between mb-4">
                                     <h1 className="h3 mb-0 text-gray-800">History</h1>
-                                    <a href="#4AE" className="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i className="fas fa-download fa-sm text-white-50" /> download</a>
                                 </div>
                                 {/* Page Heading */}
                                 {/* đây là 1 câu hỏi */}

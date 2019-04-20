@@ -10,6 +10,7 @@ import Test from '../Test';
 import Result from '../Result';
 import ListVideo from '../ListVideo';
 import DetailVideo from '../DetailVideo';
+import HighScore from '../HighScore';
 
 class MyRoutes extends Component {
     render() {
@@ -18,6 +19,7 @@ class MyRoutes extends Component {
                <Route path="/" exact component={Home} />
                <Route path="/login" exact component={Login} />
                <Route path="/history" exact component={History} />
+               <Route path="/result" exact component={HighScore} />
                <Route path="/video" exact component={ListVideo} />
                <Route path="/video/lesson/:number" exact component={DetailVideo} />
                <Route path="/list/:level" exact component={List} />
