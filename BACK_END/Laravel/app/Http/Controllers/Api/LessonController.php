@@ -27,7 +27,7 @@ class LessonController extends Controller
                         $count = 0;
                         foreach ($lists as $value){
                             $result = \App\Result::where('id_lesson',$value['id'])->where('id_user',$user_id)->first();
-                            if(isset($result->mark) && !empty($result->mark)){
+                            if(isset($result->mark)){
                                 $value["mark"] = $result->mark;
                                 $count++;
                                 $data[] = $value;
@@ -53,7 +53,7 @@ class LessonController extends Controller
                         $count = 0;
                         foreach ($lists as $value){
                             $result = \App\Result::where('id_lesson',$value['id'])->where('id_user',$user_id)->first();
-                            if(isset($result->mark) && !empty($result->mark)){
+                            if(isset($result->mark)){
                                 $value["mark"] = $result->mark;
                                 $count++;
                                 $data[] = $value;
@@ -79,7 +79,7 @@ class LessonController extends Controller
                         $count = 0;
                         foreach ($lists as $value){
                             $result = \App\Result::where('id_lesson',$value['id'])->where('id_user',$user_id)->first();
-                            if(isset($result->mark) && !empty($result->mark)){
+                            if(isset($result->mark)){
                                 $value["mark"] = $result->mark;
                                 $count++;
                                 $data[] = $value;
@@ -105,7 +105,7 @@ class LessonController extends Controller
                         $count = 0;
                         foreach ($lists as $value){
                             $result = \App\Result::where('id_lesson',$value['id'])->where('id_user',$user_id)->first();
-                            if(isset($result->mark) && !empty($result->mark)){
+                            if(isset($result->mark)){
                                 $value["mark"] = $result->mark;
                                 $count++;
                                 $data[] = $value;
@@ -131,7 +131,7 @@ class LessonController extends Controller
                         $count = 0;
                         foreach ($lists as $value){
                             $result = \App\Result::where('id_lesson',$value['id'])->where('id_user',$user_id)->first();
-                            if(isset($result->mark) && !empty($result->mark)){
+                            if(isset($result->mark)){
                                 $value["mark"] = $result->mark;
                                 $count++;
                                 $data[] = $value;
@@ -157,7 +157,7 @@ class LessonController extends Controller
                         $count = 0;
                         foreach ($lists as $value){
                             $result = \App\Result::where('id_lesson',$value['id'])->where('id_user',$user_id)->first();
-                            if(isset($result->mark) && !empty($result->mark)){
+                            if(isset($result->mark)){
                                 $value["mark"] = $result->mark;
                                 $count++;
                                 $data[] = $value;
@@ -303,7 +303,7 @@ class LessonController extends Controller
                     }
                     if(isset($questions) && !empty($questions)){
                         foreach ($data as $key => $value){
-                            if($value['answerData'] == $questions[$key]['answer']){
+                            if($value['choose'] == $questions[$key]['answer']){
                                 $mark++;
                             }
                         }
