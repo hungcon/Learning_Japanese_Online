@@ -25,7 +25,7 @@ class ComponentName extends React.Component {
                                     <div className="row no-gutters ">
                                         <div className="col">
                                             <div className="mb-0 text-gray-800 small">Process
-                                                <span className="float-right small mr-2">50%</span>
+                                                <span className="float-right small mr-2">{this.props.mark*10} %</span>
                                             </div>
                                         </div>
                                     </div>
@@ -35,7 +35,7 @@ class ComponentName extends React.Component {
                                         </div>
                                         <div className="col-4">
                                             <div className="progress progress-md mr-2">
-                                                <div className="progress-bar bg-info" role="progressbar" style={{ width: '50%' }} aria-valuenow={50} aria-valuemin={0} aria-valuemax={100} />
+                                                <div className="progress-bar bg-info" role="progressbar" style={{ width: this.props.mark*10 + '%' }} aria-valuenow={50} aria-valuemin={0} aria-valuemax={100} />
                                             </div>
                                         </div>
                                     </div>

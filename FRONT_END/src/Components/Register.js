@@ -57,7 +57,6 @@ class Register extends Component {
 
     handleSubmitCreateUser = event => {
         event.preventDefault();
-        console.log(this.state);
         var user = {
             firstname: this.state.firstname,
             lastname: this.state.lastname,
@@ -66,7 +65,6 @@ class Register extends Component {
             repeat: this.state.repeat
         };
 
-        console.log(user);
         axios.post(`http://127.0.0.1:8000/api/user/create`, user )
         .then(res => {
           if(res.data.error != null){
@@ -76,7 +74,6 @@ class Register extends Component {
               localStorage.setItem('user', JSON.stringify(res.data.user));
           }
         }).catch(function (error) {
-            console.log(error);
             alert(error);
         })
     }
