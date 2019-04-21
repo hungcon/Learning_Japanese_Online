@@ -1,5 +1,5 @@
 import React from 'react';
-import {NavLink, Redirect} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import { connect } from 'react-redux';
 class Navbar extends React.Component {
     constructor(props) {
@@ -17,19 +17,19 @@ class Navbar extends React.Component {
     }
     
     render() {
-        if(this.state.page !== ""){
-            var page = this.state.page;
-            return <Redirect to={'/list/' + page}  />;
+        if(this.state.page !== '' ){
+            var page = '/list/' + this.state.page;
+            window.location.href = window.location.origin + page;
         }
         return (
             <ul className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
                 
-                <a className="sidebar-brand d-flex align-items-center justify-content-center" href="123" >
+                <NavLink to={"/"} className="sidebar-brand d-flex align-items-center justify-content-center">
                     <div className="sidebar-brand-icon rotate-n-15">
                         <img src="/img/8.png" className="img-fluid" alt="logo" />
                     </div>
                     <div className="sidebar-brand-text mx-3">Learning Japan</div>
-                </a>
+                </NavLink>
                 <hr className="sidebar-divider my-0" />
                 <li className="nav-item active">
 

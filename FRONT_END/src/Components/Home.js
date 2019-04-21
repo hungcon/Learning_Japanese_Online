@@ -1,7 +1,30 @@
 import React, { Component } from 'react'
 import Header from './Header';
+import  { Redirect } from 'react-router-dom';
+
 export default class Home extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            user: JSON.parse(localStorage.getItem('user')),
+            isRedirect: false,
+        };
+    }
+
+    clickToRedirectPage = function(event) {
+        event.preventDefault();
+        this.setState({
+            isRedirect: true,
+        });
+    }
+
     render() {
+        if(this.state.isRedirect && this.state.user === null ){
+            return <Redirect to='/login'  />;
+        }
+        if(this.state.isRedirect && this.state.user !== null ){
+            return <Redirect to='/level'  />;
+        }
         return (
             <div>
                 <div>
@@ -19,9 +42,9 @@ export default class Home extends Component {
                                         </h5>
                                         <div className="banner--btn">
                                             <button type="button" className="btn ">
-                                                <a href="signup.html">
+                                                <a href="signup.html" onClick={(event) => this.clickToRedirectPage(event)}>
                                                     Start learning now
-                                        </a>
+                                                </a>
                                             </button>
                                         </div>
                                     </div>
@@ -38,52 +61,52 @@ export default class Home extends Component {
                             </div>
                             <div className="row">
                                 <ul className="flag--container">
-                                    <li className="flag--item">
+                                    <li className="flag--item" onClick={(event) => this.clickToRedirectPage(event)}>
                                         <img src="img/8.png" className="img-fluid" alt=" " />
                                         <br /> <span>
                                             Japanese </span>
                                     </li>
-                                    <li className="flag--item">
+                                    <li className="flag--item" onClick={(event) => this.clickToRedirectPage(event)}>
                                         <img src="img/1.png" className="img-fluid"  alt=" " />
                                         <br /> <span>
                                             French</span>
                                     </li>
-                                    <li className="flag--item">
+                                    <li className="flag--item" onClick={(event) => this.clickToRedirectPage(event)}>
                                         <img src="img/2.png" className="img-fluid"  alt=" " />
                                         <br /> <span>
                                             English</span>
                                     </li>
-                                    <li className="flag--item">
+                                    <li className="flag--item" onClick={(event) => this.clickToRedirectPage(event)}>
                                         <img src="img/3.png" className="img-fluid"  alt=" "/>
                                         <br /> <span>
                                             Spanish</span>
                                     </li>
-                                    <li className="flag--item">
+                                    <li className="flag--item" onClick={(event) => this.clickToRedirectPage(event)}>
                                         <img src="img/4.png" className="img-fluid"  alt=" " />
                                         <br /> <span>
                                             German</span>
                                     </li>
-                                    <li className="flag--item">
+                                    <li className="flag--item" onClick={(event) => this.clickToRedirectPage(event)}>
                                         <img src="img/5.png" className="img-fluid"  alt=" " />
                                         <br /> <span>
                                             Italian</span>
                                     </li>
-                                    <li className="flag--item">
+                                    <li className="flag--item" onClick={(event) => this.clickToRedirectPage(event)}>
                                         <img src="img/6.png" className="img-fluid"  alt=" " />
                                         <br /> <span>
                                             Portuguese</span>
                                     </li>
-                                    <li className="flag--item">
+                                    <li className="flag--item" onClick={(event) => this.clickToRedirectPage(event)}>
                                         <img src="img/7.png" className="img-fluid"  alt=" " />
                                         <br /> <span>
                                             Chinese</span>
                                     </li>
-                                    <li className="flag--item">
+                                    <li className="flag--item" onClick={(event) => this.clickToRedirectPage(event)}>
                                         <img src="img/9.png" className="img-fluid"  alt=" " />
                                         <br /> <span>
                                             Russian</span>
                                     </li>
-                                    <li className="flag--item">
+                                    <li className="flag--item" onClick={(event) => this.clickToRedirectPage(event)}>
                                         <img src="img/10.png" className="img-fluid"  alt=" " />
                                         <br /> <span>
                                             Viet Nam</span>
@@ -102,7 +125,7 @@ export default class Home extends Component {
                                 <div className="col-lg-6">
                                     <div className="infor--item">
                                         <div className="--item__title __title__top">
-                                            <a href className="--infor__link">
+                                            <a href="/" className="--infor__link">
                                                 <span>
                                                     <i className="fas fa-angle-right" />
                                                 </span>
@@ -115,7 +138,7 @@ export default class Home extends Component {
                                     </div>
                                     <div className="infor--item">
                                         <div className="--item__title __title__bot">
-                                            <a href className="--infor__link">
+                                            <a href="/" className="--infor__link">
                                                 <span>
                                                     <i className="fas fa-angle-right" />
                                                 </span>
@@ -251,38 +274,38 @@ export default class Home extends Component {
                                     <ul>
                                         <li><strong>Learn languages online</strong></li>
                                         <li>
-                                            <a href>Learn English online</a>
+                                            <a href="/" >Learn English online</a>
                                         </li>
-                                        <li><a href>Learn Spanish online</a></li>
-                                        <li><a href>Learn French online</a></li>
-                                        <li><a href>Learn German online</a></li>
-                                        <li><a href>Learn Italian online</a></li>
-                                        <li><a href>Learn Portuguese online</a></li>
-                                        <li><a href>Learn Japanese online</a></li>
-                                        <li><a href>Learn Russian online</a></li>
-                                        <li><a href>Learn VietNam online</a></li>
+                                        <li><a href="/" >Learn Spanish online</a></li>
+                                        <li><a href="/" >Learn French online</a></li>
+                                        <li><a href="/" >Learn German online</a></li>
+                                        <li><a href="/" >Learn Italian online</a></li>
+                                        <li><a href="/" >Learn Portuguese online</a></li>
+                                        <li><a href="/" >Learn Japanese online</a></li>
+                                        <li><a href="/" >Learn Russian online</a></li>
+                                        <li><a href="/" >Learn VietNam online</a></li>
                                     </ul>
                                 </div>
                                 <div className="col-4">
                                     <ul>
                                         <li><strong>Discover 4aesn</strong></li>
-                                        <li><a href>4aesn Premium membership</a></li>
-                                        <li><a href>4aesn mobile apps for iOS and Android</a></li>
-                                        <li><a href>Partnerships with busuu</a></li>
-                                        <li><a href>Retail industry</a></li>
-                                        <li><a href>Hospitality industry</a></li>
+                                        <li><a href="/" >4aesn Premium membership</a></li>
+                                        <li><a href="/" >4aesn mobile apps for iOS and Android</a></li>
+                                        <li><a href="/" >Partnerships with busuu</a></li>
+                                        <li><a href="/" >Retail industry</a></li>
+                                        <li><a href="/" >Hospitality industry</a></li>
                                     </ul>
                                 </div>
                                 <div className="col-4">
                                     <ul>
                                         <li><strong>About us</strong></li>
-                                        <li><a href>4 anh em siêu nhân</a></li>
-                                        <li><a href>Biện Thành Chung</a></li>
-                                        <li><a href>Phùng Văn Hưng</a></li>
-                                        <li><a href>Trần Viết Huy</a></li>
-                                        <li><a href>Phạm Hoàn</a></li>
-                                        <li><a href>Nhật Văn</a></li>
-                                        <li><a href>Khát vọng</a></li>
+                                        <li><a href="/" >4 anh em siêu nhân</a></li>
+                                        <li><a href="/" >Biện Thành Chung</a></li>
+                                        <li><a href="/" >Phùng Văn Hưng</a></li>
+                                        <li><a href="/" >Trần Viết Huy</a></li>
+                                        <li><a href="/" >Phạm Hoàn</a></li>
+                                        <li><a href="/" >Nhật Văn</a></li>
+                                        <li><a href="/" >Khát vọng</a></li>
                                     </ul>
                                 </div>
                             </div>
