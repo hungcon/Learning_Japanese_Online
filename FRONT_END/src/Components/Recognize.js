@@ -13,6 +13,7 @@ class Recognize extends Component {
       var top = $('#canvasInAPerfectWorld').offset().top;
       canvas.width = 312;
       canvas.height = 312;
+
       const context = canvas.getContext('2d');
      
       context.strokeStyle = '#ff4141';

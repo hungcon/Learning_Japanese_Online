@@ -129,7 +129,7 @@ ul, li{
 	background-color: white;
 	position: absolute;
 	top: -25px;
-	left: 390px;
+	left: 200px;
 	border-radius: 20px;
 	box-shadow: 0px 0px 17px -1px rgba(0,0,0,0.75);
 }
@@ -141,7 +141,7 @@ ul, li{
 }
 .flag--item{
 	flex-basis: 60px;
-	margin: 20px;
+	margin: 10px 20px;
 	cursor: pointer;
 	transition: 0.2s;
 	font-size: 10px;
@@ -153,7 +153,7 @@ ul, li{
 }
 .flag--item > span{
 	display: inline-block;
-	margin: 10px 0px;
+	margin: 5px 0px;
 }
 .flag--item img{
 	box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.75);
@@ -254,6 +254,51 @@ footer ul > li > strong{
 	margin: 15px 0px;
 	font-size: 20px;
 }
+.user--item{
+	font-size: 15px!important;
+}
 
 
 
+@media (min-width: 576px) {
+
+}
+
+
+@media (min-width: 768px) {
+
+}
+
+
+@media (min-width: 992px) {
+	
+}
+
+
+@media (min-width: 1200px) {
+	.flag > .container{
+		background-color: white;
+		position: absolute;
+		top: -25px;
+		left: 25px;
+		border-radius: 20px;
+		box-shadow: 0px 0px 17px -1px rgba(0,0,0,0.75);
+	}
+	.flag--item{
+		margin: 5px 20px;
+	}
+	.flag--item > span{
+		display: inline-block;
+		margin: 10px 0px;
+	}
+}
+@media (min-width: 1400px) {
+	.flag > .container{
+		background-color: white;
+		position: absolute;
+		top: -25px;
+		left: 180px;
+		border-radius: 20px;
+		box-shadow: 0px 0px 17px -1px rgba(0,0,0,0.75);
+	}
+}
