@@ -11,6 +11,7 @@ import Result from '../Result';
 import ListVideo from '../ListVideo';
 import DetailVideo from '../DetailVideo';
 import HighScore from '../HighScore';
+import Recognize from '../Recognize';
 
 class MyRoutes extends Component {
     render() {
@@ -27,6 +28,7 @@ class MyRoutes extends Component {
                <Route path="/level" exact component={ChooseLevel} />
                <Route path="/test/:lesson_id" exact component={Test} />
                <Route path="/result/:lesson_id/:type" exact component={Result} />
+               <Route path="/write" exact component={Recognize} />
             </div>
         );
     }
