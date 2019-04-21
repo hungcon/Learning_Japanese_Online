@@ -1,12 +1,26 @@
 import React from 'react';
-import {NavLink} from 'react-router-dom';
+import {NavLink, Redirect} from 'react-router-dom';
 import { connect } from 'react-redux';
 class Navbar extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {
+            page:'',
+        }
     }
+
+    RedirectList = function(event, param) {
+        event.preventDefault();
+        this.setState({
+            page: param,
+        });
+    }
+    
     render() {
+        if(this.state.page !== ""){
+            var page = this.state.page;
+            return <Redirect to={'/list/' + page}  />;
+        }
         return (
             <ul className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
                 
@@ -34,15 +48,15 @@ class Navbar extends React.Component {
                         <div className="bg-white py-2 collapse-inner rounded">
                             <h6 className="collapse-header">Basic</h6>
            
-                            <NavLink to={"/list/Hiragana"} className="collapse-item clearfix">
+                            <a href="123" onClick={(event) => this.RedirectList(event, 'Hiragana')} className="collapse-item clearfix">
                                 <img src="/img/nav-hiraganar.png" className="img-fluid nav-icon float-left mr-2" alt="hira" />
                                 <span className="float-left d-inline-block">Hiragana</span>
-                            </NavLink>
-                            <a className="collapse-item clearfix"  href="123">
+                            </a>
+                            <a href="123" onClick={(event) => this.RedirectList(event, 'Katakana')} className="collapse-item clearfix" >
                                 <img src="/img/nav-kata.png" className="img-fluid nav-icon float-left mr-2" alt="hira" />
                                 <span className="float-left d-inline-block">Katakana</span>
                             </a>
-                            <a className="collapse-item clearfix" href="123">
+                            <a href="123" onClick={(event) => this.RedirectList(event, 'Kanji')} className="collapse-item clearfix">
                                 <img src="/img/nav-kanji.jpg" className="img-fluid nav-icon float-left mr-2" alt="hira" />
                                 <span className="float-left d-inline-block">Kanji</span>
                             </a>
@@ -58,11 +72,11 @@ class Navbar extends React.Component {
                     <div id="collapseUtilities" className="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                         <div className="bg-white py-2 collapse-inner rounded">
                             <h6 className="collapse-header">JLPT</h6>
-                            <a className="collapse-item clearfix"  href="123">
+                            <a href="123" onClick={(event) => this.RedirectList(event, 'JLPTN5')} className="collapse-item clearfix">
                                 <img src="/img/nav-N5.png" className="img-fluid nav-icon float-left mr-2" alt="hira" />
                                 <span className="float-left d-inline-block">JLPT N5</span>
                             </a>
-                            <a className="collapse-item clearfix"  href="123">
+                            <a href="123" onClick={(event) => this.RedirectList(event, 'JLPTN4')} className="collapse-item clearfix">
                                 <img src="/img/N4.png" className="img-fluid nav-icon float-left mr-2" alt="hira" />
                                 <span className="float-left d-inline-block">JLPT N4</span>
                             </a>
@@ -77,10 +91,10 @@ class Navbar extends React.Component {
                 </div>
 
                 <li className="nav-item">
-                    <a className="nav-link" href="charts.html">
+                        <NavLink activeClassName="nav-link" to={"/write"} className="nav-link">
                         <i className="fas fa-pencil-alt" />
                         <span>Write</span>
-                    </a>
+                        </NavLink>
                 </li>
                 <li className="nav-item">
                     <NavLink activeClassName="nav-link" to={"/video"} className="nav-link">

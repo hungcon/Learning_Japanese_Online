@@ -11,8 +11,8 @@ class Recognize extends Component {
       const canvas = document.getElementById('canvasInAPerfectWorld');
       var left = $('#canvasInAPerfectWorld').offset().left;
       var top = $('#canvasInAPerfectWorld').offset().top;
-      canvas.width = 400;
-      canvas.height = 400;
+      canvas.width = 312;
+      canvas.height = 312;
       const context = canvas.getContext('2d');
      
       context.strokeStyle = '#ff4141';

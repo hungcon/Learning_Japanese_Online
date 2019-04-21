@@ -59,14 +59,8 @@ class Login extends React.Component {
                 localStorage.setItem('user', JSON.stringify(res.data.user));
             }
           }).catch(function (error) {
-            console.log(error);
             alert(error);
           })
-    }
-
-    handleRedirectCreateAccount = event => {
-        event.preventDefault();
-        this.setState({isCreateAccount : true});
     }
 
     onSubmit(e){
