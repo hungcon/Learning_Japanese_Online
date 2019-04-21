@@ -30,7 +30,7 @@ class QuestionTableSeeder extends Seeder
              
             ['question'=>'あそこ-高いビル-ありますねあれ-何ですか','answer'=>'に+が+は' ,'word'=>'に+が+は', 'image'=>'/img/q-image-choose.jpg'],
             ['question'=>'この会社-外国人-人ぐらい-います','answer'=>'に+は+が', 'word'=>'は+が+に', 'image'=>'/img/q-image-choose.jpg'],
-            ['question'=>'週間回りょうしん-でんわ-を-かけます','answer'=>'に+に', 'word'=>'に+に', 'image'=>'/img/q-image-choose.jpg'],
+            ['question'=>'週間回りょうしん-でんわ-をかけます','answer'=>'に+に', 'word'=>'に+に', 'image'=>'/img/q-image-choose.jpg'],
             ['question'=>'大阪-東京-しんかんせん-時間ぐらいかかります','answer'=>'から+まで+で', 'word'=>'まで+で+から', 'image'=>'/img/q-image-choose.jpg'],
             ['question'=>'さびしいです-ともだち-ほしいです','answer'=>'から+が', 'word'=>'から+が', 'image'=>'/img/q-image-choose.jpg'],
             ['question'=>'わたし-国-帰りたいです。そして両親-会いたいです','answer'=>'は+へ+に', 'word'=>'へ+に+は', 'image'=>'/img/q-image-choose.jpg'],
