@@ -25,7 +25,8 @@ class ChooseTableSeeder extends Seeder
         //         ]);
         //     }
         // }
-
+        
+        // Add bai cho beginer
         $questionabcd1s = \App\QuestionABCD::whereBetween('id', [1, 10])->get();
         foreach ($questionabcd1s as $questionabcd) {
             Choose::create([
@@ -57,6 +58,59 @@ class ChooseTableSeeder extends Seeder
                 'id_questionabcd' => $questionabcd->id
             ]);
         }
+
+        // Add bai cho Katakana 
+        $questionabcd5s = \App\QuestionABCD::whereBetween('id', [11, 20])->get();
+        foreach ($questionabcd5s as $questionabcd) {
+            Choose::create([
+                'id_lesson' => 10,
+                'id_questionabcd' => $questionabcd->id
+            ]);
+        }
+
+        $questionabcd6s = \App\QuestionABCD::whereBetween('id', [1, 10])->get();
+        foreach ($questionabcd6s as $questionabcd) {
+            Choose::create([
+                'id_lesson' => 12,
+                'id_questionabcd' => $questionabcd->id
+            ]);
+        }
+
+
+        // Add bai cho N5 
+        $questionabcd7s = \App\QuestionABCD::whereBetween('id', [21, 30])->get();
+        foreach ($questionabcd7s as $questionabcd) {
+            Choose::create([
+                'id_lesson' => 13,
+                'id_questionabcd' => $questionabcd->id
+            ]);
+        }
+
+        $questionabcd8s = \App\QuestionABCD::whereBetween('id', [31, 40])->get();
+        foreach ($questionabcd8s as $questionabcd) {
+            Choose::create([
+                'id_lesson' => 15,
+                'id_questionabcd' => $questionabcd->id
+            ]);
+        }
+
+
+        // Add bai cho N4
+        $questionabcd9s = \App\QuestionABCD::whereBetween('id', [21, 30])->get();
+        foreach ($questionabcd9s as $questionabcd) {
+            Choose::create([
+                'id_lesson' => 19,
+                'id_questionabcd' => $questionabcd->id
+            ]);
+        }
+
+        $questionabcd10s = \App\QuestionABCD::whereBetween('id', [31, 40])->get();
+        foreach ($questionabcd10s as $questionabcd) {
+            Choose::create([
+                'id_lesson' => 20,
+                'id_questionabcd' => $questionabcd->id
+            ]);
+        }  
         
     }
 }
