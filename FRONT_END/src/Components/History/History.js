@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import OutputHistory from './OutputHistory';
-// import PagingHistory from './PagingHistory';
-import Navbar from './Navbar';
-import Topbar from './Topbar';
-import Footer from './Footer';
+import OutputHistory from '../History/OutputHistory';
+import Navbar from '../Template/Navbar';
+import Topbar from '../Template/Topbar';
+import Footer from '../Template/Footer';
 
 class History extends Component {
     render() {
@@ -24,8 +23,8 @@ class History extends Component {
                                 {/* Page Heading */}
                                 {/* đây là 1 câu hỏi */}
                                 <div className="row">
-                                    <div className="col-2" />
-                                    <div className="card shadow mb-4 col-8">
+                                    <div className="col-1" />
+                                    <div className="card shadow mb-4 col-10">
                                         <div className="card-header">
                                             <h6 className="m-0 font-weight-bold text-primary">History learning</h6>
                                         </div>
@@ -38,7 +37,7 @@ class History extends Component {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="col-2" />
+                                    <div className="col-1" />
                                 </div>
                                 {/* Content Row */}
                             </div>

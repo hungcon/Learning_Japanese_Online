@@ -153,7 +153,7 @@ class OutputHistory extends Component {
             <>
                 <div className="row">
                     <div className="col-sm-12">
-                        <table className="table table-bordered dataTable" id="dataTable" width="100%" cellSpacing={0} role="grid" aria-describedby="dataTable_info" style={{ width: '100%' }}>
+                        <table className="table table-bordered  table-inverse  table-hover dataTable" id="dataTable" width="100%" cellSpacing={0} role="grid" aria-describedby="dataTable_info" style={{ width: '100%' }}>
                             <thead>
                                 <tr role="row">
                                     <th className="sorting_asc" tabIndex={0} aria-controls="dataTable" rowSpan={1} colSpan={1} aria-sort="ascending" aria-label="Name: activate to sort column descending" style={{ width: '10%' }}>STT</th>

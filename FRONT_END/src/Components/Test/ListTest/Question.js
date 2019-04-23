@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import Answer from './Answer';
-// import TestData from '../TestData/Question.json';
-// import ChooseData from '../TestData/Choose.json';
+import Answer from '../ChooseQuestion/Answer';
 import { connect } from 'react-redux';
-import Option from './Option';
-import ContentChoose from './ContentChoose';
+import Option from '../FillQuestion/Option';
+import ContentChoose from '../FillQuestion/ContentChoose';
 import {Redirect} from 'react-router-dom';
 
 class Question extends Component {

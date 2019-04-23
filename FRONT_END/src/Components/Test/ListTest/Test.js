@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import Question from './Question';  
+import Question from '../ListTest/Question';  
 import {connect} from 'react-redux';
-// import Countdown, { zeroPad, calcTimeDelta, formatTimeDelta } from 'react-countdown-now';
 import Countdown from 'react-countdown-now';
 import $ from 'jquery';
 import axios from 'axios';
 
-// var ReactCountdownClock = require("react-countdown-clock");
 class Test extends Component {
 
     constructor(props) {
@@ -71,8 +69,6 @@ class Test extends Component {
                             />
                         </h1>    
                     </div>
-
-                    {/* <ReactCountdownClock seconds={3}  color="#000"  alpha={0.9}  size={300}  onComplete={() => this.props.submitTest()} /> */}
                     <Question type={this.state.type} questions={this.state.questions} lesson_id={this.state.lesson_id} />
 
                 </div>

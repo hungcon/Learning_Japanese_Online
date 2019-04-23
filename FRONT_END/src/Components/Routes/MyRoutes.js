@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
-import Login from '../Login';
-import List from '../List';
-import Home from '../Home';
+import Login from '../Function/Login';
+import List from '../Test/ListTest/List';
+import Home from '../Template/Home';
 import { Route } from "react-router-dom";
-import Register from '../Register';
-import ChooseLevel from '../ChooseLevel';
-import History from '../History';
-import Test from '../Test';
-import Result from '../Result';
-import ListVideo from '../ListVideo';
-import DetailVideo from '../DetailVideo';
-import HighScore from '../HighScore';
-import Recognize from '../Recognize';
+import Register from '../Function/Register';
+import ChooseLevel from '../Function/ChooseLevel';
+import History from '../History/History';
+import Test from '../Test/ListTest/Test';
+import Result from '../Result/Result';
+import ListVideo from '../Video/ListVideo';
+import DetailVideo from '../Video/DetailVideo';
+import HighScore from '../Result/HighScore';
+import Recognize from '../Recognize/Recognize';
 
 class MyRoutes extends Component {
     render() {

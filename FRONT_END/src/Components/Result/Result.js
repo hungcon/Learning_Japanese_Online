@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Navbar from './Navbar';
-import Topbar from './Topbar';
-import Footer from './Footer';
+import Navbar from '../Template/Navbar';
+import Topbar from '../Template/Topbar';
+import Footer from '../Template/Footer';
 import {connect} from 'react-redux'
 import axios from 'axios';
 import {NavLink} from 'react-router-dom';
@@ -64,8 +64,8 @@ class Result extends Component {
                             {/* Page Heading */}
                             {/* đây là 1 câu hỏi */}
                             <div className="row">
-                                <div className="col-lg-3" />
-                                <div className="col-lg-6 mb-4">
+                                <div className="col-lg-2" />
+                                <div className="col-lg-8 mb-4">
                                     {/* Illustrations */}
                                     <div className="card shadow">
                                         <div className="card-header">
@@ -93,7 +93,7 @@ class Result extends Component {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="col-lg-3" />
+                                    <div className="col-lg-2" />
                                 </div>
                                 {/* Content Row */}
                             </div>

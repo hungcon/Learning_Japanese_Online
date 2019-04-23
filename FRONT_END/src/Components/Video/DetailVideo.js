@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Navbar from './Navbar';
-import Topbar from './Topbar';
-import Footer from './Footer';
-import VideoData from '../TestData/Video.json';
+import Navbar from '../Template/Navbar';
+import Topbar from '../Template/Topbar';
+import Footer from '../Template/Footer';
+import VideoData from '../../TestData/Video.json';
 class DetailVideo extends Component {
     render() {
         console.log(this.props.match.params.number);
