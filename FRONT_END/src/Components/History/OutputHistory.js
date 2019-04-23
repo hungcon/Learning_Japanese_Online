@@ -60,7 +60,7 @@ class OutputHistory extends Component {
         // Ẩn nút next
         var countHistorys = this.state.resultHistory.length;
         var btnNext = document.getElementsByClassName('paginate_button page-item next');
-        if((currentPage*2 === countHistorys) || ((currentPage*2-1) === countHistorys)){
+        if(currentPage*8 >= countHistorys){
             btnNext[0].classList.add('disabled');
         }else{
             btnNext[0].classList.remove('disabled');
@@ -92,7 +92,7 @@ class OutputHistory extends Component {
 
     displayNextPaging =()=>{
         var countHistorys = this.state.resultHistory.length;
-        if(countHistorys <=2){
+        if(countHistorys <=8){
             return  <li className="paginate_button page-item next disabled" id="dataTable_next"><a href="#4AE" aria-controls="dataTable" data-dt-idx={7} tabIndex={0} className="page-link"  onClick={(e) => this.handleNext(e)}>Next</a></li>
         }else{
             return  <li className="paginate_button page-item next" id="dataTable_next"><a href="#4AE" aria-controls="dataTable" data-dt-idx={7} tabIndex={0} className="page-link"  onClick={(e) => this.handleNext(e)}>Next</a></li>
@@ -113,7 +113,7 @@ class OutputHistory extends Component {
         var historys = this.state.resultHistory;
         var countHistorys = historys.length;
         return historys.map((value, key) => {
-            if(key<(countHistorys/2)){
+            if(key<(countHistorys/8)){
                 if(key===0){
                     return (
                         <li className="paginate_button page-item page active"><a href="#4AE" aria-controls="dataTable" data-dt-idx={key+1} tabIndex={key} className="page-link" onClick={(e)=>{this.handlePageChange(e,key+1)}}>{key+1}</a></li>
@@ -131,9 +131,9 @@ class OutputHistory extends Component {
     // Hàm hiện thị nội dung của kết quả lịch sử lấy về từ serve 
     getResultHistory = (pageNumber) => {
         var historys = this.state.resultHistory;
-        var locationStart = pageNumber * 2 - 2;
+        var locationStart = pageNumber * 8 - 8;
         return historys.map((value, key) => {
-            if ((key >= locationStart)&&(key<= (locationStart + 1))){
+            if ((key >= locationStart)&&(key<= (locationStart + 7))){
                 return (
                     <tr role="row" className="odd">
                         <td className="sorting_1">{key+1}</td>
@@ -177,7 +177,7 @@ class OutputHistory extends Component {
                 <div className="row">
                     <div className="col-sm-12 col-md-5">
                         <div className="dataTables_info" id="dataTable_info" role="status" aria-live="polite">Showing 1 to
-                     10 </div>
+                    5 </div>
                     </div>
                     <div className="col-sm-12 col-md-7">
                         <div className="dataTables_paginate paging_simple_numbers" id="dataTable_paginate">
