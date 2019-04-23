@@ -5,8 +5,9 @@ class Answer extends Component {
     // Hàm lấy ra câu trả lời của người test
     getAnswerResponse =()=>{
         var resAnswer = '';
+        var sttAnswerLesson = (this.props.answerId % 10) ? (this.props.answerId % 10) : 10;
         for(var i=0;i<this.props.userAnswer.length;i++){
-            if((i+1)===this.props.answerId){
+            if((i+1)===sttAnswerLesson){
                 resAnswer += this.props.userAnswer[i].answerData;
             }
         }
@@ -15,8 +16,8 @@ class Answer extends Component {
     
     componentDidMount =()=>{
         var previousLocationQS = this.props.previousLocation;
-        // console.log(this.props.answerId);
-        if((this.props.answerId) <= previousLocationQS){
+        var sttAnswerLesson = (this.props.answerId % 10) ? (this.props.answerId % 10) : 10;
+        if(sttAnswerLesson <= previousLocationQS){
             var resAnswer = this.getAnswerResponse();
             var temp = -1;
             switch (resAnswer) {

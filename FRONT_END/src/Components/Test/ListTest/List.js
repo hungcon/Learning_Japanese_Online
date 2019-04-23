@@ -4,6 +4,7 @@ import Lesson from '../ListTest/Lesson';
 import Navbar from '../../Template/Navbar';
 import axios from 'axios';
 import { connect } from 'react-redux';
+import Footer from '../../Template/Footer';
 
 class ComponentName extends React.Component {
     constructor(props) {
@@ -46,26 +47,27 @@ class ComponentName extends React.Component {
 
     render() {
         return (
-            <div className="row">
-                <div className="col-md-2">
-                    <Navbar />
-                </div>
-                <div className="col-md-10">
+            <div id="wrapper">
+                <Navbar />
+                <div id="content-wrapper" className="d-flex flex-column">
+                    <div id="content">
                         <Topbar />
-                        <div className="container-fluid">
-                        {/* Huy note: chỗ này m đổ tên trường ra cho tao: là cái rule ý */}
-                            <div className="d-sm-flex align-items-center justify-content-between mb-4 row">
-                                <div className="col-md-3">
+                            <div className="container-fluid">
+                            {/* Huy note: chỗ này m đổ tên trường ra cho tao: là cái rule ý */}
+                                <div className="d-sm-flex align-items-center justify-content-between mb-4 row">
+                                    <div className="col-md-3">
 
+                                    </div>
+                                    <div className="col-md-6">
+                                        <h1 className="h3 mb-0 text-gray-800">{this.state.rule} - {this.state.process*100}%</h1>
+                                    </div>
+                                    <div className="col-md-3"></div>
                                 </div>
-                                <div className="col-md-6">
-                                    <h1 className="h3 mb-0 text-gray-800">{this.state.rule} - {this.state.process*100}%</h1>
-                                </div>
-                                <div className="col-md-3"></div>
-                            </div>
 
-                        {/* list các bài học */}
-                            {this.loadLessons()}
+                            {/* list các bài học */}
+                                {this.loadLessons()}
+                        </div>
+                        <Footer />
                     </div>
                 </div>
             </div>

@@ -43,10 +43,10 @@ class Header extends Component {
                                 Learning JP
                             </div>
                             <div className="col-6 header--btn">
-                                <button type="button" className="btn btn--s">
-                                    <NavLink  activeClassName="abc" to="/register">Sign Up</NavLink>
-                                    {/* <a href="signup.html">Sign Up</a> */}
-                                </button>
+                                {/* <button type="button" className="btn btn--l"> */}
+                                    {/* <NavLink  activeClassName="abc" to="/register">Sign Up</NavLink> */}
+                                    <span className="text-info" style={{padding: 10}}>{'Welcome: ' + JSON.parse(localStorage.getItem('user')).name }</span>
+                                {/* </button> */}
                                 <button type="button" className="btn btn--l">
                                     <a onClick={this.handleLogout} href="logout.html" >Logout</a>
                                 </button>

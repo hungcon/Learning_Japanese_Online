@@ -10,7 +10,7 @@ class LessonController extends Controller
     public function getListByLevel(Request $request){
         $level = $request->level;
         $user_id = $request->user_id;
-        $user = \App\User::find($user_id)->first();
+        $user = \App\User::where('id',$user_id)->first();
         if($user->level == 0){
             $user->level = 1;
             $user->save();
