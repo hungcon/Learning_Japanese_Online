@@ -15,7 +15,6 @@ class LessonController extends Controller
             $user->level = 1;
             $user->save();
         }
-
         switch ($level) {
             case 'beginer':
                 try{

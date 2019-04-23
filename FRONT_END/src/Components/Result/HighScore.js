@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Navbar from './Navbar';
-import Topbar from './Topbar';
-import Footer from './Footer';
+import Navbar from '../Template/Navbar';
+import Topbar from '../Template/Topbar';
+import Footer from '../Template/Footer';
 class HighScore extends Component {
 
     constructor(props) {
@@ -162,8 +162,8 @@ class HighScore extends Component {
                                     <h1 className="h3 mb-0 text-gray-800">HIGHT SCORE</h1>
                                 </div>
                                 <div className="row">
-                                    <div className="col-2" />
-                                    <div className="card shadow mb-4 col-8">
+                                    <div className="col-1" />
+                                    <div className="card shadow mb-4 col-10">
                                         <div className="card-header">
                                             <h6 className="m-0 font-weight-bold text-primary">History learning</h6>
                                         </div>
@@ -172,7 +172,7 @@ class HighScore extends Component {
                                                 <div id="dataTable_wrapper" className="dataTables_wrapper dt-bootstrap4">
                                                     <div className="row">
                                                         <div className="col-sm-12">
-                                                            <table className="table table-bordered dataTable" id="dataTable" width="100%" cellSpacing={0} role="grid" aria-describedby="dataTable_info" style={{ width: '100%' }}>
+                                                            <table className="table table-bordered  table-inverse  table-hover dataTable" id="dataTable" width="100%" cellSpacing={0} role="grid" aria-describedby="dataTable_info" style={{ width: '100%' }}>
                                                                 <thead>
                                                                     <tr role="row">
                                                                         <th className="sorting_asc" tabIndex={0} aria-controls="dataTable" rowSpan={1} colSpan={1} aria-sort="ascending" aria-label="Name: activate to sort column descending" style={{ width: '10%' }}>STT</th>
@@ -214,7 +214,7 @@ class HighScore extends Component {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="col-2" />
+                                    <div className="col-1" />
                                 </div>
                             </div>
                         </div>
