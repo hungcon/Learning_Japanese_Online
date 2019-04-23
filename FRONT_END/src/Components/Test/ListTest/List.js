@@ -1,7 +1,7 @@
 import React from 'react';
-import Topbar from './Topbar';
-import Lesson from './Lesson';
-import Navbar from './Navbar';
+import Topbar from '../../Template/Topbar';
+import Lesson from '../ListTest/Lesson';
+import Navbar from '../../Template/Navbar';
 import axios from 'axios';
 import { connect } from 'react-redux';
 

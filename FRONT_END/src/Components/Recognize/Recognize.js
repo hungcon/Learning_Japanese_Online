@@ -1,18 +1,21 @@
 import React, { Component } from 'react';
 import CharacterGroup from './CharacterGroup';
 import $ from 'jquery';
-import { Tesseract } from '../Library/TesseractWrapper';
+import { Tesseract } from '../../Library/TesseractWrapper';
 import trans from 'hiragana-romaji-katakana';
 import {connect} from 'react-redux';
-import AlertInformation from './AlertInformation';
-import Hiragana from '../TestData/Hiragana.json';
+import AlertInformation from '../Function/AlertInformation';
+import Hiragana from '../../TestData/Hiragana.json';
+import Navbar from '../Template/Navbar';
+import Topbar from '../Template/Topbar';
+import Footer from '../Template/Footer';
 class Recognize extends Component {
     setEventCanvas = () => {
       const canvas = document.getElementById('canvasInAPerfectWorld');
       var left = $('#canvasInAPerfectWorld').offset().left;
       var top = $('#canvasInAPerfectWorld').offset().top;
-      canvas.width = 312;
-      canvas.height = 312;
+      canvas.width = 400;
+      canvas.height = 400;
 
       const context = canvas.getContext('2d');
      
@@ -74,7 +77,11 @@ class Recognize extends Component {
 
     render() {
         return (
-            <div>
+          <div id="wrapper">
+          <Navbar />
+          <div id="content-wrapper" className="d-flex flex-column">
+              <div id="content">
+                  <Topbar />
             <div className=" mb-4">
                 <h1 className="h3 d-sm-flex align-items-center justify-content-between mb-0 text-gray-800">
                     {
@@ -86,8 +93,8 @@ class Recognize extends Component {
             </div>
             <AlertInformation />
             <div className="row">
-            <div className="col-lg-2" />
-            <div className="col-lg-8 mb-4">
+            <div className="col-lg-1" />
+            <div className="col-lg-10 mb-4">
               {/* Illustrations */}
               <div className="card shadow" id="card_shadow">
                 <div className="card-body">
@@ -112,13 +119,16 @@ class Recognize extends Component {
                   </div>
                   <div className="row r-button ">
                     <button id="exportButton" type="button" className="btn btn-primary" onClick={ () => this.recognize()}>Test</button>
-                    <button id="reset" type="button" className="btn btn-danger" onClick={ () => this.clearCanvas()}>Reset</button>
+                    <button id="reset" type="button" className="btn btn-success ml-2" onClick={ () => this.clearCanvas()}>Reset</button>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-      </div>          
+          <Footer />
+        </div>
+    </div>
+</div>
         );
     }
 }
