@@ -1,4 +1,3 @@
-# Learning_Japanese_Online
 #BACKEND   
 Setting
 1.Open xampp
