@@ -1,9 +1,11 @@
-#BACKEND   
-Setting
-1.Open xampp
-2.Open phpMyadmin create database "learning_japanese" with utf8-general-ci
-3.Open Folder Laravel -> config -> database -> roll mouse to section:
-        'mysql' => [
+Run BACKEND
+======================
+## Config
++ Open xampp
++ Open phpMyadmin create database "learning_japanese" with utf8-general-ci
++ Open Folder Laravel -> config -> database -> roll mouse to section:
+	```php
+	'mysql' => [
             'driver' => 'mysql',
             'host' => env('DB_HOST', '127.0.0.1'),
             'port' => env('DB_PORT', '3306'),
@@ -17,31 +19,55 @@ Setting
             'prefix_indexes' => true,
             'strict' => true,
             'engine' => null,
-        ],
-     	-> change username, pasword, charset, collection  
-4. Open file Laravel -> .evn change:
+        ]
+	```
+     	 Change your username, pasword, charset, collection  
++ Open file Laravel -> .evn change:
+	```php
 	DB_CONNECTION=mysql
 	DB_HOST=127.0.0.1
 	DB_PORT=3306
 	DB_DATABASE=learning_japanese
 	DB_USERNAME=root
 	DB_PASSWORD=
----------------------------------------------------------------
-Update database:
-1.Open Laravel Folder
-2.Open Terminal or Git Bash Here
-3.Run command "php artisan migrate" (Run command "php artisan migrate:rollback" to delete all in database)
-4.Run command "php artisan db:seed" to create data for usersTable. 
-------------------------------------------------------------------
-Run Laravel Backend
-1.Open Laravel folder
-2.Open termital(ubtuntu) or Git Bash Here(window) 
-3.Run command "php artisan serve" (Run command "php artisan serve --port=8000" to run server with port 8000)
--------------------------------------------------------------------
-#FRONTEND
-1. Open folder FRONTEND
-2. Open Terminal or Git Bash Here
-3. Run command "npm install" (wait until install successfully)
-4. Run command "npm start"
+	```
 
-==> Open browser, type: localhost:3000
+## Create database
++ Open Laravel Folder
++ Open Termital (Ubuntu) or Git Bash Here (Window) 
++ Run command "php artisan migrate" (Run command "php artisan migrate:rollback" to delete all in database)
++ Run command "php artisan db:seed" to create data for usersTable. 
+
+## Run server
++ Open Laravel folder
++ Open Termital (Ubuntu) or Git Bash Here (Window) 
++ Run command "php artisan serve" (Run command "php artisan serve --port=8000" to run server with port 8000)
++ If success, console will display:
+```
+	Laravel development server started: <http://127.0.0.1:8000>
+```
+
+
+Run FRONTEND
+======================
+## Install package
++ Open FRONT_END folder
++ Open Termital (Ubuntu) or Git Bash Here (Window) 
++ Run command "npm install" (wait until install successfully)
+
+## Run server
++ Open FRONT_END folder
++ Open Termital (Ubuntu) or Git Bash Here (Window) 
++ Run command "npm start"
++ If success, console will display content such as:
+```
+	Compiled successfully!
+
+	You can now view 20182_cnwtt in the browser.
+
+	  Local:            http://localhost:3000/
+	  On Your Network:  http://10.0.2.17:3000/
+
+	Note that the development build is not optimized.
+	To create a production build, use npm run build.
+```
