@@ -37,7 +37,7 @@ Run Laravel Backend
 1.Open Laravel folder
 2.Open termital(ubtuntu) or Git Bash Here(window) 
 3.Run command "php artisan serve" (Run command "php artisan serve --port=8000" to run server with port 8000)
-
+-------------------------------------------------------------------
 #FRONTEND
 1. Open folder FRONTEND
 2. Open Terminal or Git Bash Here
