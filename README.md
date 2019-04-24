@@ -35,13 +35,13 @@ Run BACKEND
 ## Create database
 + Open Laravel Folder
 + Open Termital (Ubuntu) or Git Bash Here (Window) 
-+ Run command "php artisan migrate" (Run command "php artisan migrate:rollback" to delete all in database)
-+ Run command "php artisan db:seed" to create data for usersTable. 
++ Run command "_php artisan migrate_" (Run command "_php artisan migrate:rollback_" to delete all in database)
++ Run command "_php artisan db:seed_" to create data for usersTable. 
 
 ## Run server
 + Open Laravel folder
 + Open Termital (Ubuntu) or Git Bash Here (Window) 
-+ Run command "php artisan serve" (Run command "php artisan serve --port=8000" to run server with port 8000)
++ Run command "_php artisan serve_" (Run command "_php artisan serve --port=8000_" to run server with port 8000)
 + If success, console will display:
 ```
 	Laravel development server started: <http://127.0.0.1:8000>
@@ -53,12 +53,12 @@ Run FRONTEND
 ## Install package
 + Open FRONT_END folder
 + Open Termital (Ubuntu) or Git Bash Here (Window) 
-+ Run command "npm install" (wait until install successfully)
++ Run command "_npm install_" (wait until install successfully)
 
 ## Run server
 + Open FRONT_END folder
 + Open Termital (Ubuntu) or Git Bash Here (Window) 
-+ Run command "npm start"
++ Run command "_npm start_"
 + If success, console will display content such as:
 ```
 	Compiled successfully!
