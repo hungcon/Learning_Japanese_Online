@@ -34,7 +34,9 @@ class UserController extends Controller
                 $user->email = $email;
                 $user->password = bcrypt($password);
                 $user->save();
-                return response()->json(["message" => "Create account successful","user" => $user], 200);
+
+                $data = \App\User::where('email',$user->email)->first();
+                return response()->json(["message" => "Create account successful","user" => $data], 200);
             }catch (\Exception $e){
                 return response()->json(["error" => "Something was wrong"], 400);
             }
