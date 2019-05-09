@@ -99,7 +99,7 @@ class ChooseTableSeeder extends Seeder
         $questionabcd9s = \App\QuestionABCD::whereBetween('id', [21, 30])->get();
         foreach ($questionabcd9s as $questionabcd) {
             Choose::create([
-                'id_lesson' => 19,
+                'id_lesson' => 18,
                 'id_questionabcd' => $questionabcd->id
             ]);
         }

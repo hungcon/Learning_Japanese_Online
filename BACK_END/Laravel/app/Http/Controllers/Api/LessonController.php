@@ -45,7 +45,7 @@ class LessonController extends Controller
             case 'JLPTN5':
                 try{
                     $lessons = array();
-                    $rule = \App\Rule::where('name', '=' ,'N5')->first();
+                    $rule = \App\Rule::where('name', '=' ,'JLPTN5')->first();
                     $lists = \App\Rule::find($rule->id)->JoinToLesson->toArray();
                     if(isset($lists) && !empty($lists)){
                         $data = [];
@@ -71,7 +71,7 @@ class LessonController extends Controller
             case 'JLPTN4':
                 try{
                     $lessons = array();
-                    $rule = \App\Rule::where('name', '=' ,'N4')->first();
+                    $rule = \App\Rule::where('name', '=' ,'JLPTN4')->first();
                     $lists = \App\Rule::find($rule->id)->JoinToLesson->toArray();
                     if(isset($lists) && !empty($lists)){
                         $data = [];
