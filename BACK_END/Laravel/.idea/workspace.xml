@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ffa9e8aa-6e69-43fe-8bff-0f4e4a8cf896" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/LessonController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/LessonController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/ChooseTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/ChooseTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/RuleTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/RuleTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../FRONT_END/src/Components/Function/Level.js" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,7 +39,7 @@
     <session id="2068727346">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="14" />
+          <entry key="project.closed" value="15" />
           <entry key="project.open.time.21" value="1" />
           <entry key="project.open.time.26" value="1" />
           <entry key="project.open.time.33" value="2" />
@@ -430,7 +427,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107412000" />
+    <option name="totallyTimeSpent" value="107663000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />

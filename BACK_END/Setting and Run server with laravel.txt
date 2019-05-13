@@ -31,8 +31,13 @@ Run Laravel Backend
 2.Open termital(ubtuntu) or Git Bash Here(window) 
 3.Run command "php artisan serve" (Run command "php artisan serve --port=8000" to run server with port 8000)
 ---------------------------------------------------------------
-Update CSDL:
+Update DATABASE:
 1.Open Laravel Folder
 2.Open Terminal or Git Bash Here
 3.Run command "php artisan migrate" (Run command "php artisan migrate:rollback" to delete all in database)
-4.Run command "php artisan db:seed" to create data for usersTable.  
+4.Run command "php artisan db:seed" to create data for usersTable. 
+RollBack DATABASE:
+1.Open Laravel Folder
+2.Open Terminal or Git Bash Here
+3.Run command "php artisan migrate:rollback" to delete all in database
+4.Do stepo 3 and 4 in Update DATABASE: 

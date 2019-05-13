@@ -159,13 +159,13 @@ class HighScore extends Component {
                         <div>
                             <div className="container-fluid">
                                 <div className="d-sm-flex align-items-center justify-content-between mb-4">
-                                    <h1 className="h3 mb-0 text-gray-800">HIGHT SCORE</h1>
+                                    <h1 className="h3 mb-0 text-gray-800">HIGH SCORE</h1>
                                 </div>
                                 <div className="row">
                                     <div className="col-1" />
                                     <div className="card shadow mb-4 col-10">
                                         <div className="card-header">
-                                            <h6 className="m-0 font-weight-bold text-primary">History learning</h6>
+                                            <h6 className="m-0 font-weight-bold text-primary">History </h6>
                                         </div>
                                         <div className="card-body">
                                             <div className="table-responsive">
